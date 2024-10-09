@@ -17,6 +17,7 @@
 package io.aiven.kafka.connect.s3.source.output;
 
 import java.io.InputStream;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -29,10 +30,20 @@ import io.aiven.kafka.connect.s3.source.utils.OffsetManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public interface OutputWriter extends ByteMapper {
-
-    Logger LOGGER = LoggerFactory.getLogger(AvroWriter.class);
-
+public interface OutputWriter {
+    /**
+     * Configure the OutputWriter
+     * @param config  the configuration
+     * @param s3SourceConfig the S3Source configuration.
+     */
     void configureValueConverter(Map<String, String> config, S3SourceConfig s3SourceConfig);
+
+    /**
+     * Converts an input stream into an {@code Iterator<byte[]>} where each {@code byte[]} is the data to be sent to kafka.
+     * @param inputStream the input stream to read bytes from.
+     * @param topic the Topic the input stream is to be associated with.
+     * @return an Iterator of buffers extracted from the input stream.
+     */
+    Iterator<byte[]> toByteArray(InputStream inputStream, String topic);
 
 }

@@ -17,11 +17,13 @@
 package io.aiven.kafka.connect.s3.source.output;
 
 import static io.aiven.kafka.connect.s3.source.config.S3SourceConfig.SCHEMA_REGISTRY_URL;
+import static io.aiven.kafka.connect.s3.source.config.S3SourceConfig.VALUE_SERIALIZER;
 
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.lang.reflect.InvocationTargetException;
 import java.nio.channels.Channels;
 import java.nio.channels.SeekableByteChannel;
 import java.nio.file.Files;
@@ -29,6 +31,8 @@ import java.nio.file.Path;
 import java.time.Instant;
 import java.util.*;
 
+import io.aiven.kafka.connect.s3.source.utils.iterators.WrappedIterator;
+import io.confluent.kafka.serializers.KafkaAvroSerializer;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 
 import io.aiven.kafka.connect.s3.source.config.S3SourceConfig;
@@ -43,19 +47,39 @@ import org.apache.parquet.io.SeekableInputStream;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class ParquetWriter extends AvroWriter {
+public class ParquetWriter implements OutputWriter {
 
     private Logger LOGGER = LoggerFactory.getLogger(ParquetWriter.class);
 
-    protected List<GenericRecord> getRecords(final InputStream inputStream, final String topic,
-            final int topicPartition) {
-        final String timestamp = String.valueOf(Instant.now().toEpochMilli());
+    private KafkaAvroSerializer avroSerializer;
+
+    @Override
+    public void configureValueConverter(final Map<String, String> config, final S3SourceConfig s3SourceConfig) {
+        config.put(SCHEMA_REGISTRY_URL, s3SourceConfig.getString(SCHEMA_REGISTRY_URL));
+        try {
+            avroSerializer = (KafkaAvroSerializer) s3SourceConfig.getClass(VALUE_SERIALIZER)
+                    .getDeclaredConstructor()
+                    .newInstance();
+            avroSerializer.configure(config, false);
+        } catch (InstantiationException | IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
+            LOGGER.error("Can not initialize avroSerializer : " + e.getMessage());
+        }
+    }
+
+    @Override
+    public Iterator<byte[]> toByteArray(InputStream inputStream, String topic) {
+        final List<GenericRecord> records = readAvroRecords(inputStream, topic);
+        return WrappedIterator.create(records.iterator())
+                .map(record -> avroSerializer.serialize(topic, record));
+    }
+
+    private List<GenericRecord> readAvroRecords(final InputStream inputStream, final String topic) {
         File parquetFile;
         final var records = new ArrayList<GenericRecord>();
         try {
-            parquetFile = File.createTempFile(topic + "_" + topicPartition + "_" + timestamp, ".parquet");
+            parquetFile = File.createTempFile(topic, ".parquet");
         } catch (IOException e) {
-            LOGGER.error("Error in reading s3 object stream " + e.getMessage());
+            LOGGER.error("Error creating temp file." + e.getMessage());
             return records;
         }
 

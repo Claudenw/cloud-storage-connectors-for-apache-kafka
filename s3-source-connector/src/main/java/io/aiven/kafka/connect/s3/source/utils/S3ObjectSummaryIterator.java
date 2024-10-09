@@ -21,6 +21,8 @@ class S3ObjectSummaryIterator implements Iterator<S3ObjectSummary> {
     /** The inner iterator on the object summaries.  When it is empty a new one is read from object listing.*/
     private Iterator<S3ObjectSummary> innerIterator;
 
+    private ListObjectsV2Request req;
+
     /**
      * Constructs the s3ObjectSummaryIterator based on the Amazon se client.
      * @param s3Client the Amazon client to read use for access.
@@ -29,13 +31,16 @@ class S3ObjectSummaryIterator implements Iterator<S3ObjectSummary> {
      */
     S3ObjectSummaryIterator(final AmazonS3 s3Client, final String bucketName, final int maxKeys) {
         this.s3Client = s3Client;
-        this.objectListing = s3Client.listObjectsV2(new ListObjectsV2Request().withBucketName(bucketName)
-                .withMaxKeys(maxKeys));
-        this.innerIterator = objectListing.getObjectSummaries().iterator();
+        req = new ListObjectsV2Request().withBucketName(bucketName)
+                .withMaxKeys(maxKeys);
     }
 
     @Override
     public boolean hasNext() {
+        if (objectListing == null) {
+            this.objectListing = s3Client.listObjectsV2(req);
+            this.innerIterator = objectListing.getObjectSummaries().iterator();
+        }
         if (!this.innerIterator.hasNext()) {
             if (!objectListing.isTruncated()) {
                 // there is no more data

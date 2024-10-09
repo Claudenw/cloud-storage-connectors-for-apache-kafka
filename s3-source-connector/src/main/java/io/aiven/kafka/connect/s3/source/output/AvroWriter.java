@@ -63,14 +63,13 @@ public class AvroWriter implements OutputWriter {
 
     @Override
     public Iterator<byte[]> toByteArray(InputStream inputStream, String topic) {
-        final DatumReader<GenericRecord> datumReader = new GenericDatumReader<>();
-        final List<GenericRecord> records = readAvroRecords(inputStream, datumReader);
+        final List<GenericRecord> records = readAvroRecords(inputStream);
        return WrappedIterator.create(records.iterator())
                         .map(record -> avroSerializer.serialize(topic, record));
     }
 
-    protected List<GenericRecord> readAvroRecords(final InputStream content,
-            final DatumReader<GenericRecord> datumReader) {
+    private List<GenericRecord> readAvroRecords(final InputStream content) {
+        final DatumReader<GenericRecord> datumReader = new GenericDatumReader<>();
         final List<GenericRecord> records = new ArrayList<>();
         try (SeekableByteArrayInput sin = new SeekableByteArrayInput(IOUtils.toByteArray(content))) {
             try (DataFileReader<GenericRecord> reader = new DataFileReader<>(sin, datumReader)) {

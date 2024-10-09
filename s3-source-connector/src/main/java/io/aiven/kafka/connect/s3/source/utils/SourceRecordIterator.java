@@ -25,14 +25,12 @@ import static io.aiven.kafka.connect.s3.source.config.S3SourceConfig.LOGGER;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.NoSuchElementException;
-import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -53,7 +51,7 @@ import com.amazonaws.services.s3.model.S3ObjectSummary;
  * Iterator that processes S3 files and creates Kafka source records. Supports different output formats (Avro, JSON,
  * Parquet).
  */
-public final class SourceRecordIterator implements Iterator<AivenS3SourceRecord> {
+public final class SourceRecordIterator  {
     public static final String PATTERN_TOPIC_KEY = "topicName";
     public static final String PATTERN_PARTITION_KEY = "partitionId";
     public static final String OFFSET_KEY = "offset";
@@ -78,23 +76,42 @@ public final class SourceRecordIterator implements Iterator<AivenS3SourceRecord>
     private final String bucketName;
     private final AmazonS3 s3Client;
 
-    private final ByteMapper byteMapper;
+    private final OutputWriter outputWriter;
 
-    private final ExtendedIterator<Iterator<ConsumerRecord<byte[], byte[]>>> innerIterator;
-    private ExtendedIterator<AivenS3SourceRecord> outerIterator;
+    private ExtendedIterator<Iterator<ConsumerRecord<byte[], byte[]>>> consumerRecordIterIter;
 
+    private final ExtendedIterator<S3ObjectSummary> s3ObjectSummaryIterator;
 
     public SourceRecordIterator(final S3SourceConfig s3SourceConfig, final AmazonS3 s3Client, final String bucketName,
-                                final OffsetManager offsetManager, final ByteMapper byteMapper) {
+                                final OffsetManager offsetManager, final OutputWriter outputWriter) {
         this.s3SourceConfig = s3SourceConfig;
         this.offsetManager = offsetManager;
         this.s3Client = s3Client;
         this.bucketName = bucketName;
-        this.byteMapper = byteMapper;
-        Iterator<S3ObjectSummary> s3ObjectSummaryIterator = new S3ObjectSummaryIterator(s3Client, bucketName, s3SourceConfig.getInt(FETCH_PAGE_SIZE) * PAGE_SIZE_FACTOR);
-        innerIterator = WrappedIterator.create(s3ObjectSummaryIterator).map(this::objectMap).map(this::ConsumerRecordMap);
-        outerIterator = innerIterator.hasNext() ? WrappedIterator.create(innerIterator.next()).map(this::aivenS3SourceRecordMap) : new NullIterator<>();
+        this.outputWriter = outputWriter;
+
+        s3ObjectSummaryIterator = WrappedIterator.create(new Iterator<S3ObjectSummary>() {
+            Iterator<S3ObjectSummary> innerIterator = new S3ObjectSummaryIterator(s3Client, bucketName, s3SourceConfig.getInt(FETCH_PAGE_SIZE) * PAGE_SIZE_FACTOR);
+
+            @Override
+            public boolean hasNext() {
+                if (!innerIterator.hasNext()) {
+                    innerIterator = new S3ObjectSummaryIterator(s3Client, bucketName, s3SourceConfig.getInt(FETCH_PAGE_SIZE) * PAGE_SIZE_FACTOR);
+                }
+                return innerIterator.hasNext();
+            }
+
+            @Override
+            public S3ObjectSummary next() {
+                if (!hasNext()) {
+                    throw new NoSuchElementException();
+                }
+                return innerIterator.next();
+            }
+        });
     }
+
+
 
 
 
@@ -130,7 +147,7 @@ public final class SourceRecordIterator implements Iterator<AivenS3SourceRecord>
             Map<Map<String, Object>, Long> currentOffsets = new HashMap<>();
 
             try (InputStream inputStream = s3Object.getObjectContent()) {
-                ExtendedIterator<byte[]> valueBytesIterator = WrappedIterator.create(byteMapper.toByteArray(inputStream));
+                ExtendedIterator<byte[]> valueBytesIterator = WrappedIterator.create(outputWriter.toByteArray(inputStream, topic));
                 return valueBytesIterator.filter(bytes -> bytes.length > 0)
                         .map(value -> {
                             long currentOffset;
@@ -165,23 +182,50 @@ public final class SourceRecordIterator implements Iterator<AivenS3SourceRecord>
                 currentRecord.partition(), currentRecord.key(), currentRecord.value());
     }
 
-    @Override
-    public boolean hasNext() {
-        if (!outerIterator.hasNext()) {
-            if (!innerIterator.hasNext()) {
-                return false;
-            }
-            outerIterator = WrappedIterator.create(innerIterator.next()).map(this::aivenS3SourceRecordMap);
-        }
-        return outerIterator.hasNext();
+    public boolean hasData() {
+        return s3ObjectSummaryIterator.hasNext();
     }
 
-    @Override
-    @SuppressWarnings("PMD.AvoidInstantiatingObjectsInLoops")
-    public AivenS3SourceRecord next() {
-        if (!hasNext()) {
-            throw new NoSuchElementException();
+    public ExtendedIterator<AivenS3SourceRecord> forMaxPollRecords(int maxPollRecords) {
+        ExtendedIterator<AivenS3SourceRecord> result = new NullIterator<>();
+        if (hasData()) {
+        int i=0;
+            ExtendedIterator<Iterator<ConsumerRecord<byte[], byte[]>>> innerIterator = WrappedIterator.create(s3ObjectSummaryIterator).map(this::objectMap).map(this::ConsumerRecordMap);
+        while (i<maxPollRecords && innerIterator.hasNext()) {
+            i++;
+            result.andThen(WrappedIterator.create(innerIterator.next()).map(this::aivenS3SourceRecordMap));
         }
-        return outerIterator.next();
+        return result;
     }
+
+    public ExtendedIterator<AivenS3SourceRecord> allRecords() {
+        if (hasData()) {
+            ExtendedIterator<Iterator<ConsumerRecord<byte[], byte[]>>> innerIterator = WrappedIterator.create(s3ObjectSummaryIterator).map(this::objectMap).map(this::ConsumerRecordMap);
+            return WrappedIterator.create(new Iterator<AivenS3SourceRecord>() {
+                Iterator<AivenS3SourceRecord> outerIterator = WrappedIterator.create(innerIterator.next()).map(SourceRecordIterator.this::aivenS3SourceRecordMap);
+
+
+                @Override
+                public boolean hasNext () {
+                    if (!outerIterator.hasNext()) {
+                        if (!innerIterator.hasNext()) {
+                            return false;
+                        }
+                        outerIterator = WrappedIterator.create(innerIterator.next()).map(SourceRecordIterator.this::aivenS3SourceRecordMap);
+                    }
+                    return outerIterator.hasNext();
+                }
+
+                @Override
+                public AivenS3SourceRecord next () {
+                    if (!hasNext()) {
+                        throw new NoSuchElementException();
+                    }
+                    return outerIterator.next();
+                }
+            });
+        }
+        return new NullIterator<>();
+    }
+
 }

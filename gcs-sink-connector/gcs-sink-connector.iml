@@ -1,0 +1,3171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module relativePaths="true" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output/>
+    <orderEntry type="inheritedJdk"/>
+    <content url="file://$MODULE_DIR$/">
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false"/>
+      <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true"/>
+      <sourceFolder url="file://$MODULE_DIR$/src/integration-test/java" isTestSource="true"/>
+      <sourceFolder url="file://$MODULE_DIR$/src/integration-test/resources" isTestSource="true"/>
+      <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource"/>
+      <sourceFolder url="file://$MODULE_DIR$/src/test/resources" type="java-test-resource"/>
+      <excludeFolder url="file://$MODULE_DIR$/.gradle"/>
+      <excludeFolder url="file://$MODULE_DIR$/build"/>
+    </content>
+    <orderEntry type="sourceFolder" forTests="false"/>
+    <orderEntry type="module" module-name="commons"/>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.kafka/connect-runtime/1.1.0/9d6708b0fa9a717c52431303586000c1e8daf242/connect-runtime-1.1.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.kafka/connect-runtime/1.1.0/f9b016889a06d62ffaa8e73ca5614645c1bd5df6/connect-runtime-1.1.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.kafka/connect-transforms/1.1.0/96a78cba15be70eb7e9d0c9757986c6e00da2f7d/connect-transforms-1.1.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.kafka/connect-transforms/1.1.0/bcc386c4aca0c66675267d765dcda17a6b3accba/connect-transforms-1.1.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.kafka/connect-api/1.1.0/f962d25b2c10aff69ff81e22f153a547e392d1b3/connect-api-1.1.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.kafka/connect-api/1.1.0/9dea59869b31e38ff2088cf04875b634de7fa90b/connect-api-1.1.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.cloud/google-cloud-storage/2.37.0/4d2de3c64f5356607c24fccbdfe51fd801fa3702/google-cloud-storage-2.37.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.cloud/google-cloud-storage/2.37.0/d7c65fa66547a599b85f2f5b2131125b13543785/google-cloud-storage-2.37.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.reflections/reflections/0.9.11/4c686033d918ec1727e329b7222fcb020152e32b/reflections-0.9.11.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.reflections/reflections/0.9.11/2398090ad4dcba954285f97acef10e92e0260044/reflections-0.9.11-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/33.0.0-jre/161ba27964a62f241533807a46b8711b13c1d94b/guava-33.0.0-jre.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/33.0.0-jre/2cca40652185734d5a89349c471a54367fb98067/guava-33.0.0-jre-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.github.spotbugs/spotbugs-annotations/4.8.1/8b7a91a79245f3de0d8c2f73c6f685562280d7bd/spotbugs-annotations-4.8.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.github.spotbugs/spotbugs-annotations/4.8.1/62e2cc9cfe009786e8f7b5ac6421668cb8a62b1/spotbugs-annotations-4.8.1-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.kafka/kafka-tools/1.1.0/54c15fbc8421b8f9bc80869578a0ebd2af125495/kafka-tools-1.1.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.kafka/kafka-tools/1.1.0/1c0870cf7d4807b3fa8bacd19fe7a4a0eaddcd1c/kafka-tools-1.1.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.kafka/kafka-log4j-appender/1.1.0/4f270c1c6842bb403ea3eaeeed02b2f2fbcd5cf7/kafka-log4j-appender-1.1.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.kafka/kafka-log4j-appender/1.1.0/ab3eb1c5c8f77b7e2dac2861d9cdaa0ff90af621/kafka-log4j-appender-1.1.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.kafka/kafka-clients/1.1.0/87ab9fd8c521eb2573d54dac313d958694b12d7d/kafka-clients-1.1.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.kafka/kafka-clients/1.1.0/259e3f93213831dfb1b65ac20b3e3a945f462818/kafka-clients-1.1.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-log4j12/1.7.25/110cefe2df103412849d72ef7a67e4e91e4266b4/slf4j-log4j12-1.7.25.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-log4j12/1.7.25/d6f907c4254a49f40fa46005b65bc97261ad9e46/slf4j-log4j12-1.7.25-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.m2/repository/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.jaxrs/jackson-jaxrs-base/2.17.0/d25516941d7ec233d87df30719b27665487f9584/jackson-jaxrs-base-2.17.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.jaxrs/jackson-jaxrs-base/2.17.0/c590cf768ccc527773de2b050ea9d236e01d625b/jackson-jaxrs-base-2.17.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.module/jackson-module-jaxb-annotations/2.17.0/e07032ce170277213ac4835169ca79fa0340c7b5/jackson-module-jaxb-annotations-2.17.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.module/jackson-module-jaxb-annotations/2.17.0/b4cee8ee9c8f1f06d3a7fcab0df095a34bf98bec/jackson-module-jaxb-annotations-2.17.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.17.0/7173e9e1d4bc6d7ca03bc4eeedcd548b8b580b34/jackson-databind-2.17.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.17.0/4241e9bdb3e3c2fe8bdfad112b7794c44c40d1f2/jackson-databind-2.17.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.17.0/a6e5058ef9720623c517252d17162f845306ff3a/jackson-core-2.17.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.17.0/7e3408d602e036a52ba6a40d5e1ba76fb61b644c/jackson-core-2.17.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.17.0/880a742337010da4c851f843d8cac150e22dff9f/jackson-annotations-2.17.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.17.0/536350a2ea1e4f5bcc7f716797af19a2ddf0f53e/jackson-annotations-2.17.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.jaxrs/jackson-jaxrs-json-provider/2.17.0/f5fe1c7fe9705dc80d8722f76bff2e9307b63775/jackson-jaxrs-json-provider-2.17.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.jaxrs/jackson-jaxrs-json-provider/2.17.0/5347ee295b43e912a11b9d35ac8761e16a9041f2/jackson-jaxrs-json-provider-2.17.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.containers/jersey-container-servlet/2.25.1/cf5f7a76fcea38158b890ab7a0142d4db709a882/jersey-container-servlet-2.25.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.containers/jersey-container-servlet/2.25.1/334916026e1c327d22abce2e5ee1a9b446f8206f/jersey-container-servlet-2.25.1-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-servlet/9.2.24.v20180105/21fe471364a908faefbbfecfb273dab927b5e9f4/jetty-servlet-9.2.24.v20180105.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-servlet/9.2.24.v20180105/8ad28c6836d77e5fb1fd85371617a7406bf40d0b/jetty-servlet-9.2.24.v20180105-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-security/9.2.24.v20180105/27378bd82a9e17d8f0e4b1cec2563bda6efe8c59/jetty-security-9.2.24.v20180105.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-security/9.2.24.v20180105/52e7cee8106dca35009eb29a0678cdea695963b8/jetty-security-9.2.24.v20180105-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-server/9.2.24.v20180105/939a4edd1ab556f874f10f0c67fc7cf884a4d276/jetty-server-9.2.24.v20180105.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-server/9.2.24.v20180105/b56d265040fcc65d010669083be0f7c2ecf71630/jetty-server-9.2.24.v20180105-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-servlets/9.2.24.v20180105/b9c4828634f72325548718f08e2d59463647bed2/jetty-servlets-9.2.24.v20180105.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-servlets/9.2.24.v20180105/a250afcc92e5e6adbefd8f8e0086d008dbe752b8/jetty-servlets-9.2.24.v20180105-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-client/9.2.24.v20180105/98ef823b8787d670b44146599d1eaae7914d4473/jetty-client-9.2.24.v20180105.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-client/9.2.24.v20180105/693f84dedf845ede43158f52841326e676169477/jetty-client-9.2.24.v20180105-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.maven/maven-artifact/3.5.2/df674758263619cb16e053fd99ef1d2ae66de4c2/maven-artifact-3.5.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.maven/maven-artifact/3.5.2/a3a14b9496052a7c3dd197d5828057b2135caa15/maven-artifact-3.5.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.m2/repository/com/google/guava/failureaccess/1.0.2/failureaccess-1.0.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.errorprone/error_prone_annotations/2.26.1/c1fde57694bdc14e8618899aaa6e857d9465d7de/error_prone_annotations-2.26.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.errorprone/error_prone_annotations/2.26.1/b6d2491085a2ca4d152f3937f45009c23d928ef9/error_prone_annotations-2.26.1-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.m2/repository/com/google/j2objc/j2objc-annotations/3.0.0/j2objc-annotations-3.0.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.http-client/google-http-client/1.44.1/d8956bacb8a4011365fa15a690482c49a70c78c5/google-http-client-1.44.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.http-client/google-http-client/1.44.1/19007a0b442ea82cb492afea38a08501c8870cf2/google-http-client-1.44.1-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-context/1.62.2/69e86c35140b3b1718d65635bb54ccecc4c12f14/grpc-context-1.62.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-context/1.62.2/deed411ef596a386d7ae9fbeae90bdbc18c1fdeb/grpc-context-1.62.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.opencensus/opencensus-contrib-http-util/0.31.1/3c13fc5715231fadb16a9b74a44d9d59c460cfa8/opencensus-contrib-http-util-0.31.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.opencensus/opencensus-contrib-http-util/0.31.1/1c6d09598fff894dfc4bfd03aeb68417d1176374/opencensus-contrib-http-util-0.31.1-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.http-client/google-http-client-jackson2/1.44.1/3f1947de0fd9eb250af16abe6103c11e68d11635/google-http-client-jackson2-1.44.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.http-client/google-http-client-jackson2/1.44.1/2fcb96bd44584341bfddcf4e2bd20d1deeaf30fb/google-http-client-jackson2-1.44.1-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.http-client/google-http-client-gson/1.44.1/f3b8967c6f7078da6380687859d0873105f84d39/google-http-client-gson-1.44.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.http-client/google-http-client-gson/1.44.1/97f2c7bef94e6e1465b32f80d6f776149f9db23/google-http-client-gson-1.44.1-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.api-client/google-api-client/2.4.0/1fc68ff50f1ffca280393854385e1197faf798eb/google-api-client-2.4.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.api-client/google-api-client/2.4.0/3d200baddbbc26b90a083ebbdd45d2c9ee9a2635/google-api-client-2.4.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.m2/repository/commons-codec/commons-codec/1.16.1/commons-codec-1.16.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.oauth-client/google-oauth-client/1.35.0/2f52003156e40ba8be5f349a2716a77428896e69/google-oauth-client-1.35.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.oauth-client/google-oauth-client/1.35.0/9bade1314f1a9756531a9e9bcbae7bd789370a35/google-oauth-client-1.35.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.http-client/google-http-client-apache-v2/1.44.1/6d34f55cb53182254dc0e81e58bbb55fb65737d/google-http-client-apache-v2-1.44.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.http-client/google-http-client-apache-v2/1.44.1/be0fb66995ed35e01a579a1735aff6715d31f322/google-http-client-apache-v2-1.44.1-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.apis/google-api-services-storage/v1-rev20240319-2.0.0/1c2c884d3af0571552e7c8178d3cac20175bf634/google-api-services-storage-v1-rev20240319-2.0.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.apis/google-api-services-storage/v1-rev20240319-2.0.0/5a0661482906a659926d4a1e40fb57680945268a/google-api-services-storage-v1-rev20240319-2.0.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.10.1/b3add478d4382b78ea20b1671390a858002feb6c/gson-2.10.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.10.1/982a90132e942f302e6fe79d6e78c4bc2e998569/gson-2.10.1-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.cloud/google-cloud-core/2.37.0/8c4e44d841c81d2f5095a96d700826864d681afb/google-cloud-core-2.37.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.cloud/google-cloud-core/2.37.0/7d662867694a59096859aa329368a9af9a93bbcd/google-cloud-core-2.37.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.auto.value/auto-value-annotations/1.10.4/9679de8286eb0a151db6538ba297a8951c4a1224/auto-value-annotations-1.10.4.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.auto.value/auto-value-annotations/1.10.4/5f89a1225fd0220207a78cc3fae96bb9a788adc0/auto-value-annotations-1.10.4-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.cloud/google-cloud-core-http/2.37.0/c7c7414d54caa8a8e1132e80ea4d0842f28703bd/google-cloud-core-http-2.37.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.cloud/google-cloud-core-http/2.37.0/dc0da732bed7e1173ede0c7c70e9f627540d527f/google-cloud-core-http-2.37.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.http-client/google-http-client-appengine/1.44.1/da4f9f691edb7a9f00cd806157a4990cb7e07711/google-http-client-appengine-1.44.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.http-client/google-http-client-appengine/1.44.1/709c2ccf8e0cda10794a4343ef57635602337fa6/google-http-client-appengine-1.44.1-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.api/gax-httpjson/2.47.0/f66184dd350ace5bab9016ab9007b2c9444aadb3/gax-httpjson-2.47.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.api/gax-httpjson/2.47.0/79869f7885a21dfa7b53b1231650d6b5b1c76e68/gax-httpjson-2.47.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.cloud/google-cloud-core-grpc/2.37.0/8540dc131d5e38f10771001c07638ea00bc25c71/google-cloud-core-grpc-2.37.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.cloud/google-cloud-core-grpc/2.37.0/470ba9a40d02c41746497f0cec7ab7ae84a9043b/google-cloud-core-grpc-2.37.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.api/gax/2.47.0/7aae7101d5b7b6cc3858ba5d23deff61749f9d9a/gax-2.47.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.api/gax/2.47.0/5e07333a5908491301a9d324f9764f372d750ce8/gax-2.47.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.opentelemetry/opentelemetry-api/1.37.0/9b4bdeb434885fdf417967ddea37afe4d21fab4e/opentelemetry-api-1.37.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.opentelemetry/opentelemetry-api/1.37.0/45e7c2d313a39f4f01f39fec3cc3efa771906754/opentelemetry-api-1.37.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.opentelemetry/opentelemetry-context/1.37.0/f180a3855a9dd8c1cf4fddabcfbd4d0a55c4996b/opentelemetry-context-1.37.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.opentelemetry/opentelemetry-context/1.37.0/2570b9c9ba18e8b6b8c0a9d96c7cfc4b24c5b434/opentelemetry-context-1.37.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.api/gax-grpc/2.47.0/7b34f26bd4f79f81eaebd364d2fd19c3537175d3/gax-grpc-2.47.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.api/gax-grpc/2.47.0/71d7365180f9ce9aa0fd2ac59164f77ce15ab87a/gax-grpc-2.47.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-inprocess/1.62.2/eff7a21027f8205334c22629cd8c2d38619b95cf/grpc-inprocess-1.62.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-inprocess/1.62.2/cb5b49936e93411ef1dcf959f0821f81ddd299db/grpc-inprocess-1.62.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-alts/1.62.2/539c66c5fc83ed2fd356c4a94b41d8b1a2373ad6/grpc-alts-1.62.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-alts/1.62.2/7e941212d5ddfd47816559e4bf5550831f7da2c0/grpc-alts-1.62.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-grpclb/1.62.2/6007272964ba7afd0ee926f8de8d3badc7ab9f4e/grpc-grpclb-1.62.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-grpclb/1.62.2/3621fb4ec7dce05f9cb993108fa6f089dc51b6d7/grpc-grpclb-1.62.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.conscrypt/conscrypt-openjdk-uber/2.5.2/d858f142ea189c62771c505a6548d8606ac098fe/conscrypt-openjdk-uber-2.5.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.conscrypt/conscrypt-openjdk-uber/2.5.2/d8290a2f7b28ee0e92efaafbae528577fee6fdee/conscrypt-openjdk-uber-2.5.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-auth/1.62.2/5bc444f4e23ed7a8bafdf5eca700d0fd28a44c8f/grpc-auth-1.62.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-auth/1.62.2/a37e7fefd295001a4a7beb853b0d1ffba11e7429/grpc-auth-1.62.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.auth/google-auth-library-credentials/1.23.0/a50ee3611922a0eea9d421c6ddb1db031972a7dc/google-auth-library-credentials-1.23.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.auth/google-auth-library-credentials/1.23.0/c0c7a490b594a389e11cc20c3e99023a40b2bca7/google-auth-library-credentials-1.23.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.auth/google-auth-library-oauth2-http/1.23.0/f9ebd75a55b8e2cfa62e1f66d04a62b46a2f3b70/google-auth-library-oauth2-http-1.23.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.auth/google-auth-library-oauth2-http/1.23.0/a2ceea7246ecf491fd3c1694d4581a0737fae688/google-auth-library-oauth2-http-1.23.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.api/api-common/2.30.0/c0621415b79825a4745d57b9f0610be202ef4255/api-common-2.30.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.api/api-common/2.30.0/34135e5d51ba2b13bdbbdfd933ae2a1020416a02/api-common-2.30.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.containers/jersey-container-servlet-core/2.25.1/400e30bb035a0cdf3c554530224141ce659a0d1e/jersey-container-servlet-core-2.25.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.containers/jersey-container-servlet-core/2.25.1/d99241eb017d4943a55b01def4a58d620782e49a/jersey-container-servlet-core-2.25.1-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-server/2.25.1/276e2ee0fd1cdabf99357fce560c5baab675b1a2/jersey-server-2.25.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-server/2.25.1/f0c3629e116829bb892a86d1fabfbc3e18550b7c/jersey-server-2.25.1-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-client/2.25.1/4d563b1f93352ee9fad597e9e1daf2c6159993c6/jersey-client-2.25.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-client/2.25.1/753404f68c295f40f25cdda40b05be518ede99b3/jersey-client-2.25.1-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.media/jersey-media-jaxb/2.25.1/d7da0beeed5614a3bfd882662faec602699e24b/jersey-media-jaxb-2.25.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.media/jersey-media-jaxb/2.25.1/4472b847fb1929f9756bf1e3711917e215005adb/jersey-media-jaxb-2.25.1-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-common/2.25.1/2438ce68d4907046095ab54aa83a6092951b4bbb/jersey-common-2.25.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-common/2.25.1/909e99b31725e867874bd156c61d6a3c19e5ce4f/jersey-common-2.25.1-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/javax.annotation/javax.annotation-api/1.3.2/934c04d3cfef185a8008e7bf34331b79730a9d43/javax.annotation-api-1.3.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/javax.annotation/javax.annotation-api/1.3.2/65dfd2c47380bf72ec62a5b8c4ceb78a4eda1a53/javax.annotation-api-1.3.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.opencensus/opencensus-api/0.31.1/66a60c7201c2b8b20ce495f0295b32bb0ccbbc57/opencensus-api-0.31.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.opencensus/opencensus-api/0.31.1/2473574e7bd949d01193671f814872074b4c7015/opencensus-api-0.31.1-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.api.grpc/proto-google-iam-v1/1.33.0/4766da92d1f36c8b612c1c142d5f3ace3774f098/proto-google-iam-v1-1.33.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.api.grpc/proto-google-iam-v1/1.33.0/9b3ada19c7b50e43b25a37d3ec61c70231fce5fb/proto-google-iam-v1-1.33.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.protobuf/protobuf-java/3.25.3/d3200261955f3298e0d85c9892201e70492ce8eb/protobuf-java-3.25.3.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.protobuf/protobuf-java/3.25.3/6d6e3fd28826b75a0c006ff15f0d360602188337/protobuf-java-3.25.3-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.protobuf/protobuf-java-util/3.25.3/c2284abc8c484d64ee5cb79bf61d5b7a819f6d50/protobuf-java-util-3.25.3.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.protobuf/protobuf-java-util/3.25.3/703db93e953d4fcc402e18379d8783400b53e94c/protobuf-java-util-3.25.3-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-core/1.62.2/5808049a5e33eba6f248a68d58e75399a68f2784/grpc-core-1.62.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-core/1.62.2/9d3c2a0521bf2d1be5f76e9169fec618f870da23/grpc-core-1.62.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-protobuf/1.62.2/15aaf31c8d16c3c1c695223d3bd22b75c6405a83/grpc-protobuf-1.62.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-protobuf/1.62.2/a1dbebb75e4e628d9822616a127d435953fb7627/grpc-protobuf-1.62.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.api.grpc/proto-google-common-protos/2.38.0/53f7972acb7a89ae6a9bd6f4f7d2743107940e87/proto-google-common-protos-2.38.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.api.grpc/proto-google-common-protos/2.38.0/6c43b6f07ec653a8ab9b605e6cdf011ca14baaff/proto-google-common-protos-2.38.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.threeten/threetenbp/1.6.9/39c822e33f202e7c25b54172d8235d484b4966fc/threetenbp-1.6.9.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.threeten/threetenbp/1.6.9/642206adb6b37bf69ebc31a37d1812e5ec8d4c61/threetenbp-1.6.9-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.api.grpc/proto-google-cloud-storage-v2/2.37.0-alpha/b18fe7c3a7e7a7995fc58d9753632993d0ca1a50/proto-google-cloud-storage-v2-2.37.0-alpha.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.api.grpc/proto-google-cloud-storage-v2/2.37.0-alpha/dbb3f50a33825e1c91ca6aa6d4f2907755f85e42/proto-google-cloud-storage-v2-2.37.0-alpha-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.api.grpc/grpc-google-cloud-storage-v2/2.37.0-alpha/ddba8757a6e31cc923bcb530bdeb3db99fde4ec9/grpc-google-cloud-storage-v2-2.37.0-alpha.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.api.grpc/grpc-google-cloud-storage-v2/2.37.0-alpha/1b8790e84a44fc789bd305898aaf3ed6f74ec6a0/grpc-google-cloud-storage-v2-2.37.0-alpha-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.api.grpc/gapic-google-cloud-storage-v2/2.37.0-alpha/ef17a642076723f0244ad513389be6287d4dc10d/gapic-google-cloud-storage-v2-2.37.0-alpha.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.api.grpc/gapic-google-cloud-storage-v2/2.37.0-alpha/83fc7b845ced28c7644d22bce7e551e5c5e2a2e8/gapic-google-cloud-storage-v2-2.37.0-alpha-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-api/1.62.2/a93b6ee3761d48edd9a9279f20a58be1a245ad01/grpc-api-1.62.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-api/1.62.2/20dadf84aa6c2cc1bc7a378c7f0d98bd13f7a13a/grpc-api-1.62.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-stub/1.62.2/fc1e85697502d96d6c912e8dd2a56f46f1aba050/grpc-stub-1.62.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-stub/1.62.2/36e9e6a5f5ce39dd589e72f657e56e8110173a1/grpc-stub-1.62.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.checkerframework/checker-qual/3.42.0/638ec33f363a94d41a4f03c3e7d3dcfba64e402d/checker-qual-3.42.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.checkerframework/checker-qual/3.42.0/49cc9a760cebbbcd13be06679a224a1ecc85f884/checker-qual-3.42.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.lz4/lz4-java/1.4/9bedb74f461a87ff2161bdf0778ad8ca6bad3e1c/lz4-java-1.4.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.lz4/lz4-java/1.4/4497150930c7d3da08ad023a5977499c6dc8985c/lz4-java-1.4-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.xerial.snappy/snappy-java/1.1.7.1/d5190b41f3de61e3b83d692322d58630252bc8c3/snappy-java-1.1.7.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.xerial.snappy/snappy-java/1.1.7.1/1b2180f596c29c385dd1da67645597c5a5edfe0c/snappy-java-1.1.7.1-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/net.sourceforge.argparse4j/argparse4j/0.7.0/6f0621d0c3888de39e0f06d01f37ba53a798e657/argparse4j-0.7.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/net.sourceforge.argparse4j/argparse4j/0.7.0/dc5e5b48261b5eb12c2804561a98f1fbc287bc07/argparse4j-0.7.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/javax.ws.rs/javax.ws.rs-api/2.0.1/104e9c2b5583cfcfeac0402316221648d6d8ea6b/javax.ws.rs-api-2.0.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/javax.ws.rs/javax.ws.rs-api/2.0.1/a20db7429fd8dfff74335ec867472b71c345049b/javax.ws.rs-api-2.0.1-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/javax.servlet/javax.servlet-api/3.1.0/3cd63d075497751784b2fa84be59432f4905bf7c/javax.servlet-api-3.1.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/javax.servlet/javax.servlet-api/3.1.0/ab3976d4574c48d22dc1abf6a9e8bd0fdf928223/javax.servlet-api-3.1.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-http/9.2.24.v20180105/391d0a1545a2916b24605ddb22f636a63086048d/jetty-http-9.2.24.v20180105.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-http/9.2.24.v20180105/d5377163b4c11cd802692eb6e1609055da6257bd/jetty-http-9.2.24.v20180105-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-io/9.2.24.v20180105/be1c08b859e420a066166e4c7411c1a66752ddd/jetty-io-9.2.24.v20180105.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-io/9.2.24.v20180105/dafb081a98109da4c5d707264659699b898a5aee/jetty-io-9.2.24.v20180105-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-continuation/9.2.24.v20180105/4de97aaac685a68d6d8b9e5eb6504f79a5f9c45e/jetty-continuation-9.2.24.v20180105.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-continuation/9.2.24.v20180105/5e1905d5361c585ff84d3c6db9a3c1ae0e1c3fbc/jetty-continuation-9.2.24.v20180105-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-util/9.2.24.v20180105/66a65b2b78b3a67f359a0bb640c4c59197156f05/jetty-util-9.2.24.v20180105.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-util/9.2.24.v20180105/13dd0226c78135f660307cb76ce378b3f0eb059e/jetty-util-9.2.24.v20180105-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2-locator/2.5.0-b32/195474f8ad0a8d130e9ea949a771bcf1215fc33b/hk2-locator-2.5.0-b32.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2-locator/2.5.0-b32/9ad9ce916e9cae42f3dd457d863d7faf3a5b0a2e/hk2-locator-2.5.0-b32-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.javassist/javassist/3.21.0-GA/598244f595db5c5fb713731eddbb1c91a58d959b/javassist-3.21.0-GA.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.javassist/javassist/3.21.0-GA/81fefbd46ba6a18fc7af83b9c60b28c0862cd492/javassist-3.21.0-GA-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.codehaus.plexus/plexus-utils/3.1.0/60eecb6f15abdb1c653ad80abaac6fe188b3feaa/plexus-utils-3.1.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.codehaus.plexus/plexus-utils/3.1.0/d4062783613c4c6cf909c939d15fd1f2b584db03/plexus-utils-3.1.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.5/6c6c702c89bfff3cd9e80b04d668c5e190d588c6/commons-lang3-3.5.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.5/f7d878153e86a1cdddf6b37850e00a9f8bff726f/commons-lang3-3.5-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2.external/javax.inject/2.5.0-b32/b2fa50c8186a38728c35fe6a9da57ce4cc806923/javax.inject-2.5.0-b32.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2.external/javax.inject/2.5.0-b32/55e665280bbf8ed63c301959e130cfe335637f31/javax.inject-2.5.0-b32-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.bundles.repackaged/jersey-guava/2.25.1/a2bb4f8208e134cf2cf71dfb8824e42942f7bd06/jersey-guava-2.25.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.bundles.repackaged/jersey-guava/2.25.1/eeb130898a7b7b146ce9a85f9434b4100105f29d/jersey-guava-2.25.1-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2-api/2.5.0-b32/6a576c9653832ce610b80a2f389374ef19d96171/hk2-api-2.5.0-b32.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2-api/2.5.0-b32/fa4f62a464d7d65b2a3d33035bb5606792273556/hk2-api-2.5.0-b32-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/osgi-resource-locator/1.0.1/4ed2b2d4738aed5786cfa64cba5a332779c4c708/osgi-resource-locator-1.0.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/osgi-resource-locator/1.0.1/b5685f8eaa7d83351b185a82a92abcd1b8b87fc8/osgi-resource-locator-1.0.1-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/javax.validation/validation-api/1.1.0.Final/8613ae82954779d518631e05daa73a6a954817d5/validation-api-1.1.0.Final.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/javax.validation/validation-api/1.1.0.Final/7d49b53caed9bd81d172807c3e096d24f3c57090/validation-api-1.1.0.Final-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/log4j/log4j/1.2.17/5af35056b4d257e4b64b9e8069c0746e8b08629f/log4j-1.2.17.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/log4j/log4j/1.2.17/677abe279b68c5e7490d6d50c6951376238d7d3e/log4j-1.2.17-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2-utils/2.5.0-b32/5108a926988c4ceda7f1e681dddfe3101454a002/hk2-utils-2.5.0-b32.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2-utils/2.5.0-b32/6b4474b77b50234f978e9fecce87c030d64193f2/hk2-utils-2.5.0-b32-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2.external/aopalliance-repackaged/2.5.0-b32/6af37c3f8ec6f9e9653ec837eb508da28ce443cd/aopalliance-repackaged-2.5.0-b32.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2.external/aopalliance-repackaged/2.5.0-b32/51312ba9370f3b514cc95c5c2c77a224a1d7e9b9/aopalliance-repackaged-2.5.0-b32-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy/1.14.9/b69e7fff6c473d3ed2b489cdfd673a091fd94226/byte-buddy-1.14.9.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy/1.14.9/6c36f86b91c864d5aabf4033324a4756bc72f99a/byte-buddy-1.14.9-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.m2/repository/javax/inject/javax.inject/1/javax.inject-1.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/jakarta.xml.bind/jakarta.xml.bind-api/2.3.3/48e3b9cfc10752fba3521d6511f4165bea951801/jakarta.xml.bind-api-2.3.3.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/jakarta.xml.bind/jakarta.xml.bind-api/2.3.3/d83744bae211a4072c39f007000a13f501a88395/jakarta.xml.bind-api-2.3.3-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/jakarta.activation/jakarta.activation-api/1.2.2/99f53adba383cb1bf7c3862844488574b559621f/jakarta.activation-api-1.2.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/jakarta.activation/jakarta.activation-api/1.2.2/c45b5962230be8a5f93759203870c98917bb8b31/jakarta.activation-api-1.2.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.confluent/kafka-connect-avro-data/7.2.2/1eb86ab401d0390967a27b468c954e0babd8abef/kafka-connect-avro-data-7.2.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.confluent/kafka-connect-avro-data/7.2.2/4d5d5fe76d23aad17492bf1d764f57e1424885ca/kafka-connect-avro-data-7.2.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.confluent/kafka-avro-serializer/7.2.2/fa5599cdbe84f9b0e3caf526eeb4c2949d9ac107/kafka-avro-serializer-7.2.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.confluent/kafka-avro-serializer/7.2.2/49309c28e7d2780abf454711ca683788b2243e2/kafka-avro-serializer-7.2.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.confluent/kafka-schema-serializer/7.2.2/cd2c40b5ee77b3242b218b81a77920e363a19fd0/kafka-schema-serializer-7.2.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.confluent/kafka-schema-serializer/7.2.2/f9e260c255ec922b3e4febbab149a75f754fd33f/kafka-schema-serializer-7.2.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.confluent/kafka-schema-registry-client/7.2.2/5458c066627767f114b97ba7a2fcbf13f9bf4daa/kafka-schema-registry-client-7.2.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.confluent/kafka-schema-registry-client/7.2.2/b2df184ad8b64aed4118233442276e21b59c59a1/kafka-schema-registry-client-7.2.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.avro/avro/1.11.0/2b0c58e5b450d4f4931456952ad9520cae9c896c/avro-1.11.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.avro/avro/1.11.0/48f7cf6c06ba99b304e452cbecf25c825b96ca94/avro-1.11.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.confluent/kafka-schema-converter/7.2.2/3e6fae269f111a47b8633c254fc1b467d4559952/kafka-schema-converter-7.2.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.confluent/kafka-schema-converter/7.2.2/f5a85c164028832fc7c8454addbe9184b427fdb4/kafka-schema-converter-7.2.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.confluent/common-utils/7.2.2/8bfc0e7eed95e6d5d9a54cf0f542d7bc24ecdc30/common-utils-7.2.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.confluent/common-utils/7.2.2/e2a967af5c6b8693d79071027876da65a2bffb03/common-utils-7.2.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.hadoop/hadoop-common/3.4.0/2b4b1694b695b31cdd8e345b6b59fd74d43a26bc/hadoop-common-3.4.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.hadoop/hadoop-common/3.4.0/79c6d205a68f638f4da83447d2b7897417b71a2a/hadoop-common-3.4.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.xerial.snappy/snappy-java/1.1.10.5/ac605269f3598506196e469f1fb0d7ed5c55059e/snappy-java-1.1.10.5.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.xerial.snappy/snappy-java/1.1.10.5/7826b3c28c6d3491875d267ecf8f573fcf03da56/snappy-java-1.1.10.5-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.github.luben/zstd-jni/1.5.6-3/823b794106e4bcb80110f49408d1641231f25927/zstd-jni-1.5.6-3.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.github.luben/zstd-jni/1.5.6-3/258f1172b988a6932b94acf5ca11f494133021f8/zstd-jni-1.5.6-3-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-text/1.11.0/2bb044b7717ec2eccaf9ea7769c1509054b50e9a/commons-text-1.11.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-text/1.11.0/495883e4f3d80c80f15f6a5ae0e2b4a81184a9b5/commons-text-1.11.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.parquet/parquet-avro/1.11.2/b3221625d751a13f761944699f01147f9813299f/parquet-avro-1.11.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.parquet/parquet-avro/1.11.2/8ab6e49c308d3de8b36dcfd5ae861cb6dfb3c5ce/parquet-avro-1.11.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.parquet/parquet-hadoop/1.11.2/1b31db5a8f5cc6cece536893bc7eacaa5883f92/parquet-hadoop-1.11.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.parquet/parquet-hadoop/1.11.2/8a8d5ea297faf41aa1cfaffea7ca3b2c5b4b5912/parquet-hadoop-1.11.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.parquet/parquet-column/1.11.2/8443b75f51fa88031f66cfd97cbd8703d40941a3/parquet-column-1.11.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.parquet/parquet-column/1.11.2/eb11611bfcd464523a461944254b5d161520bd0b/parquet-column-1.11.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.parquet/parquet-encoding/1.11.2/80c498923633dbcd1b4f8ade17ba0df09620a326/parquet-encoding-1.11.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.parquet/parquet-encoding/1.11.2/6cfd87557608c0dbf2628feff9d0076648b3f0b/parquet-encoding-1.11.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.parquet/parquet-common/1.11.2/3ea78df174a03199a64fc17773c09faf4adc24c1/parquet-common-1.11.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.parquet/parquet-common/1.11.2/1ce513da98033f666d5727599cf29834b8713f9a/parquet-common-1.11.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.parquet/parquet-format-structures/1.11.2/741c7305310b800151eca0a523d0e847ef7580c6/parquet-format-structures-1.11.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.parquet/parquet-format-structures/1.11.2/d6930cf5e63f67446b630c084ce223593ff5bf5a/parquet-format-structures-1.11.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.android/annotations/4.1.1.4/a1678ba907bf92691d879fef34e1a187038f9259/annotations-4.1.1.4.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.android/annotations/4.1.1.4/deb22daeb37bdcbc14230aeaeddce38320d6d0f9/annotations-4.1.1.4-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.codehaus.mojo/animal-sniffer-annotations/1.23/3c0daebd5f0e1ce72cc50c818321ac957aeb5d70/animal-sniffer-annotations-1.23.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.codehaus.mojo/animal-sniffer-annotations/1.23/d4026d5c3c5566247873b7f62ce8e487ddfc856/animal-sniffer-annotations-1.23-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.perfmark/perfmark-api/0.27.0/f86f575a41b091786a4b027cd9c0c1d2e3fc1c01/perfmark-api-0.27.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.perfmark/perfmark-api/0.27.0/c7a23ed4115a2d2d04cb88d3575c8fb43a6fb6e6/perfmark-api-0.27.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-protobuf-lite/1.62.2/9d807d2a0e34bd7284a5336186f57cf241090920/grpc-protobuf-lite-1.62.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-protobuf-lite/1.62.2/1be4921850cb2b801ffce9e8be293596dddb6028/grpc-protobuf-lite-1.62.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-netty-shaded/1.62.2/a714ecbed7be23639d861015125b6b921481bc97/grpc-netty-shaded-1.62.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-netty-shaded/1.62.2/deed411ef596a386d7ae9fbeae90bdbc18c1fdeb/grpc-netty-shaded-1.62.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-util/1.62.2/98c4138f09fb57c3ad6cbeffb31ed73e302038f7/grpc-util-1.62.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-util/1.62.2/d012f307837c801952a9e54d8ac5e698ea5ebfcf/grpc-util-1.62.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-googleapis/1.62.2/b70a7127144ca2a38dacc18b96c9ad2cdc047676/grpc-googleapis-1.62.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-googleapis/1.62.2/ec0f344ca454051db2a810d73492a1241dcf6b45/grpc-googleapis-1.62.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-xds/1.62.2/40d7036c6ae1aa694d754fde3560a5b29eda9574/grpc-xds-1.62.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-xds/1.62.2/dde6317383e606891e5ac859bfa9ac99fc749de2/grpc-xds-1.62.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.opencensus/opencensus-proto/0.2.0/c05b6b32b69d5d9144087ea0ebc6fab183fb9151/opencensus-proto-0.2.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.opencensus/opencensus-proto/0.2.0/834947f69ce51cf3201b0d64b61db21cbcf4ba8e/opencensus-proto-0.2.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-services/1.62.2/9c323306c41d52641114987aff2ef2adcb889080/grpc-services-1.62.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-services/1.62.2/51eb2ddc512348f5c1bd59e6b019fdc10cfb0f8c/grpc-services-1.62.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.confluent/logredactor/1.0.10/fd7cf91c835cc5069d86f8dc949d81346e6cbda9/logredactor-1.0.10.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.confluent/logredactor/1.0.10/48cbc7790b74b937b4a5e01e2ac74d7595a14d30/logredactor-1.0.10-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.re2j/re2j/1.7/2949632c1b4acce0d7784f28e3152e9cf3c2ec7a/re2j-1.7.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.re2j/re2j/1.7/ccf86a85c0db41fdc145d22ce684cb42a0f05b33/re2j-1.7-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-rls/1.62.2/a7f6aa7a5793c2ce9ed5dff546de243b09a57422/grpc-rls-1.62.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-rls/1.62.2/3e773eab9e64b98d43acbb680090e75c08e8f956/grpc-rls-1.62.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-configuration2/2.8.0/6a76acbe14d2c01d4758a57171f3f6a150dbd462/commons-configuration2-2.8.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-configuration2/2.8.0/6555590404c24d0ed3160135ddfe423879fd6087/commons-configuration2-2.8.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.13.0/b7263237aa89c1f99b327197c41d0669707a462e/commons-lang3-3.13.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.13.0/c035e3c80a649b8a1b2e533ff69317304accb247/commons-lang3-3.13.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.hadoop.thirdparty/hadoop-shaded-protobuf_3_21/1.2.0/e1eb9e1cb1d52dd77f5f59712fba624d76c11d80/hadoop-shaded-protobuf_3_21-1.2.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.hadoop/hadoop-annotations/3.4.0/612302e6e385d7e6a62bc0129dbc58689f8c7b2b/hadoop-annotations-3.4.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.hadoop/hadoop-annotations/3.4.0/7823c35d2b8c857fc54675c8897d15114a09ac82/hadoop-annotations-3.4.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.hadoop.thirdparty/hadoop-shaded-guava/1.2.0/a0a6e7aa87c838ea418fc36ed290987dd90f5f6c/hadoop-shaded-guava-1.2.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.m2/repository/commons-beanutils/commons-beanutils/1.9.4/commons-beanutils-1.9.4.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.m2/repository/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/jakarta.activation/jakarta.activation-api/1.2.1/562a587face36ec7eff2db7f2fc95425c6602bc1/jakarta.activation-api-1.2.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/jakarta.activation/jakarta.activation-api/1.2.1/6fe481428613e57af220e17b9ebf3475fb27efb8/jakarta.activation-api-1.2.1-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.github.pjfanning/jersey-json/1.20/3ced16e1d195baf892041e66f9f4e41595b7a3b4/jersey-json-1.20.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.github.pjfanning/jersey-json/1.20/2a2df154dc57f49c3bc0493669cb94a1bb0820de/jersey-json-1.20-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.codehaus.jettison/jettison/1.5.4/174ca56c411b05aec323d8f53e66709c0d28b337/jettison-1.5.4.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.codehaus.jettison/jettison/1.5.4/b6a8e14d6ea9c0d5c9181a7d622083867b59c6b/jettison-1.5.4-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-reload4j/1.7.36/db708f7d959dee1857ac524636e85ecf2e1781c1/slf4j-reload4j-1.7.36.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-reload4j/1.7.36/7adde2baa6395d097ab737516ad7c7fccf7044ba/slf4j-reload4j-1.7.36-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/ch.qos.reload4j/reload4j/1.2.22/f9d9e55d1072d7a697d2bf06e1847e93635a7cf9/reload4j-1.2.22.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/ch.qos.reload4j/reload4j/1.2.22/6e109f68f55e270bebbd0c9ab098977bad6c2bb4/reload4j-1.2.22-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-handler/4.1.100.Final/4c0acdb8bb73647ebb3847ac2d503d53d72c02b4/netty-handler-4.1.100.Final.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-handler/4.1.100.Final/98ccfcd1e1b4d217fe7ab98909570362379fe3f5/netty-handler-4.1.100.Final-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport-native-epoll/4.1.100.Final/cf3c3ef7cb7b30b58385d824dbaf85f5f72da221/netty-transport-native-epoll-4.1.100.Final.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport-native-epoll/4.1.100.Final/4e43755159b2933429b08e86a721909490cf6638/netty-transport-native-epoll-4.1.100.Final-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.dropwizard.metrics/metrics-core/3.2.4/36af4975e38bb39686a63ba5139dce8d3f410669/metrics-core-3.2.4.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.dropwizard.metrics/metrics-core/3.2.4/20012b8e51a8703455aa61c350b3057096eccda6/metrics-core-3.2.4-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-compress/1.24.0/b4b1b5a3d9573b2970fddab236102c0a4d27d35e/commons-compress-1.24.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-compress/1.24.0/a369c080d269f41c002855a37042b5f79f65fbfe/commons-compress-1.24.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.bouncycastle/bcprov-jdk15on/1.70/4636a0d01f74acaf28082fb62b317f1080118371/bcprov-jdk15on-1.70.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.bouncycastle/bcprov-jdk15on/1.70/6245e15dd47e5fc33cff275df61662e0a8e5958f/bcprov-jdk15on-1.70-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.fasterxml.woodstox/woodstox-core/5.4.0/3e05dcce371d3f672feba29f086ad78a93ae3996/woodstox-core-5.4.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.fasterxml.woodstox/woodstox-core/5.4.0/a0a22082b56f8a161a3442713bb67498aed6be27/woodstox-core-5.4.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.codehaus.woodstox/stax2-api/4.2.1/a3f7325c52240418c2ba257b103c3c550e140c83/stax2-api-4.2.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.codehaus.woodstox/stax2-api/4.2.1/8d0d447792449c247f739781838cd620687074b/stax2-api-4.2.1-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/dnsjava/dnsjava/3.4.0/a214858bba6ddc017a3c2fd5d17f0ee359770dad/dnsjava-3.4.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/dnsjava/dnsjava/3.4.0/1b7626874ad529ce798d60914838955fbf91e09/dnsjava-3.4.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.parquet/parquet-jackson/1.11.2/59ff5446e3b620df1cf04ba3bdb27c50a3afdaf7/parquet-jackson-1.11.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.parquet/parquet-jackson/1.11.2/5255c5d17aae1d983b0391d3043ccf8eba79b3e4/parquet-jackson-1.11.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/commons-pool/commons-pool/1.6/4572d589699f09d866a226a14b7f4323c6d8f040/commons-pool-1.6.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/commons-pool/commons-pool/1.6/9376f5559455b8fe1b15308d3ad9c545f6905b1a/commons-pool-1.6-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.sun.xml.bind/jaxb-impl/2.2.3-1/56baae106392040a45a06d4a41099173425da1e6/jaxb-impl-2.2.3-1.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.sun.xml.bind/jaxb-impl/2.2.3-1/c7853ba682b292a2f9d831af145cadc5313a7af1/jaxb-impl-2.2.3-1-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport-classes-epoll/4.1.100.Final/78489936ca1d91483e34a31d04a3b0812386eb39/netty-transport-classes-epoll-4.1.100.Final.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport-classes-epoll/4.1.100.Final/e6573edf249410aacced1d4b1c0c99d1756af299/netty-transport-classes-epoll-4.1.100.Final-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport-native-unix-common/4.1.100.Final/648ff5571022dbfa6789122e3872477bbf67fa7b/netty-transport-native-unix-common-4.1.100.Final.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport-native-unix-common/4.1.100.Final/76f5ca086b771a3a88a49c60f04b954266721a5b/netty-transport-native-unix-common-4.1.100.Final-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec/4.1.100.Final/9c3c71e7cf3b8ce3bfc9fa52a524b9ca7ddf259c/netty-codec-4.1.100.Final.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec/4.1.100.Final/fcc7695974a619ce8e2390bb6cca48aa797d5386/netty-codec-4.1.100.Final-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport/4.1.100.Final/6620fbfb47667a5eb6050e35c7b4c88000bcd77f/netty-transport-4.1.100.Final.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport/4.1.100.Final/743ad4b9efa250a468bbb45dc8c43777d30ff660/netty-transport-4.1.100.Final-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-resolver/4.1.100.Final/fe62f9ccd41b8660d07639dbbab8ae1edd6f2720/netty-resolver-4.1.100.Final.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-resolver/4.1.100.Final/4eeb98383b8efc07dffaf71a36dd88806a48e802/netty-resolver-4.1.100.Final-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-buffer/4.1.100.Final/39b05d2d4027971bf99111a9be1d7035a116bb55/netty-buffer-4.1.100.Final.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-buffer/4.1.100.Final/156438ae717cbaec24227c4df3d0f3b24db864ab/netty-buffer-4.1.100.Final-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-common/4.1.100.Final/847f942381145de23f21c836d05b0677474271d3/netty-common-4.1.100.Final.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-common/4.1.100.Final/e499ae47879ccf01c77a0bc129774efa7a5d385a/netty-common-4.1.100.Final-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.swagger.core.v3/swagger-annotations/2.1.10/1eec58d3db42dcefac76fa47211812c4782b1342/swagger-annotations-2.1.10.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.swagger.core.v3/swagger-annotations/2.1.10/789b30cc87f007e669fd710c9a12b6eb893d95e5/swagger-annotations-2.1.10-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.confluent/logredactor-metrics/1.0.10/80d6efe2f01e1655b686445a08776d50f369953c/logredactor-metrics-1.0.10.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.confluent/logredactor-metrics/1.0.10/2d40e813bbdf872ec6eb9684169eded9b756dfd7/logredactor-metrics-1.0.10-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.eclipsesource.minimal-json/minimal-json/0.9.5/8134f8babbfbb18373110ea0b5871fd34b9c77bf/minimal-json-0.9.5.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.eclipsesource.minimal-json/minimal-json/0.9.5/1bbb62376e67556393d5d578348ff23d02ea9a0c/minimal-json-0.9.5-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.yetus/audience-annotations/0.11.0/8bb9bffe503eeaade43d479377d5c482bf6c7c51/audience-annotations-0.11.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.yetus/audience-annotations/0.11.0/4ee83ae87de12843003ccf7a7e9051f277696d49/audience-annotations-0.11.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/javax.xml.bind/jaxb-api/2.2.2/aeb3021ca93dde265796d82015beecdcff95bf09/jaxb-api-2.2.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/javax.xml.bind/jaxb-api/2.2.2/3016adffd4777795f8aebce4b97e159539e3ad36/jaxb-api-2.2.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/javax.xml.stream/stax-api/1.0-2/d6337b0de8b25e53e81b922352fbea9f9f57ba0b/stax-api-1.0-2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/javax.xml.stream/stax-api/1.0-2/dd58a0151c110e27c6c18abd45b01792f46d3fcd/stax-api-1.0-2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.cloud/google-cloud-nio/0.127.16/83f936869ee9ceed62a8df2e67fbd918bc625849/google-cloud-nio-0.127.16.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.cloud/google-cloud-nio/0.127.16/9e740bdf3a34f9d9fb5b5defc6307ad451c7d0b/google-cloud-nio-0.127.16-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/33.1.0-jre/9b7ed39143d59e8eabcc6f91ffe4d23db2efe558/guava-33.1.0-jre.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/33.1.0-jre/d387b5accef736533f994567b6d7d000d330bab6/guava-33.1.0-jre-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.kafka/connect-json/1.1.0/5c46c0b1da161c647394cea74aeb1dda9e18a34/connect-json-1.1.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.kafka/connect-json/1.1.0/d948d686180f7f30a56d9161b847fa084acf6301/connect-json-1.1.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter-params/5.10.2/359132c82a9d3fa87a325db6edd33b5fdc67a3d8/junit-jupiter-params-5.10.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter-params/5.10.2/1add8e4310a408675f46eae8acafe6b2b72232e5/junit-jupiter-params-5.10.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter-api/5.10.2/fb55d6e2bce173f35fd28422e7975539621055ef/junit-jupiter-api-5.10.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter-api/5.10.2/b281dbb5921ce56b37b6e07a2502f663ca6c8db6/junit-jupiter-api-5.10.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/net.jqwik/jqwik-engine/1.8.4/c9981d56475d3893c681576ae5eb4f014b292936/jqwik-engine-1.8.4.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/net.jqwik/jqwik-engine/1.8.4/37ebdd51513696fa64f5fc0f01b6bb761309d823/jqwik-engine-1.8.4-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/net.jqwik/jqwik/1.8.4/5ba285e3992663d1234cde50422431f756590343/jqwik-1.8.4.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/net.jqwik/jqwik/1.8.4/e03645b0ad6b2cfeac329195d43bc1cea2843ba9/jqwik-1.8.4-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/net.jqwik/jqwik-web/1.8.4/e2ae6a3014d252879e5f01d2d020e13ce73f90b4/jqwik-web-1.8.4.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/net.jqwik/jqwik-web/1.8.4/299b1f16006e4af318d47030cdb460fc27f5b4b4/jqwik-web-1.8.4-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/net.jqwik/jqwik-time/1.8.4/429483e69e108f81bc0dcc6ee477e2dc0020ff8d/jqwik-time-1.8.4.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/net.jqwik/jqwik-time/1.8.4/9ddd05fa8eb9e01d8c7c6dcf876bf2c234872ebb/jqwik-time-1.8.4-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/net.jqwik/jqwik-api/1.8.4/bc11612dea9145a96c02aecfa2ccbd27745c91b5/jqwik-api-1.8.4.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/net.jqwik/jqwik-api/1.8.4/d2babda0a98064e76bff472bf802d76b291f9b2f/jqwik-api-1.8.4-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.junit.platform/junit-platform-commons/1.10.2/3197154a1f0c88da46c47a9ca27611ac7ec5d797/junit-platform-commons-1.10.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.junit.platform/junit-platform-commons/1.10.2/513097c1d045c39db2fa42a54f830d4358936dc3/junit-platform-commons-1.10.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter/5.10.2/831c0b86ddc2ce38391c5b81ea662b0cfdc02cce/junit-jupiter-5.10.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter/5.10.2/4e79ee610aff59d79b5f229252ded392b7d48fd1/junit-jupiter-5.10.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest/2.2/1820c0968dba3a11a1b30669bb1f01978a91dedc/hamcrest-2.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest/2.2/a0a13cfc629420efb587d954f982c4c6a100da25/hamcrest-2.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.assertj/assertj-core/3.26.0/fc4a3d051da838946f9dffe725efbd06cd7d1eec/assertj-core-3.26.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.assertj/assertj-core/3.26.0/8349db6d2e01a74b3e5d9713bfd5de537b218ed7/assertj-core-3.26.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.mockito/mockito-core/5.12.0/22f8bbaf478e6789164787fa411a3b5ed986e110/mockito-core-5.12.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.mockito/mockito-core/5.12.0/cb49b9c44c44126329cf94e2092255bc311620d6/mockito-core-5.12.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.xerial.snappy/snappy-java/1.1.10.5/ac605269f3598506196e469f1fb0d7ed5c55059e/snappy-java-1.1.10.5.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.xerial.snappy/snappy-java/1.1.10.5/7826b3c28c6d3491875d267ecf8f573fcf03da56/snappy-java-1.1.10.5-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.github.luben/zstd-jni/1.5.6-3/823b794106e4bcb80110f49408d1641231f25927/zstd-jni-1.5.6-3.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.github.luben/zstd-jni/1.5.6-3/258f1172b988a6932b94acf5ca11f494133021f8/zstd-jni-1.5.6-3-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.parquet/parquet-tools/1.11.2/2452382043db0dc6ee2d8933e6c4b3effb9b0ba6/parquet-tools-1.11.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.parquet/parquet-tools/1.11.2/d55f0808c8ed623d012cbf76222aa5c393e5af75/parquet-tools-1.11.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.hadoop/hadoop-mapreduce-client-core/3.4.0/116cfe656efef91d7ca88e05ed09dff374b72c42/hadoop-mapreduce-client-core-3.4.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.hadoop/hadoop-mapreduce-client-core/3.4.0/f89fe234438678e2bf66c47dd5626460a71c358f/hadoop-mapreduce-client-core-3.4.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.m2/repository/org/apache/httpcomponents/httpclient/4.5.14/httpclient-4.5.14.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy/1.14.16/e1b9a06e131b7d5b183c8ccc7c29b9e5a8dba077/byte-buddy-1.14.16.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy/1.14.16/718b9f53637ac360fb851785fc86244c60509f18/byte-buddy-1.14.16-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.14.15/b4cc9d88d5de562bf75b3a54ab436ad01b3f72d/byte-buddy-agent-1.14.15.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.14.15/673cccf24bef97f7a056e59e344fb309b605358/byte-buddy-agent-1.14.15-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.hadoop/hadoop-hdfs-client/3.4.0/4608b4f7b4993166e7a0bb90c03b97b0c1e156bd/hadoop-hdfs-client-3.4.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.hadoop/hadoop-hdfs-client/3.4.0/cc6f05db930bf431a041e07a58057ad46e3bd150/hadoop-hdfs-client-3.4.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-reload4j/1.7.36/db708f7d959dee1857ac524636e85ecf2e1781c1/slf4j-reload4j-1.7.36.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-reload4j/1.7.36/7adde2baa6395d097ab737516ad7c7fccf7044ba/slf4j-reload4j-1.7.36-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.hadoop/hadoop-annotations/3.4.0/612302e6e385d7e6a62bc0129dbc58689f8c7b2b/hadoop-annotations-3.4.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.hadoop/hadoop-annotations/3.4.0/7823c35d2b8c857fc54675c8897d15114a09ac82/hadoop-annotations-3.4.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-all/4.1.100.Final/5ef15a3ce29a792b7ad17438e5f84c617b3f2993/netty-all-4.1.100.Final.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.m2/repository/org/apache/httpcomponents/httpcore/4.4.16/httpcore-4.4.16.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/ch.qos.reload4j/reload4j/1.2.19/4eae9978468c5e885a6fb44df7e2bbc07a20e6ce/reload4j-1.2.19.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/ch.qos.reload4j/reload4j/1.2.19/435055e6fec4dfaebf3f356c18246480e2157548/reload4j-1.2.19-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-buffer/4.1.100.Final/39b05d2d4027971bf99111a9be1d7035a116bb55/netty-buffer-4.1.100.Final.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-buffer/4.1.100.Final/156438ae717cbaec24227c4df3d0f3b24db864ab/netty-buffer-4.1.100.Final-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec/4.1.100.Final/9c3c71e7cf3b8ce3bfc9fa52a524b9ca7ddf259c/netty-codec-4.1.100.Final.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec/4.1.100.Final/fcc7695974a619ce8e2390bb6cca48aa797d5386/netty-codec-4.1.100.Final-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec-dns/4.1.100.Final/663b1b7bf3ff0f12fde4df20c72d9e94584ebffa/netty-codec-dns-4.1.100.Final.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec-dns/4.1.100.Final/a6ce877e8a4fe3ae1668f89380f8e207aa64d285/netty-codec-dns-4.1.100.Final-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec-haproxy/4.1.100.Final/e906264fde946c8be131408c6440e6c65774c61b/netty-codec-haproxy-4.1.100.Final.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec-haproxy/4.1.100.Final/62cc372a6ffa1377b80e09b151feb4a5d0a8bb77/netty-codec-haproxy-4.1.100.Final-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec-http/4.1.100.Final/992623e7d8f2d96e41faf1687bb963f5433e3517/netty-codec-http-4.1.100.Final.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec-http/4.1.100.Final/d8be0b54191325da735d0c28887c0f5cda98e4e3/netty-codec-http-4.1.100.Final-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec-http2/4.1.100.Final/cbf1a430ea44dbdedbcde16b185cbb95f28d72c7/netty-codec-http2-4.1.100.Final.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec-http2/4.1.100.Final/7e75598f5e768ef40c6d2b1a0f5a37f5807d3f1c/netty-codec-http2-4.1.100.Final-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec-memcache/4.1.100.Final/db315888a18454b7447a937fb7073bdcad3612a1/netty-codec-memcache-4.1.100.Final.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec-memcache/4.1.100.Final/ad4076548667074072f9b0d4a46e8b4919e74050/netty-codec-memcache-4.1.100.Final-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec-mqtt/4.1.100.Final/d4ef59a99307cb16f47843033c51f1d8ca667b3b/netty-codec-mqtt-4.1.100.Final.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec-mqtt/4.1.100.Final/265d0c47f639a895fac31048899e08f337b388df/netty-codec-mqtt-4.1.100.Final-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec-redis/4.1.100.Final/e3009241f1eb1e3f0f0d487010d6708b327bfbd9/netty-codec-redis-4.1.100.Final.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec-redis/4.1.100.Final/ef3c6f73eb61f1c72d6a62aac0d1d94f3cb3f595/netty-codec-redis-4.1.100.Final-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec-smtp/4.1.100.Final/3f08d2c4e5caa16c9c1731d1600c44bc7fb50109/netty-codec-smtp-4.1.100.Final.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec-smtp/4.1.100.Final/faf7febf18cd756d9b6c13eb47018c7e509ba86/netty-codec-smtp-4.1.100.Final-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec-socks/4.1.100.Final/a9fbf4d64b08abed542eefd5f7aed4807edca56f/netty-codec-socks-4.1.100.Final.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec-socks/4.1.100.Final/dff97a0cc292cd8cbba30d174179c52ce57e4445/netty-codec-socks-4.1.100.Final-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec-stomp/4.1.100.Final/2681fe11716189f9b5f0985bef232acd2f47f13b/netty-codec-stomp-4.1.100.Final.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec-stomp/4.1.100.Final/b8dc1816d05f715bbb969dec07368400cc86849a/netty-codec-stomp-4.1.100.Final-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec-xml/4.1.100.Final/133c53f9f331011dc9f127aa00f08131efad5398/netty-codec-xml-4.1.100.Final.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec-xml/4.1.100.Final/58a86ad46eb52213a8a6c33e2a4fa2261afc1124/netty-codec-xml-4.1.100.Final-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-common/4.1.100.Final/847f942381145de23f21c836d05b0677474271d3/netty-common-4.1.100.Final.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-common/4.1.100.Final/e499ae47879ccf01c77a0bc129774efa7a5d385a/netty-common-4.1.100.Final-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-handler/4.1.100.Final/4c0acdb8bb73647ebb3847ac2d503d53d72c02b4/netty-handler-4.1.100.Final.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-handler/4.1.100.Final/98ccfcd1e1b4d217fe7ab98909570362379fe3f5/netty-handler-4.1.100.Final-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport-native-unix-common/4.1.100.Final/648ff5571022dbfa6789122e3872477bbf67fa7b/netty-transport-native-unix-common-4.1.100.Final.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport-native-unix-common/4.1.100.Final/76f5ca086b771a3a88a49c60f04b954266721a5b/netty-transport-native-unix-common-4.1.100.Final-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-handler-proxy/4.1.100.Final/af3cf676eed30184215426ecf0f0dde15555ea9c/netty-handler-proxy-4.1.100.Final.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-handler-proxy/4.1.100.Final/3e7cb7bc5d0d4ccd37230289b9b37df7d34c0e6f/netty-handler-proxy-4.1.100.Final-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-handler-ssl-ocsp/4.1.100.Final/1a2a1fbe9023e8ff87cc7f011ae372353b47bab2/netty-handler-ssl-ocsp-4.1.100.Final.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-handler-ssl-ocsp/4.1.100.Final/33a4f34f962c34f70e6175e28bdbdb700d25e6ba/netty-handler-ssl-ocsp-4.1.100.Final-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-resolver/4.1.100.Final/fe62f9ccd41b8660d07639dbbab8ae1edd6f2720/netty-resolver-4.1.100.Final.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-resolver/4.1.100.Final/4eeb98383b8efc07dffaf71a36dd88806a48e802/netty-resolver-4.1.100.Final-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-resolver-dns/4.1.100.Final/62dbdf5f25eda75ea8456be1ed72b3fcb0d18774/netty-resolver-dns-4.1.100.Final.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-resolver-dns/4.1.100.Final/5a97540acfb42b5d5f68b8b667cbb296d7ed0df0/netty-resolver-dns-4.1.100.Final-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport/4.1.100.Final/6620fbfb47667a5eb6050e35c7b4c88000bcd77f/netty-transport-4.1.100.Final.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport/4.1.100.Final/743ad4b9efa250a468bbb45dc8c43777d30ff660/netty-transport-4.1.100.Final-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport-rxtx/4.1.100.Final/6269f0b343986623ffcfbe76d9fcd50dd04882ce/netty-transport-rxtx-4.1.100.Final.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport-rxtx/4.1.100.Final/d09f51af51fc53bfba577226832d9384548d2131/netty-transport-rxtx-4.1.100.Final-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport-sctp/4.1.100.Final/605aab389945175470056c4c40394cfc2f019f81/netty-transport-sctp-4.1.100.Final.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport-sctp/4.1.100.Final/287b46cf97d0e51a437942942b992dfdd417bb71/netty-transport-sctp-4.1.100.Final-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport-udt/4.1.100.Final/9800d99ac8dd083d9a39c804ff4e8dd85a01b5d3/netty-transport-udt-4.1.100.Final.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport-udt/4.1.100.Final/44cea4d65bf1710a37bad00696224ec99df8fd9f/netty-transport-udt-4.1.100.Final-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport-classes-epoll/4.1.100.Final/78489936ca1d91483e34a31d04a3b0812386eb39/netty-transport-classes-epoll-4.1.100.Final.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport-classes-epoll/4.1.100.Final/e6573edf249410aacced1d4b1c0c99d1756af299/netty-transport-classes-epoll-4.1.100.Final-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport-classes-kqueue/4.1.100.Final/a32c1b13b82bfd7f09d4ea4836257d48056f0fe2/netty-transport-classes-kqueue-4.1.100.Final.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport-classes-kqueue/4.1.100.Final/eefc61caa71d43a973e89d0de7c2082c4fa5a8/netty-transport-classes-kqueue-4.1.100.Final-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-resolver-dns-classes-macos/4.1.100.Final/b5be42330dcf4ac6e86f37ca74d04e30a8f5513d/netty-resolver-dns-classes-macos-4.1.100.Final.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-resolver-dns-classes-macos/4.1.100.Final/dca3509cecc5d902f1637a5783ce571b7dabe629/netty-resolver-dns-classes-macos-4.1.100.Final-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.confluent/kafka-connect-avro-data/7.2.2/1eb86ab401d0390967a27b468c954e0babd8abef/kafka-connect-avro-data-7.2.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.confluent/kafka-connect-avro-data/7.2.2/4d5d5fe76d23aad17492bf1d764f57e1424885ca/kafka-connect-avro-data-7.2.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.confluent/kafka-avro-serializer/7.2.2/fa5599cdbe84f9b0e3caf526eeb4c2949d9ac107/kafka-avro-serializer-7.2.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.confluent/kafka-avro-serializer/7.2.2/49309c28e7d2780abf454711ca683788b2243e2/kafka-avro-serializer-7.2.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.confluent/kafka-schema-serializer/7.2.2/cd2c40b5ee77b3242b218b81a77920e363a19fd0/kafka-schema-serializer-7.2.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.confluent/kafka-schema-serializer/7.2.2/f9e260c255ec922b3e4febbab149a75f754fd33f/kafka-schema-serializer-7.2.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.confluent/kafka-schema-registry-client/7.2.2/5458c066627767f114b97ba7a2fcbf13f9bf4daa/kafka-schema-registry-client-7.2.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.confluent/kafka-schema-registry-client/7.2.2/b2df184ad8b64aed4118233442276e21b59c59a1/kafka-schema-registry-client-7.2.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.hadoop/hadoop-common/3.4.0/2b4b1694b695b31cdd8e345b6b59fd74d43a26bc/hadoop-common-3.4.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.hadoop/hadoop-common/3.4.0/79c6d205a68f638f4da83447d2b7897417b71a2a/hadoop-common-3.4.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.avro/avro/1.11.0/2b0c58e5b450d4f4931456952ad9520cae9c896c/avro-1.11.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.avro/avro/1.11.0/48f7cf6c06ba99b304e452cbecf25c825b96ca94/avro-1.11.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.confluent/kafka-schema-converter/7.2.2/3e6fae269f111a47b8633c254fc1b467d4559952/kafka-schema-converter-7.2.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.confluent/kafka-schema-converter/7.2.2/f5a85c164028832fc7c8454addbe9184b427fdb4/kafka-schema-converter-7.2.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.confluent/common-utils/7.2.2/8bfc0e7eed95e6d5d9a54cf0f542d7bc24ecdc30/common-utils-7.2.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.confluent/common-utils/7.2.2/e2a967af5c6b8693d79071027876da65a2bffb03/common-utils-7.2.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter-engine/5.10.2/f1f8fe97bd58e85569205f071274d459c2c4f8cd/junit-jupiter-engine-5.10.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter-engine/5.10.2/624f71a8d76185f2ac8d234c686bbdab0bd28ae0/junit-jupiter-engine-5.10.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.junit.platform/junit-platform-engine/1.10.2/d53bb4e0ce7f211a498705783440614bfaf0df2e/junit-platform-engine-1.10.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.junit.platform/junit-platform-engine/1.10.2/886c197f5fcfe9eaf0d1dde20aa1bd3abd653f44/junit-platform-engine-1.10.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-text/1.11.0/2bb044b7717ec2eccaf9ea7769c1509054b50e9a/commons-text-1.11.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-text/1.11.0/495883e4f3d80c80f15f6a5ae0e2b4a81184a9b5/commons-text-1.11.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.parquet/parquet-avro/1.11.2/b3221625d751a13f761944699f01147f9813299f/parquet-avro-1.11.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.parquet/parquet-avro/1.11.2/8ab6e49c308d3de8b36dcfd5ae861cb6dfb3c5ce/parquet-avro-1.11.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.parquet/parquet-hadoop/1.11.2/1b31db5a8f5cc6cece536893bc7eacaa5883f92/parquet-hadoop-1.11.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.parquet/parquet-hadoop/1.11.2/8a8d5ea297faf41aa1cfaffea7ca3b2c5b4b5912/parquet-hadoop-1.11.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.parquet/parquet-column/1.11.2/8443b75f51fa88031f66cfd97cbd8703d40941a3/parquet-column-1.11.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.parquet/parquet-column/1.11.2/eb11611bfcd464523a461944254b5d161520bd0b/parquet-column-1.11.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.parquet/parquet-encoding/1.11.2/80c498923633dbcd1b4f8ade17ba0df09620a326/parquet-encoding-1.11.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.parquet/parquet-encoding/1.11.2/6cfd87557608c0dbf2628feff9d0076648b3f0b/parquet-encoding-1.11.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.parquet/parquet-common/1.11.2/3ea78df174a03199a64fc17773c09faf4adc24c1/parquet-common-1.11.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.parquet/parquet-common/1.11.2/1ce513da98033f666d5727599cf29834b8713f9a/parquet-common-1.11.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.parquet/parquet-format-structures/1.11.2/741c7305310b800151eca0a523d0e847ef7580c6/parquet-format-structures-1.11.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.parquet/parquet-format-structures/1.11.2/d6930cf5e63f67446b630c084ce223593ff5bf5a/parquet-format-structures-1.11.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.android/annotations/4.1.1.4/a1678ba907bf92691d879fef34e1a187038f9259/annotations-4.1.1.4.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.android/annotations/4.1.1.4/deb22daeb37bdcbc14230aeaeddce38320d6d0f9/annotations-4.1.1.4-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.codehaus.mojo/animal-sniffer-annotations/1.23/3c0daebd5f0e1ce72cc50c818321ac957aeb5d70/animal-sniffer-annotations-1.23.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.codehaus.mojo/animal-sniffer-annotations/1.23/d4026d5c3c5566247873b7f62ce8e487ddfc856/animal-sniffer-annotations-1.23-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.perfmark/perfmark-api/0.27.0/f86f575a41b091786a4b027cd9c0c1d2e3fc1c01/perfmark-api-0.27.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.perfmark/perfmark-api/0.27.0/c7a23ed4115a2d2d04cb88d3575c8fb43a6fb6e6/perfmark-api-0.27.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-protobuf-lite/1.62.2/9d807d2a0e34bd7284a5336186f57cf241090920/grpc-protobuf-lite-1.62.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-protobuf-lite/1.62.2/1be4921850cb2b801ffce9e8be293596dddb6028/grpc-protobuf-lite-1.62.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-netty-shaded/1.62.2/a714ecbed7be23639d861015125b6b921481bc97/grpc-netty-shaded-1.62.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-netty-shaded/1.62.2/deed411ef596a386d7ae9fbeae90bdbc18c1fdeb/grpc-netty-shaded-1.62.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-util/1.62.2/98c4138f09fb57c3ad6cbeffb31ed73e302038f7/grpc-util-1.62.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-util/1.62.2/d012f307837c801952a9e54d8ac5e698ea5ebfcf/grpc-util-1.62.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-googleapis/1.62.2/b70a7127144ca2a38dacc18b96c9ad2cdc047676/grpc-googleapis-1.62.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-googleapis/1.62.2/ec0f344ca454051db2a810d73492a1241dcf6b45/grpc-googleapis-1.62.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-xds/1.62.2/40d7036c6ae1aa694d754fde3560a5b29eda9574/grpc-xds-1.62.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-xds/1.62.2/dde6317383e606891e5ac859bfa9ac99fc749de2/grpc-xds-1.62.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.opencensus/opencensus-proto/0.2.0/c05b6b32b69d5d9144087ea0ebc6fab183fb9151/opencensus-proto-0.2.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.opencensus/opencensus-proto/0.2.0/834947f69ce51cf3201b0d64b61db21cbcf4ba8e/opencensus-proto-0.2.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-services/1.62.2/9c323306c41d52641114987aff2ef2adcb889080/grpc-services-1.62.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-services/1.62.2/51eb2ddc512348f5c1bd59e6b019fdc10cfb0f8c/grpc-services-1.62.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.confluent/logredactor/1.0.10/fd7cf91c835cc5069d86f8dc949d81346e6cbda9/logredactor-1.0.10.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.confluent/logredactor/1.0.10/48cbc7790b74b937b4a5e01e2ac74d7595a14d30/logredactor-1.0.10-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.re2j/re2j/1.7/2949632c1b4acce0d7784f28e3152e9cf3c2ec7a/re2j-1.7.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.google.re2j/re2j/1.7/ccf86a85c0db41fdc145d22ce684cb42a0f05b33/re2j-1.7-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-rls/1.62.2/a7f6aa7a5793c2ce9ed5dff546de243b09a57422/grpc-rls-1.62.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-rls/1.62.2/3e773eab9e64b98d43acbb680090e75c08e8f956/grpc-rls-1.62.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-configuration2/2.8.0/6a76acbe14d2c01d4758a57171f3f6a150dbd462/commons-configuration2-2.8.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-configuration2/2.8.0/6555590404c24d0ed3160135ddfe423879fd6087/commons-configuration2-2.8.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.13.0/b7263237aa89c1f99b327197c41d0669707a462e/commons-lang3-3.13.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.13.0/c035e3c80a649b8a1b2e533ff69317304accb247/commons-lang3-3.13.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.hadoop.thirdparty/hadoop-shaded-protobuf_3_21/1.2.0/e1eb9e1cb1d52dd77f5f59712fba624d76c11d80/hadoop-shaded-protobuf_3_21-1.2.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.hadoop.thirdparty/hadoop-shaded-guava/1.2.0/a0a6e7aa87c838ea418fc36ed290987dd90f5f6c/hadoop-shaded-guava-1.2.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.m2/repository/commons-beanutils/commons-beanutils/1.9.4/commons-beanutils-1.9.4.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.m2/repository/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.github.pjfanning/jersey-json/1.20/3ced16e1d195baf892041e66f9f4e41595b7a3b4/jersey-json-1.20.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.github.pjfanning/jersey-json/1.20/2a2df154dc57f49c3bc0493669cb94a1bb0820de/jersey-json-1.20-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.codehaus.jettison/jettison/1.5.4/174ca56c411b05aec323d8f53e66709c0d28b337/jettison-1.5.4.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.codehaus.jettison/jettison/1.5.4/b6a8e14d6ea9c0d5c9181a7d622083867b59c6b/jettison-1.5.4-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/ch.qos.reload4j/reload4j/1.2.22/f9d9e55d1072d7a697d2bf06e1847e93635a7cf9/reload4j-1.2.22.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/ch.qos.reload4j/reload4j/1.2.22/6e109f68f55e270bebbd0c9ab098977bad6c2bb4/reload4j-1.2.22-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-resolver-dns-native-macos/4.1.100.Final/6db932ddf73981d1f0b023eab8fb61ae1a6ca170/netty-resolver-dns-native-macos-4.1.100.Final-osx-x86_64.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-resolver-dns-native-macos/4.1.100.Final/1348f4a6a2ffeec5f609e405b1fa1e01417a25e1/netty-resolver-dns-native-macos-4.1.100.Final-osx-aarch_64.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport-native-epoll/4.1.100.Final/cf3c3ef7cb7b30b58385d824dbaf85f5f72da221/netty-transport-native-epoll-4.1.100.Final.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport-native-epoll/4.1.100.Final/4e43755159b2933429b08e86a721909490cf6638/netty-transport-native-epoll-4.1.100.Final-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport-native-epoll/4.1.100.Final/d83003b8eac838e4bc3f7662a22f9f2d879c0fe4/netty-transport-native-epoll-4.1.100.Final-linux-x86_64.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport-native-epoll/4.1.100.Final/4e43755159b2933429b08e86a721909490cf6638/netty-transport-native-epoll-4.1.100.Final-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport-native-epoll/4.1.100.Final/22c3fe045620e6e05002ed1999d276dc4176a7a4/netty-transport-native-epoll-4.1.100.Final-linux-aarch_64.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport-native-epoll/4.1.100.Final/4e43755159b2933429b08e86a721909490cf6638/netty-transport-native-epoll-4.1.100.Final-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.dropwizard.metrics/metrics-core/3.2.4/36af4975e38bb39686a63ba5139dce8d3f410669/metrics-core-3.2.4.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.dropwizard.metrics/metrics-core/3.2.4/20012b8e51a8703455aa61c350b3057096eccda6/metrics-core-3.2.4-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-compress/1.24.0/b4b1b5a3d9573b2970fddab236102c0a4d27d35e/commons-compress-1.24.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-compress/1.24.0/a369c080d269f41c002855a37042b5f79f65fbfe/commons-compress-1.24.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.bouncycastle/bcprov-jdk15on/1.70/4636a0d01f74acaf28082fb62b317f1080118371/bcprov-jdk15on-1.70.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.bouncycastle/bcprov-jdk15on/1.70/6245e15dd47e5fc33cff275df61662e0a8e5958f/bcprov-jdk15on-1.70-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.fasterxml.woodstox/woodstox-core/5.4.0/3e05dcce371d3f672feba29f086ad78a93ae3996/woodstox-core-5.4.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.fasterxml.woodstox/woodstox-core/5.4.0/a0a22082b56f8a161a3442713bb67498aed6be27/woodstox-core-5.4.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.codehaus.woodstox/stax2-api/4.2.1/a3f7325c52240418c2ba257b103c3c550e140c83/stax2-api-4.2.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.codehaus.woodstox/stax2-api/4.2.1/8d0d447792449c247f739781838cd620687074b/stax2-api-4.2.1-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/dnsjava/dnsjava/3.4.0/a214858bba6ddc017a3c2fd5d17f0ee359770dad/dnsjava-3.4.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/dnsjava/dnsjava/3.4.0/1b7626874ad529ce798d60914838955fbf91e09/dnsjava-3.4.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport-native-kqueue/4.1.100.Final/135c3a560a4fb84b0e2084f376610347483e2e8a/netty-transport-native-kqueue-4.1.100.Final-osx-x86_64.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport-native-kqueue/4.1.100.Final/8c29945567b786a60a98bee4636022d485ba055f/netty-transport-native-kqueue-4.1.100.Final-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport-native-kqueue/4.1.100.Final/2d75a8e80a75def2b61bac1ea5f66d184f5069f0/netty-transport-native-kqueue-4.1.100.Final-osx-aarch_64.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport-native-kqueue/4.1.100.Final/8c29945567b786a60a98bee4636022d485ba055f/netty-transport-native-kqueue-4.1.100.Final-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.parquet/parquet-jackson/1.11.2/59ff5446e3b620df1cf04ba3bdb27c50a3afdaf7/parquet-jackson-1.11.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.parquet/parquet-jackson/1.11.2/5255c5d17aae1d983b0391d3043ccf8eba79b3e4/parquet-jackson-1.11.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/commons-pool/commons-pool/1.6/4572d589699f09d866a226a14b7f4323c6d8f040/commons-pool-1.6.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/commons-pool/commons-pool/1.6/9376f5559455b8fe1b15308d3ad9c545f6905b1a/commons-pool-1.6-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.sun.xml.bind/jaxb-impl/2.2.3-1/56baae106392040a45a06d4a41099173425da1e6/jaxb-impl-2.2.3-1.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.sun.xml.bind/jaxb-impl/2.2.3-1/c7853ba682b292a2f9d831af145cadc5313a7af1/jaxb-impl-2.2.3-1-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.swagger.core.v3/swagger-annotations/2.1.10/1eec58d3db42dcefac76fa47211812c4782b1342/swagger-annotations-2.1.10.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.swagger.core.v3/swagger-annotations/2.1.10/789b30cc87f007e669fd710c9a12b6eb893d95e5/swagger-annotations-2.1.10-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.confluent/logredactor-metrics/1.0.10/80d6efe2f01e1655b686445a08776d50f369953c/logredactor-metrics-1.0.10.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/io.confluent/logredactor-metrics/1.0.10/2d40e813bbdf872ec6eb9684169eded9b756dfd7/logredactor-metrics-1.0.10-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.eclipsesource.minimal-json/minimal-json/0.9.5/8134f8babbfbb18373110ea0b5871fd34b9c77bf/minimal-json-0.9.5.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/com.eclipsesource.minimal-json/minimal-json/0.9.5/1bbb62376e67556393d5d578348ff23d02ea9a0c/minimal-json-0.9.5-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.yetus/audience-annotations/0.11.0/8bb9bffe503eeaade43d479377d5c482bf6c7c51/audience-annotations-0.11.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/org.apache.yetus/audience-annotations/0.11.0/4ee83ae87de12843003ccf7a7e9051f277696d49/audience-annotations-0.11.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/javax.xml.bind/jaxb-api/2.2.2/aeb3021ca93dde265796d82015beecdcff95bf09/jaxb-api-2.2.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/javax.xml.bind/jaxb-api/2.2.2/3016adffd4777795f8aebce4b97e159539e3ad36/jaxb-api-2.2.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/javax.xml.stream/stax-api/1.0-2/d6337b0de8b25e53e81b922352fbea9f9f57ba0b/stax-api-1.0-2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/claude-warren/.gradle/caches/modules-2/files-2.1/javax.xml.stream/stax-api/1.0-2/dd58a0151c110e27c6c18abd45b01792f46d3fcd/stax-api-1.0-2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+  </component>
+  <component name="ModuleRootManager"/>
+</module>

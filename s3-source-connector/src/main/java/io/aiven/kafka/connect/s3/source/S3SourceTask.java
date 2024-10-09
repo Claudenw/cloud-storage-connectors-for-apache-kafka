@@ -21,13 +21,10 @@ import static io.aiven.kafka.connect.s3.source.config.S3SourceConfig.MAX_POLL_RE
 import static io.aiven.kafka.connect.s3.source.config.S3SourceConfig.OUTPUT_FORMAT_KEY;
 
 import java.lang.reflect.InvocationTargetException;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicBoolean;
 
+import org.apache.kafka.connect.data.SchemaAndValue;
 import org.apache.kafka.connect.errors.ConnectException;
 import org.apache.kafka.connect.source.SourceRecord;
 import org.apache.kafka.connect.source.SourceTask;
@@ -39,7 +36,6 @@ import io.aiven.kafka.connect.s3.source.output.OutputWriter;
 import io.aiven.kafka.connect.s3.source.output.OutputWriterFactory;
 import io.aiven.kafka.connect.s3.source.utils.AivenS3SourceRecord;
 import io.aiven.kafka.connect.s3.source.utils.OffsetManager;
-import io.aiven.kafka.connect.s3.source.utils.RecordProcessor;
 import io.aiven.kafka.connect.s3.source.utils.SourceRecordIterator;
 import io.aiven.kafka.connect.s3.source.utils.Version;
 
@@ -66,7 +62,7 @@ public class S3SourceTask extends SourceTask {
     private S3SourceConfig s3SourceConfig;
     private AmazonS3 s3Client;
 
-    private Iterator<List<AivenS3SourceRecord>> sourceRecordIterator;
+    private SourceRecordIterator sourceRecordIterator;
     private Optional<Converter> keyConverter;
     private Converter valueConverter;
 
@@ -140,17 +136,16 @@ public class S3SourceTask extends SourceTask {
         return results;
     }
 
-    private List<SourceRecord> extractSourceRecords(final List<SourceRecord> results) throws InterruptedException {
+    private List<SourceRecord> extractSourceRecords(List<SourceRecord> results) throws InterruptedException {
         waitForObjects();
         if (connectorStopped.get()) {
-            return results;
+            return Collections.emptyList();
         }
-        return RecordProcessor.processRecords(sourceRecordIterator, results, s3SourceConfig, keyConverter,
-                valueConverter, connectorStopped, this.outputWriter);
+        return processRecords(results);
     }
 
     private void waitForObjects() throws InterruptedException {
-        while (!sourceRecordIterator.hasNext() && !connectorStopped.get()) {
+        while (!sourceRecordIterator.hasData() && !connectorStopped.get()) {
             LOGGER.debug("Blocking until new S3 files are available.");
             Thread.sleep(S_3_POLL_INTERVAL_MS);
             prepareReaderFromOffsetStorageReader();
@@ -171,4 +166,25 @@ public class S3SourceTask extends SourceTask {
     public void stop() {
         this.connectorStopped.set(true);
     }
+
+    private List<SourceRecord> processRecords(List<SourceRecord> results) {
+
+        final int maxPollRecords = s3SourceConfig.getInt(S3SourceConfig.MAX_POLL_RECORDS);
+        sourceRecordIterator.forMaxPollRecords(maxPollRecords).map(this::sourceRecordMap).forEach(results::add);
+        return results;
+    }
+
+    private SourceRecord sourceRecordMap(AivenS3SourceRecord aivenS3SourceRecord) {
+        final String topic = aivenS3SourceRecord.getToTopic();
+        final Map<String, String> conversionConfig = new HashMap<>();
+        final Optional<SchemaAndValue> keyData = keyConverter
+                .map(c -> c.toConnectData(topic, aivenS3SourceRecord.key()));
+
+        outputWriter.configureValueConverter(conversionConfig, s3SourceConfig);
+        valueConverter.configure(conversionConfig, false);
+        final SchemaAndValue schemaAndValue = valueConverter.toConnectData(topic, aivenS3SourceRecord.value());
+
+        return aivenS3SourceRecord.getSourceRecord(topic, keyData, schemaAndValue);
+    }
+
 }
