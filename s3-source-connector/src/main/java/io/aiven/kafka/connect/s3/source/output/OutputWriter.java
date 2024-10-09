@@ -29,15 +29,10 @@ import io.aiven.kafka.connect.s3.source.utils.OffsetManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public interface OutputWriter {
+public interface OutputWriter extends ByteMapper {
 
     Logger LOGGER = LoggerFactory.getLogger(AvroWriter.class);
 
     void configureValueConverter(Map<String, String> config, S3SourceConfig s3SourceConfig);
 
-    @SuppressWarnings("PMD.ExcessiveParameterList")
-    void handleValueData(Optional<byte[]> optionalKeyBytes, InputStream inputStream, String topic,
-            List<ConsumerRecord<byte[], byte[]>> consumerRecordList, S3SourceConfig s3SourceConfig, int topicPartition,
-            long startOffset, OffsetManager offsetManager, Map<Map<String, Object>, Long> currentOffsets,
-            Map<String, Object> partitionMap);
 }

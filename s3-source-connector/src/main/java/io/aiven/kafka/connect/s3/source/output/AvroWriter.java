@@ -17,14 +17,17 @@
 package io.aiven.kafka.connect.s3.source.output;
 
 import static io.aiven.kafka.connect.s3.source.config.S3SourceConfig.SCHEMA_REGISTRY_URL;
+import static io.aiven.kafka.connect.s3.source.config.S3SourceConfig.VALUE_SERIALIZER;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.lang.reflect.InvocationTargetException;
+import java.util.*;
 
+import io.aiven.kafka.connect.s3.source.utils.iterators.ExtendedIterator;
+import io.aiven.kafka.connect.s3.source.utils.iterators.WrappedIterator;
+import io.confluent.kafka.serializers.KafkaAvroSerializer;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 
 import io.aiven.kafka.connect.s3.source.config.S3SourceConfig;
@@ -43,27 +46,30 @@ import org.slf4j.LoggerFactory;
 public class AvroWriter implements OutputWriter {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(AvroWriter.class);
+    private KafkaAvroSerializer avroSerializer;
 
     @Override
     public void configureValueConverter(final Map<String, String> config, final S3SourceConfig s3SourceConfig) {
         config.put(SCHEMA_REGISTRY_URL, s3SourceConfig.getString(SCHEMA_REGISTRY_URL));
+        try {
+            avroSerializer = (KafkaAvroSerializer) s3SourceConfig.getClass(VALUE_SERIALIZER)
+                    .getDeclaredConstructor()
+                    .newInstance();
+            avroSerializer.configure(config, false);
+        } catch (InstantiationException | IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
+            LOGGER.error("Can not initialize avroSerializer : " + e.getMessage());
+        }
     }
 
     @Override
-    @SuppressWarnings("PMD.ExcessiveParameterList")
-    public void handleValueData(final Optional<byte[]> optionalKeyBytes, final InputStream inputStream,
-            final String topic, final List<ConsumerRecord<byte[], byte[]>> consumerRecordList,
-            final S3SourceConfig s3SourceConfig, final int topicPartition, final long startOffset,
-            final OffsetManager offsetManager, final Map<Map<String, Object>, Long> currentOffsets,
-            final Map<String, Object> partitionMap) {
+    public Iterator<byte[]> toByteArray(InputStream inputStream, String topic) {
         final DatumReader<GenericRecord> datumReader = new GenericDatumReader<>();
-        DecoderFactory.get().binaryDecoder(inputStream, null);
         final List<GenericRecord> records = readAvroRecords(inputStream, datumReader);
-        OutputUtils.buildConsumerRecordList(optionalKeyBytes, topic, consumerRecordList, s3SourceConfig, topicPartition,
-                startOffset, offsetManager, currentOffsets, records, partitionMap);
+       return WrappedIterator.create(records.iterator())
+                        .map(record -> avroSerializer.serialize(topic, record));
     }
 
-    private List<GenericRecord> readAvroRecords(final InputStream content,
+    protected List<GenericRecord> readAvroRecords(final InputStream content,
             final DatumReader<GenericRecord> datumReader) {
         final List<GenericRecord> records = new ArrayList<>();
         try (SeekableByteArrayInput sin = new SeekableByteArrayInput(IOUtils.toByteArray(content))) {

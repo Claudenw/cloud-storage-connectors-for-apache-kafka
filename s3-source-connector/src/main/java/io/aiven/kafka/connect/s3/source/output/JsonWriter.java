@@ -20,10 +20,9 @@ import static io.aiven.kafka.connect.s3.source.config.S3SourceConfig.SCHEMAS_ENA
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
+import org.apache.commons.collections.iterators.SingletonIterator;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 
 import io.aiven.kafka.connect.s3.source.config.S3SourceConfig;
@@ -42,27 +41,14 @@ public class JsonWriter implements OutputWriter {
     }
 
     @Override
-    @SuppressWarnings("PMD.ExcessiveParameterList")
-    public void handleValueData(final Optional<byte[]> optionalKeyBytes, final InputStream inputStream,
-            final String topic, final List<ConsumerRecord<byte[], byte[]>> consumerRecordList,
-            final S3SourceConfig s3SourceConfig, final int topicPartition, final long startOffset,
-            final OffsetManager offsetManager, final Map<Map<String, Object>, Long> currentOffsets,
-            final Map<String, Object> partitionMap) {
-        final byte[] valueBytes = serializeJsonData(inputStream);
-        if (valueBytes.length > 0) {
-            consumerRecordList.add(OutputUtils.getConsumerRecord(optionalKeyBytes, valueBytes, topic, topicPartition,
-                    offsetManager, currentOffsets, startOffset, partitionMap));
-        }
-    }
-
-    private byte[] serializeJsonData(final InputStream inputStream) {
+    public Iterator<byte[]> toByteArray(final InputStream inputStream, String topic) {
         final JsonNode jsonNode;
         try {
             jsonNode = objectMapper.readTree(inputStream);
-            return objectMapper.writeValueAsBytes(jsonNode);
+            return new SingletonIterator(objectMapper.writeValueAsBytes(jsonNode));
         } catch (IOException e) {
             LOGGER.error("Error in reading s3 object stream " + e.getMessage());
+            return Collections.emptyIterator();
         }
-        return new byte[0];
     }
 }

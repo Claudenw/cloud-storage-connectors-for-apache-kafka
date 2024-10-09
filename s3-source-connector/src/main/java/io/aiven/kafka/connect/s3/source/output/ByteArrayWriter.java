@@ -18,10 +18,9 @@ package io.aiven.kafka.connect.s3.source.output;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
+import org.apache.commons.collections.iterators.SingletonIterator;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 
 import io.aiven.kafka.connect.s3.source.config.S3SourceConfig;
@@ -51,6 +50,16 @@ public class ByteArrayWriter implements OutputWriter {
                     topic, topicPartition, offsetManager, currentOffsets, startOffset, partitionMap));
         } catch (IOException e) {
             LOGGER.error("Error in reading s3 object stream " + e.getMessage());
+        }
+    }
+
+    @Override
+    public Iterator<byte[]> toByteArray(InputStream inputStream, String topic) {
+        try {
+            return new SingletonIterator(IOUtils.toByteArray(inputStream));
+        } catch (IOException e) {
+            LOGGER.error("Error in reading s3 object stream " + e.getMessage());
+            return Collections.emptyIterator();
         }
     }
 }
