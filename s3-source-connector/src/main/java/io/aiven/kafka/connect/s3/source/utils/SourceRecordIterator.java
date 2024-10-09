@@ -34,7 +34,6 @@ import java.util.NoSuchElementException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import io.aiven.kafka.connect.s3.source.output.ByteMapper;
 import io.aiven.kafka.connect.s3.source.utils.iterators.ExtendedIterator;
 import io.aiven.kafka.connect.s3.source.utils.iterators.NullIterator;
 import io.aiven.kafka.connect.s3.source.utils.iterators.WrappedIterator;
