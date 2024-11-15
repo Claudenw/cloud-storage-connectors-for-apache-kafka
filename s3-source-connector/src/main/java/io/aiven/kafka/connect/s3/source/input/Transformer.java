@@ -24,8 +24,10 @@ import io.aiven.kafka.connect.s3.source.config.S3SourceConfig;
 
 public interface Transformer {
 
+    // TODO make this method accept an S3OffsetManagerEntry and update the values in the configuration directly.
     void configureValueConverter(Map<String, String> config, S3SourceConfig s3SourceConfig);
 
+    // TODO make this method accept an S3OffsetManagerEntry to retrieve the topic an topicParitiion.
     List<Object> getRecords(InputStream inputStream, String topic, int topicPartition, S3SourceConfig s3SourceConfig);
 
     byte[] getValueBytes(Object record, String topic, S3SourceConfig s3SourceConfig);

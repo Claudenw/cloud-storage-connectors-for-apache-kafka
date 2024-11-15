@@ -86,9 +86,7 @@ class RecordProcessorTest {
             s3SourceConfig,
             Optional.of(keyConverter),
             valueConverter,
-            connectorStopped,
-            transformer, fileReader, offsetManager
-        );
+            connectorStopped);
 
         assertTrue(processedRecords.isEmpty(), "Processed records should be empty when there are no records.");
     }
@@ -98,8 +96,9 @@ class RecordProcessorTest {
         when(s3SourceConfig.getInt(S3SourceConfig.MAX_POLL_RECORDS)).thenReturn(5);
         when(sourceRecordIterator.hasNext()).thenReturn(true, false); // One iteration with records
 
-        final S3SourceRecord mockRecord = mock(S3SourceRecord.class);
-        when(sourceRecordIterator.next()).thenReturn(mockRecord);
+        S3OffsetManagerEntry offsetManagerEntry = new S3OffsetManagerEntry("bucket", "s3ObjectKey", "topic", 1);
+        final S3SourceRecord s3SourceRecord = new S3SourceRecord(offsetManagerEntry, new byte[0], new byte[0]);
+        when(sourceRecordIterator.next()).thenReturn(s3SourceRecord);
 
         final List<SourceRecord> results = new ArrayList<>();
         RecordProcessor.processRecords(
@@ -108,8 +107,7 @@ class RecordProcessorTest {
             s3SourceConfig,
             Optional.of(keyConverter),
             valueConverter,
-            connectorStopped,
-            transformer, fileReader, offsetManager
+            connectorStopped
         );
 
         assertThat(results.size()).isEqualTo(1);
@@ -128,28 +126,10 @@ class RecordProcessorTest {
             s3SourceConfig,
             Optional.of(keyConverter),
             valueConverter,
-            connectorStopped,
-            transformer, fileReader, offsetManager
+            connectorStopped
         );
 
         assertTrue(processedRecords.isEmpty(), "Processed records should be empty when connector is stopped.");
         verify(sourceRecordIterator, never()).next();
-    }
-
-    @Test
-    void testCreateSourceRecords() {
-        final S3SourceRecord mockRecord = mock(S3SourceRecord.class);
-        when(mockRecord.getTopic()).thenReturn("test-topic");
-        when(mockRecord.key()).thenReturn("mock-key".getBytes(StandardCharsets.UTF_8));
-        when(mockRecord.value()).thenReturn("mock-value".getBytes(StandardCharsets.UTF_8));
-
-        when(valueConverter.toConnectData(anyString(), any()))
-                .thenReturn(new SchemaAndValue(null, "mock-value-converted"));
-        when(mockRecord.getSourceRecord(anyString(), any(), any())).thenReturn(mock(SourceRecord.class));
-
-        final SourceRecord sourceRecords = RecordProcessor.createSourceRecord(mockRecord, s3SourceConfig,
-                Optional.of(keyConverter), valueConverter, new HashMap<>(), transformer, fileReader, offsetManager);
-
-        assertThat(sourceRecords).isNotNull();
     }
 }
