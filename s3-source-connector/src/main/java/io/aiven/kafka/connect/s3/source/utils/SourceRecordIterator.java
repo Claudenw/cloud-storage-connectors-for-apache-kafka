@@ -16,31 +16,15 @@
 
 package io.aiven.kafka.connect.s3.source.utils;
 
-import static io.aiven.kafka.connect.s3.source.config.S3SourceConfig.MAX_POLL_RECORDS;
-
-import java.io.IOException;
-import java.io.InputStream;
-import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
 import java.util.NoSuchElementException;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import io.aiven.kafka.connect.s3.source.config.S3SourceConfig;
 import io.aiven.kafka.connect.s3.source.input.Transformer;
 
-import com.amazonaws.AmazonClientException;
 import com.amazonaws.services.s3.AmazonS3;
-import com.amazonaws.services.s3.model.S3Object;
-import com.amazonaws.services.s3.model.S3ObjectInputStream;
 import com.amazonaws.services.s3.model.S3ObjectSummary;
 import org.apache.commons.collections4.IteratorUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * Iterator that processes S3 files and creates Kafka source records. Supports different output formats (Avro, JSON,
@@ -48,22 +32,19 @@ import org.slf4j.LoggerFactory;
  */
 public final class SourceRecordIterator implements Iterator<S3SourceRecord> {
 
-    private final Iterator<S3ObjectSummary> s3ObjectSummaryIterator;
-
-    private final TopicPartitionExtractingPredicate topicPartitionExtractingPredicate;
-    private final S3ObjectToSourceRecordMapper sourceToRecordMapper;
-
     private Iterator<S3SourceRecord> outer;
     private final Iterator<Iterator<S3SourceRecord>> inner;
 
     public SourceRecordIterator(final S3SourceConfig s3SourceConfig, final AmazonS3 s3Client, final String bucketName,
-            final OffsetManager offsetManager, final Transformer transformer, final FileReader fileReader) {
-        s3ObjectSummaryIterator = fileReader.fetchObjectSummaries(s3Client);
-        topicPartitionExtractingPredicate = new TopicPartitionExtractingPredicate();
-        sourceToRecordMapper = new S3ObjectToSourceRecordMapper(transformer, topicPartitionExtractingPredicate, s3SourceConfig, offsetManager);
-        Iterator<S3ObjectSummary> objectSummaryIterator = IteratorUtils.filteredIterator(s3ObjectSummaryIterator, topicPartitionExtractingPredicate::test);
-        inner = IteratorUtils.transformedIterator(objectSummaryIterator, s3ObjectSummary -> sourceToRecordMapper.apply(s3Client.getObject(bucketName, s3ObjectSummary.getKey())));
-        outer = null;
+            final OffsetManager offsetManager, final Transformer transformer, final Iterator<S3ObjectSummary> s3ObjectSummaryIterator) {
+        final TopicPartitionExtractingPredicate topicPartitionExtractingPredicate = new TopicPartitionExtractingPredicate();
+        final S3ObjectToSourceRecordMapper sourceToRecordMapper = new S3ObjectToSourceRecordMapper(transformer,
+                topicPartitionExtractingPredicate, s3SourceConfig, offsetManager);
+        final Iterator<S3ObjectSummary> objectSummaryIterator = IteratorUtils.filteredIterator(s3ObjectSummaryIterator,
+                topicPartitionExtractingPredicate::test);
+        inner = IteratorUtils.transformedIterator(objectSummaryIterator, s3ObjectSummary -> sourceToRecordMapper
+                .apply(s3Client.getObject(bucketName, s3ObjectSummary.getKey())));
+        // outer is purposefully not set here.
     }
 
     @Override
@@ -79,7 +60,7 @@ public final class SourceRecordIterator implements Iterator<S3SourceRecord> {
             if (inner.hasNext()) {
                 outer = inner.next();
             } else {
-                outer = null;
+                outer = null; // NOPMD NullAssignment
                 return false;
             }
         }
