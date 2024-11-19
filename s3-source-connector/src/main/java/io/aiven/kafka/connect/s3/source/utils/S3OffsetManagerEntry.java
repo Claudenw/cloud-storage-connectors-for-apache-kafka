@@ -29,12 +29,22 @@ public class S3OffsetManagerEntry implements OffsetManager.OffsetManagerEntry<S3
     static final String PARTITION = "partition";
     static final String RECORD_COUNT = "recordCount";
 
-    private static final long UNSET = -1L;
-
+    /**
+     * THe list of Keys that may not be set via {@link #setProperty(String, Object)}.
+     */
     static final List<String> RESTRICTED_KEYS = List.of(BUCKET, OBJECT_KEY, TOPIC, PARTITION, RECORD_COUNT);
+    /** The data map that stores all the values */
     private final Map<String, Object> data;
+    /** THe record count for the data map.  Extracted here because it is used/updated frequently duirng processing */
     private long recordCount;
 
+    /**
+     * Constructs
+     * @param bucket
+     * @param s3ObjectKey
+     * @param topic
+     * @param partition
+     */
     public S3OffsetManagerEntry(final String bucket, final String s3ObjectKey, final String topic,
             final Integer partition) {
         data = new HashMap<>();
@@ -44,8 +54,33 @@ public class S3OffsetManagerEntry implements OffsetManager.OffsetManagerEntry<S3
         data.put(PARTITION, partition);
     }
 
+    /**
+     * Constructs an OffsetManagerEntry from an existing map.
+     * used by {@link #fromProperties(Map)}.
+     * @param properties the property map.
+     */
+    private S3OffsetManagerEntry(final Map<String, Object> properties) {
+        data = new HashMap<>();
+        data.putAll(properties);
+        for (String field : RESTRICTED_KEYS) {
+            if (data.get(field) == null) {
+                throw new IllegalArgumentException("Missing '"+field+"' property");
+            }
+        }
+    }
+
+    /**
+     * Creates an S3OffsetManagerEntry.
+     * Will return {@code null} if properties is {@code null}.
+     * @param properties the properties to wrap.  May be {@code null}.
+     * @return an S3OffsetManagerEntry.
+     * @throws IllegalArgumentException if one of the {@link #RESTRICTED_KEYS} is missing.
+     */
     @Override
     public S3OffsetManagerEntry fromProperties(final Map<String, Object> properties) {
+        if (properties == null) {
+            return null;
+        }
         S3OffsetManagerEntry result = new S3OffsetManagerEntry(properties);
         Long recordCount = (Long) properties.get(RECORD_COUNT);
         if (recordCount != null) {
@@ -54,11 +89,15 @@ public class S3OffsetManagerEntry implements OffsetManager.OffsetManagerEntry<S3
         return result;
     }
 
-
-    private S3OffsetManagerEntry(final Map<String, Object> properties) {
-        data = new HashMap<>();
-        data.putAll(properties);
+    @Override
+    public Object getProperty(String key) {
+        if (RECORD_COUNT.equals(key)) {
+            return recordCount;
+        }
+        return data.get(key);
     }
+
+
 
     @Override
     public void setProperty(final String property, final Object value) {
@@ -69,28 +108,54 @@ public class S3OffsetManagerEntry implements OffsetManager.OffsetManagerEntry<S3
         data.put(property, value);
     }
 
+    /**
+     * Returnes true if this record has been stored in the OffsetManager.
+     * Sotrage in the offset meanager indicates that the record represents an object
+     * that has been sent to Kafka.
+     * @return {@code true} if this record has been sent ot Kafka.
+     */
+    public boolean wasProcessed() {
+        return data.get(RECORD_COUNT) != null;
+    }
+
+    /**
+     * Increment the record count and return the result.
+     * @return the new record count value.
+     */
     public long incrementRecordCount() {
         return recordCount += 1;
     }
 
+    /**
+     *  Gets the umber of records extracted from data returned from S3.
+     * @return the umber of records extracted from data returned from S3.
+     */
     public long getRecordCount() {
         return recordCount;
     }
 
+    /**
+     *  Gets the S3Object key for the current object.
+     * @return the S3ObjectKey.
+     */
     public String getKey() {
         return (String) data.get(OBJECT_KEY);
     }
 
+    /**
+     * Gets the Kafka partition number for the current object.
+     * @return the Kafka partition number for the current object.
+     */
     public Integer getPartition() {
         return (Integer) data.get(PARTITION);
     }
 
+    /**
+     * Gets the Kafka topic for the current object.
+     * @return the Kafka topic for the current object..
+     */
     public String getTopic() {
         return (String) data.get(TOPIC);
-    }
-
-    public boolean shouldSkipRecord(final long candidateRecord) {
-        return candidateRecord < recordCount;
     }
 
     /**
@@ -105,9 +170,33 @@ public class S3OffsetManagerEntry implements OffsetManager.OffsetManagerEntry<S3
         return result;
     }
 
+    /**
+     * Returns the OffsetManagerKey for this Entry.
+     * @return the OffsetManagerKey for this Entry.
+     */
     @Override
     public OffsetManager.OffsetManagerKey getManagerKey() {
         return () -> Map.of(BUCKET, data.get(BUCKET), TOPIC, data.get(TOPIC), PARTITION, data.get(PARTITION));
     }
 
+    @Override
+    public int compareTo(S3OffsetManagerEntry other) {
+        if (this == other) {
+            return 0;
+        }
+        int result = ((String) getProperty(BUCKET)).compareTo((String) other.getProperty(BUCKET));
+        if (result == 0) {
+            result = getTopic().compareTo(other.getTopic());
+            if (result == 0) {
+                result = getPartition().compareTo(other.getPartition());
+                if (result == 0) {
+                    result = getKey().compareTo(other.getKey());
+                    if (result == 0) {
+                        result = Long.compare(getRecordCount(), other.getRecordCount());
+                    }
+                }
+            }
+        }
+        return result;
+    }
 }

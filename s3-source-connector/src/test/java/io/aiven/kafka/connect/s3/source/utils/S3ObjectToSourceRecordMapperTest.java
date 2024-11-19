@@ -15,11 +15,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Iterator;
 import java.util.List;
 
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -58,12 +54,12 @@ public class S3ObjectToSourceRecordMapperTest {
     void noS3ObjectContentContentTest() {
         underTest = new S3ObjectToSourceRecordMapper(transformer, topicPartitionExtractingPredicate, s3SourceConfig, offsetManager);
         Iterator<S3SourceRecord> result = underTest.apply(s3Object);
-        assertFalse(result.hasNext());
+        assertThat(result.hasNext()).isFalse();
     }
 
     void assertS3RecordMatches(S3SourceRecord s3SourceRecord, String key, String value) {
-        assertArrayEquals(key.getBytes(StandardCharsets.UTF_8), s3SourceRecord.getRecordKey(), key);
-        assertArrayEquals(value.getBytes(StandardCharsets.UTF_8), s3SourceRecord.getRecordValue(), value);
+        assertThat(s3SourceRecord.getRecordKey()).isEqualTo(key.getBytes(StandardCharsets.UTF_8));
+        assertThat(s3SourceRecord.getRecordValue()).isEqualTo(value.getBytes(StandardCharsets.UTF_8));
     }
 
     private S3ObjectToSourceRecordMapper singleRecordMapper(final Transformer transformer) {
@@ -91,11 +87,11 @@ public class S3ObjectToSourceRecordMapperTest {
     void singleRecordTest() {
         underTest = singleRecordMapper(new TestingTransformer());
         Iterator<S3SourceRecord> result = underTest.apply(s3Object);
-        assertTrue(result.hasNext());
+        assertThat(result).hasNext();
         S3SourceRecord s3SourceRecord = result.next();
         assertS3RecordMatches(s3SourceRecord, "s3ObjectKey", "Transformed(Original value)");
-        assertEquals(1L, offsetManagerEntry.getRecordCount());
-        assertFalse(result.hasNext());
+        assertThat(offsetManagerEntry.getRecordCount()).isEqualTo(1L);
+        assertThat(result.hasNext()).isFalse();
     }
 
 
@@ -103,14 +99,14 @@ public class S3ObjectToSourceRecordMapperTest {
     void multipleRecordTest() {
         underTest = doubleRecordMapper();
         Iterator<S3SourceRecord> result = underTest.apply(s3Object);
-        assertTrue(result.hasNext());
+        assertThat(result).hasNext();
         S3SourceRecord s3SourceRecord = result.next();
         assertS3RecordMatches(s3SourceRecord, "s3ObjectKey", "Transformed(Original value)");
-        assertEquals(1L, offsetManagerEntry.getRecordCount());
-        assertTrue(result.hasNext());
+        assertThat(offsetManagerEntry.getRecordCount()).isEqualTo(1L);
+        assertThat(result).hasNext();
         s3SourceRecord = result.next();
         assertS3RecordMatches(s3SourceRecord, "s3ObjectKey", "Transformed2");
-        assertEquals(2L, offsetManagerEntry.getRecordCount());
+        assertThat(offsetManagerEntry.getRecordCount()).isEqualTo(2L);
     }
 
     @Test
@@ -122,7 +118,7 @@ public class S3ObjectToSourceRecordMapperTest {
             }
         });
         Iterator<S3SourceRecord> result = underTest.apply(s3Object);
-        assertFalse(result.hasNext());
+        assertThat(result.hasNext()).isFalse();
     }
 
     @Test
@@ -138,10 +134,10 @@ public class S3ObjectToSourceRecordMapperTest {
         underTest = new S3ObjectToSourceRecordMapper(transformer, topicPartitionExtractingPredicate, s3SourceConfig, offsetManager);
         underTest = singleRecordMapper(new TestingTransformer());
         Iterator<S3SourceRecord> result = underTest.apply(s3Object);
-        assertTrue(result.hasNext());
+        assertThat(result).hasNext();
         S3SourceRecord s3SourceRecord = result.next();
         assertS3RecordMatches(s3SourceRecord, "s3ObjectKey", "Transformed(Original value)");
-        assertEquals(1L, offsetManagerEntry.getRecordCount());
-        assertFalse(result.hasNext());
+        assertThat(offsetManagerEntry.getRecordCount()).isEqualTo(1L);
+        assertThat(result.hasNext()).isFalse();
     }
 }

@@ -26,6 +26,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import org.apache.kafka.connect.source.SourceTaskContext;
@@ -67,19 +68,17 @@ public class OffsetManager {
       this.offsets = offsets;
     }
 
+    /**
+     * @deprecated use getEntry() instead.
+     * @return
+     */
+    @Deprecated
     public Map<Map<String, Object>, Map<String, Object>> getOffsets() {
         return Collections.unmodifiableMap(offsets);
     }
 
-
-    public boolean shouldSkipRecord(final S3OffsetManagerEntry offsetManagerEntry) {
-        boolean result = false;
-        Map<String, Object> partitionMap = offsetManagerEntry.getManagerKey().getPartitionMap();
-        if (offsets.containsKey(offsetManagerEntry.getManagerKey().getPartitionMap())) {
-            S3OffsetManagerEntry stored = offsetManagerEntry.fromProperties(offsets.get(offsetManagerEntry.getManagerKey().getPartitionMap()));
-            result = stored.shouldSkipRecord(offsetManagerEntry.getRecordCount());
-        }
-        return result;
+    public <T extends OffsetManagerEntry> T getEntry(OffsetManagerKey key, Function<Map<String, Object>, T> creator) {
+        return creator.apply(offsets.get(key.getPartitionMap()));
     }
 
     void updateCurrentOffsets(OffsetManagerEntry entry) {
@@ -114,21 +113,31 @@ public class OffsetManager {
     /**
      * The definition of an entry in the OffsetManager.
      */
-    public interface OffsetManagerEntry<T extends OffsetManagerEntry> {
+    public interface OffsetManagerEntry<T extends OffsetManagerEntry> extends Comparable<T> {
 
         /**
          * Creates a new OffsetManagerEntry by wrapping the properties with the current implementation.
-         * @param properties the properties to wrap.
+         * This method may throw a RuntimeException if requried properties are not defined in the map.
+         * @param properties the properties to wrap.  May be {@code null}.
          * @return an OffsetManagerProperty
          */
         T fromProperties(Map<String, Object> properties);
 
         /**
-         * Extract the data from the entry in the correct format to return to Kafka.
+         * Extracts the data from the entry in the correct format to return to Kafka.
          *
-         * @return
+         * @return the properties in a format to return to Kafka.
          */
         Map<String, Object> getProperties();
+
+        /**
+         * Gets the value of the named property.
+         * The value returned from a {@code null} key is implementation dependant.
+         * @param key the property to retrieve.
+         * @return the value associated with the property or @{code null} if not set.
+         * @throws NullPointerException if a {@code null} key is not supported.
+         */
+        Object getProperty(String key);
 
         /**
          * Sets a key/value pair. Will overwrite any existing value. Implementations of OffsetManagerEntry may declare
