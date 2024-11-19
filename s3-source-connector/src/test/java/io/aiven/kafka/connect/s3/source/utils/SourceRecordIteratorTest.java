@@ -83,8 +83,8 @@ final class SourceRecordIteratorTest {
     }
 
     void assertS3RecordMatches(S3SourceRecord s3SourceRecord, String key, String value, int counter) {
-        assertThat(s3SourceRecord.getRecordKey()).as(() -> String.format("Wrong record key at %s: %s != %s", counter, new String(s3SourceRecord.getRecordKey()), key)).isEqualTo(key.getBytes(StandardCharsets.UTF_8));
-        assertThat(s3SourceRecord.getRecordValue()).as(() -> String.format("Wrong record value at %s: %s != %s", counter, new String(s3SourceRecord.getRecordValue()), value)).isEqualTo(value.getBytes(StandardCharsets.UTF_8));
+        assertThat(s3SourceRecord.getRecordKey()).as(() -> String.format("Wrong record key at %s: %s != %s (expected)", counter, new String(s3SourceRecord.getRecordKey()), key)).isEqualTo(key.getBytes(StandardCharsets.UTF_8));
+        assertThat(s3SourceRecord.getRecordValue()).as(() -> String.format("Wrong record value at %s: %s != %s (expected)", counter, new String(s3SourceRecord.getRecordValue()), value)).isEqualTo(value.getBytes(StandardCharsets.UTF_8));
     }
 
     private List<S3OffsetManagerEntry> multiKeySetUp(String[] keys, String topic, int partition) {
@@ -106,7 +106,7 @@ final class SourceRecordIteratorTest {
 
         Iterator<S3ObjectSummary> s3ObjectSummaryIterator = s3ObjectSummaries.iterator();
 
-        SourceRecordIterator sourceRecordIterator = new SourceRecordIterator(mockConfig, mockS3Client, DFLT_BUCKET, offsetManager, new TestingTransformer(), s3ObjectSummaryIterator);
+        SourceRecordIterator sourceRecordIterator = new SourceRecordIterator(mockConfig, mockS3Client, offsetManager, new TestingTransformer(), s3ObjectSummaryIterator);
         for (int i = 0; i < keys.length; i++) {
             String key = keys[i];
 
@@ -128,7 +128,7 @@ final class SourceRecordIteratorTest {
 
         Iterator<S3ObjectSummary> s3ObjectSummaryIterator = s3ObjectSummaries.iterator();
 
-        SourceRecordIterator sourceRecordIterator = new SourceRecordIterator(mockConfig, mockS3Client, DFLT_BUCKET, offsetManager, new TestingTransformer(), s3ObjectSummaryIterator);
+        SourceRecordIterator sourceRecordIterator = new SourceRecordIterator(mockConfig, mockS3Client, offsetManager, new TestingTransformer(), s3ObjectSummaryIterator);
         for (int i = 1; i < keys.length; i++) {
             String key = keys[i];
 

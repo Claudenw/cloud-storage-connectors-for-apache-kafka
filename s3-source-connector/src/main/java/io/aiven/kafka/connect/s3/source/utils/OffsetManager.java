@@ -16,7 +16,6 @@
 
 package io.aiven.kafka.connect.s3.source.utils;
 
-import static io.aiven.kafka.connect.s3.source.S3SourceTask.OBJECT_KEY;
 import static java.util.stream.Collectors.toMap;
 
 import java.util.ArrayList;
@@ -91,16 +90,19 @@ public class OffsetManager {
             }});
     }
 
+    // TODO move this to S3OffsetManager creation.
     private static Set<Integer> parsePartitions(final S3SourceConfig s3SourceConfig) {
         final String partitionString = s3SourceConfig.getString(S3SourceConfig.TARGET_TOPIC_PARTITIONS);
         return Arrays.stream(partitionString.split(",")).map(Integer::parseInt).collect(Collectors.toSet());
     }
 
+    // TODO move this to S3OffsetManager creation.
     private static Set<String> parseTopics(final S3SourceConfig s3SourceConfig) {
         final String topicString = s3SourceConfig.getString(S3SourceConfig.TARGET_TOPICS);
         return Arrays.stream(topicString.split(",")).collect(Collectors.toSet());
     }
 
+    // TODO move this to S3OffsetManager creation.  May not be needed.
     private static List<Map<String, Object>> buildPartitionKeys(final String bucket, final Set<Integer> partitions,
             final Set<String> topics) {
         final List<Map<String, Object>> partitionKeys = new ArrayList<>();
@@ -166,6 +168,10 @@ public class OffsetManager {
      */
     @FunctionalInterface
     public interface OffsetManagerKey {
+        /**
+         * gets the partition map used by Kafka to identify this Offset entry.
+         * @return The partition map used by Kafka to identify this Offset entry.
+         */
         Map<String, Object> getPartitionMap();
     }
 }

@@ -43,7 +43,7 @@ public class S3ObjectToSourceRecordMapperTest {
         transformer = mock(Transformer.class);
         topicPartitionExtractingPredicate = mock(TopicPartitionExtractingPredicate.class);
         offsetManagerEntry = new S3OffsetManagerEntry("bucket", "s3ObjectKey", "topic", 1);
-        when(topicPartitionExtractingPredicate.getOffsetMapEntry()).thenReturn(offsetManagerEntry);
+        when(topicPartitionExtractingPredicate.getOffsetMnagerEntry()).thenReturn(offsetManagerEntry);
         s3SourceConfig = mock(S3SourceConfig.class);
         s3Object = mock(S3Object.class);
         when(s3Object.getKey()).thenReturn("s3ObjectKey");

@@ -32,10 +32,20 @@ import org.apache.commons.collections4.IteratorUtils;
  */
 public final class SourceRecordIterator implements Iterator<S3SourceRecord> {
 
+    /** The S3SourceRecord Iterator that we will return values from */
     private Iterator<S3SourceRecord> outer;
+    /** The Iterator of Iterators of S3SourceRecords that we will process.  The inner iterator feeds the outer iterator*/
     private final Iterator<Iterator<S3SourceRecord>> inner;
 
-    public SourceRecordIterator(final S3SourceConfig s3SourceConfig, final AmazonS3 s3Client, final String bucketName,
+    /**
+     * Constructor.
+     * @param s3SourceConfig The S3 source configuration.
+     * @param s3Client The s3Client that we are reading from.
+     * @param offsetManager the Offset manager for this source package.
+     * @param transformer the Transformer to convert S3 data to Kafka data.
+     * @param s3ObjectSummaryIterator The iterator of S3ObjectSummaries.
+     */
+    public SourceRecordIterator(final S3SourceConfig s3SourceConfig, final AmazonS3 s3Client,
             final OffsetManager offsetManager, final Transformer transformer, final Iterator<S3ObjectSummary> s3ObjectSummaryIterator) {
         final TopicPartitionExtractingPredicate topicPartitionExtractingPredicate = new TopicPartitionExtractingPredicate();
         final S3ObjectToSourceRecordMapper sourceToRecordMapper = new S3ObjectToSourceRecordMapper(transformer,
@@ -43,7 +53,7 @@ public final class SourceRecordIterator implements Iterator<S3SourceRecord> {
         final Iterator<S3ObjectSummary> objectSummaryIterator = IteratorUtils.filteredIterator(s3ObjectSummaryIterator,
                 topicPartitionExtractingPredicate::test);
         inner = IteratorUtils.transformedIterator(objectSummaryIterator, s3ObjectSummary -> sourceToRecordMapper
-                .apply(s3Client.getObject(bucketName, s3ObjectSummary.getKey())));
+                .apply(s3Client.getObject(s3ObjectSummary.getBucketName(), s3ObjectSummary.getKey())));
         // outer is purposefully not set here.
     }
 
@@ -60,6 +70,7 @@ public final class SourceRecordIterator implements Iterator<S3SourceRecord> {
             if (inner.hasNext()) {
                 outer = inner.next();
             } else {
+                // reset to null so we can pick up any new records from inner if they suddenly appear.
                 outer = null; // NOPMD NullAssignment
                 return false;
             }

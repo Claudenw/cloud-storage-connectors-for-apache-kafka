@@ -23,10 +23,11 @@ import java.util.Map;
 public class S3OffsetManagerEntry implements OffsetManager.OffsetManagerEntry<S3OffsetManagerEntry> {
 
     // package private statics for testing.
-    static final String BUCKET = "bucket";
-    static final String OBJECT_KEY = "objectKey";
-    static final String TOPIC = "topic";
-    static final String PARTITION = "partition";
+    // TODO make this private after values in S3SourceTask are no longer needed
+    public static final String BUCKET = "bucket";
+    public static final String OBJECT_KEY = "objectKey";
+    public static final String TOPIC = "topic";
+    public static final String PARTITION = "partition";
     static final String RECORD_COUNT = "recordCount";
 
     /**
@@ -81,8 +82,9 @@ public class S3OffsetManagerEntry implements OffsetManager.OffsetManagerEntry<S3
         if (properties == null) {
             return null;
         }
-        S3OffsetManagerEntry result = new S3OffsetManagerEntry(properties);
         Long recordCount = (Long) properties.get(RECORD_COUNT);
+
+        S3OffsetManagerEntry result = new S3OffsetManagerEntry(properties);
         if (recordCount != null) {
             result.recordCount = recordCount;
         }
@@ -106,16 +108,6 @@ public class S3OffsetManagerEntry implements OffsetManager.OffsetManagerEntry<S3
                     String.format("'%s' is a restricted key and may not be set using setProperty()", property));
         }
         data.put(property, value);
-    }
-
-    /**
-     * Returnes true if this record has been stored in the OffsetManager.
-     * Sotrage in the offset meanager indicates that the record represents an object
-     * that has been sent to Kafka.
-     * @return {@code true} if this record has been sent ot Kafka.
-     */
-    public boolean wasProcessed() {
-        return data.get(RECORD_COUNT) != null;
     }
 
     /**
@@ -176,7 +168,7 @@ public class S3OffsetManagerEntry implements OffsetManager.OffsetManagerEntry<S3
      */
     @Override
     public OffsetManager.OffsetManagerKey getManagerKey() {
-        return () -> Map.of(BUCKET, data.get(BUCKET), TOPIC, data.get(TOPIC), PARTITION, data.get(PARTITION));
+        return () -> Map.of(BUCKET, data.get(BUCKET), TOPIC, data.get(TOPIC), PARTITION, data.get(PARTITION), OBJECT_KEY, data.get(OBJECT_KEY));
     }
 
     @Override
