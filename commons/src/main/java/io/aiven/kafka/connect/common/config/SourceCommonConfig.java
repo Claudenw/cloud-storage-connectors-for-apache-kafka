@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Aiven Oy
+ * Copyright 2024 Aiven Oy
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,27 +19,9 @@ package io.aiven.kafka.connect.common.config;
 import java.util.Map;
 
 import org.apache.kafka.common.config.ConfigDef;
-/**
- * @deprecated Use {@link SinkCommonConfig} instead
- */
-@Deprecated
-public class AivenCommonConfig extends SinkCommonConfig {
 
-    protected AivenCommonConfig(final ConfigDef definition, final Map<?, ?> originals) {
+public class SourceCommonConfig extends CommonConfig {
+    public SourceCommonConfig(ConfigDef definition, Map<?, ?> originals) {// NOPMD
         super(definition, originals);
     }
-
-
-
-    protected static void addOutputFieldsFormatConfigGroup(final ConfigDef configDef,
-            final OutputFieldType defaultFieldType) {
-        SinkCommonConfig.addOutputFieldsFormatConfigGroup(configDef, defaultFieldType);
-    }
-
-
-    protected static void addCompressionTypeConfig(final ConfigDef configDef,
-            final CompressionType defaultCompressionType) {
-        SinkCommonConfig.addCompressionTypeConfig(configDef, defaultCompressionType);
-    }
-
 }
