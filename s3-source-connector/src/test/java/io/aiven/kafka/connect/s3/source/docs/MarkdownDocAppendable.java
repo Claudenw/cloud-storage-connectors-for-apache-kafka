@@ -1,12 +1,18 @@
 package io.aiven.kafka.connect.s3.source.docs;
 
 import org.apache.commons.lang3.StringUtils;
+import scala.Char;
 
 import java.io.IOException;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class MarkdownDocAppendable extends BaseDocAppendable {
+
+    private static final String ESCAPED_CHARS = "\\`*_{}[]<>()#+-.!|";
+
     /**
      * Constructs an appendable filter built on top of the specified underlying appendable.
      *
@@ -19,7 +25,7 @@ public class MarkdownDocAppendable extends BaseDocAppendable {
 
     @Override
     public void appendHeader(int level, CharSequence text) throws IOException {
-        append(String.format("%s %s%n", Util.repeat(level, '#'), text));
+        append(String.format("%s %s%n", Util.repeat(level, '#'), escape(text)));
     }
 
     @Override
@@ -27,11 +33,19 @@ public class MarkdownDocAppendable extends BaseDocAppendable {
         String prefix = ordered ? "1." : "-";
         list.stream().forEach(s -> {
             try {
-                append(String.format("%s %s%n", prefix, s));
+                append(String.format("%s %s%n", prefix, escape(s)));
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
         });
+    }
+
+    public String escape(CharSequence charSequence) {
+        String result = charSequence.toString();
+        for (char c : ESCAPED_CHARS.toCharArray()) {
+            result = result.replace(String.valueOf(c), "\\"+c);
+        }
+        return result;
     }
 
     @Override
@@ -40,7 +54,7 @@ public class MarkdownDocAppendable extends BaseDocAppendable {
     }
 
     private String escapeTableEntry(String text) {
-        return text.replace("|", "&#124;").replace("\n", "<br/>");
+        return escape(text).replace("\n", "<br/>");
     }
 
     @Override
