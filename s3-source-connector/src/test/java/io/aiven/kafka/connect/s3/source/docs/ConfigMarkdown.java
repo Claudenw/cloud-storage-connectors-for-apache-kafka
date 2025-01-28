@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 public class ConfigMarkdown {
     ConfigDef config = S3SourceConfig.configDef();
@@ -22,12 +24,12 @@ public class ConfigMarkdown {
         List<String> headers = Arrays.asList("Name", "Default", "Description");
         int maxName = 0;
         int maxValue = 0;
-        List<List<String>> rows = new ArrayList<>();
+        Map<String, List<String>> rows = new TreeMap<>();
         for (ConfigDef.ConfigKey key : keys) {
             maxName = maxName > key.name.length() ? maxName : key.name.length();
             String value = key.defaultValue == null ? "" : key.defaultValue.toString();
             maxValue = maxValue > value.length() ? maxValue : value.length();
-            rows.add(Arrays.asList(key.name, value, key.documentation));
+            rows.put(key.name, Arrays.asList(key.name, value, key.documentation));
         }
 
         maxName = maxName > maxColumnWidth ? maxColumnWidth : maxName;
@@ -39,7 +41,7 @@ public class ConfigMarkdown {
                 TextStyle.builder().setMaxWidth(maxDesc).get());
 
         StringBuilder sb = new StringBuilder();
-        TableDefinition tableDefinition = TableDefinition.from("", styles, headers, rows);
+        TableDefinition tableDefinition = TableDefinition.from("", styles, headers, rows.values());
 
         MarkdownDocAppendable output = new MarkdownDocAppendable(sb);
         output.appendTable(tableDefinition);
