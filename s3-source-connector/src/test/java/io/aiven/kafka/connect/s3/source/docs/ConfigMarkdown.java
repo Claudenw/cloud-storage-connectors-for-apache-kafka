@@ -16,14 +16,27 @@ public class ConfigMarkdown {
     @Test
     public void x() throws IOException {
         Collection< ConfigDef.ConfigKey> keys = config.configKeys().values();
+        int maxColumnWidth = 35;
+        int tableWidth = 180;
 
-
-        List<String> headers = Arrays.asList("Name", "Display Name", "Default", "Description");
-        List<TextStyle> styles = Arrays.asList(TextStyle.DEFAULT, TextStyle.DEFAULT, TextStyle.DEFAULT, TextStyle.DEFAULT);
+        List<String> headers = Arrays.asList("Name", "Default", "Description");
+        int maxName = 0;
+        int maxValue = 0;
         List<List<String>> rows = new ArrayList<>();
         for (ConfigDef.ConfigKey key : keys) {
-            rows.add(Arrays.asList(key.name, key.displayName, key.defaultValue == null ? "" : key.defaultValue.toString(), key.documentation));
+            maxName = maxName > key.name.length() ? maxName : key.name.length();
+            String value = key.defaultValue == null ? "" : key.defaultValue.toString();
+            maxValue = maxValue > value.length() ? maxValue : value.length();
+            rows.add(Arrays.asList(key.name, value, key.documentation));
         }
+
+        maxName = maxName > maxColumnWidth ? maxColumnWidth : maxName;
+        maxValue = maxValue > maxColumnWidth ? maxColumnWidth : maxValue;
+        int maxDesc = tableWidth - maxName - maxValue;
+        List<TextStyle> styles = Arrays.asList(
+                TextStyle.builder().setMaxWidth(maxName).get(),
+                TextStyle.builder().setMaxWidth(maxValue).get(),
+                TextStyle.builder().setMaxWidth(maxDesc).get());
 
         StringBuilder sb = new StringBuilder();
         TableDefinition tableDefinition = TableDefinition.from("", styles, headers, rows);
