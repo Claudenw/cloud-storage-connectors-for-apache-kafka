@@ -6,10 +6,14 @@ import scala.Char;
 import java.io.IOException;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Queue;
 
 public class MarkdownDocAppendable extends BaseDocAppendable {
+
+    private static final String EOL = "\n";
 
     private static final String ESCAPED_CHARS = "\\`*_{}[]<>()#+-.!|";
 
@@ -54,17 +58,32 @@ public class MarkdownDocAppendable extends BaseDocAppendable {
     }
 
     private String escapeTableEntry(String text) {
-        return escape(text).replace("\n", "<br/>");
+        return escape(text).replace(EOL, "<br/>");
+    }
+
+    protected String wrapColumn(final CharSequence columnData, final TextStyle style) {
+        final Queue<CharSequence> result = new LinkedList<>();
+        int wrapPos = 0;
+        int nextPos;
+        final int wrappedMaxWidth = style.getMaxWidth();
+        while (wrapPos < columnData.length()) {
+            final int workingWidth = wrapPos == 0 ? style.getMaxWidth() : wrappedMaxWidth;
+            nextPos = TextDocAppendable.indexOfWrap(columnData, workingWidth, wrapPos);
+            final CharSequence working = columnData.subSequence(wrapPos, nextPos);
+            result.add(working);
+            wrapPos = Util.indexOfNonWhitespace(columnData, nextPos);
+            wrapPos = wrapPos == -1 ? nextPos : wrapPos;
+        }
+        return String.join(EOL, result);
     }
 
     @Override
     public void appendTable(TableDefinition table) throws IOException {
-        final char eol = '\n';
         append("| ");
         for (String header : table.headers()) {
             append(escapeTableEntry(header)).append(" | ");
         }
-        append(eol).append("| ");
+        append(EOL).append("| ");
         for (TextStyle style : table.columnTextStyles()) {
             switch (style.getAlignment()) {
 
@@ -80,13 +99,15 @@ public class MarkdownDocAppendable extends BaseDocAppendable {
             }
             append("| ");
         }
-        append(eol);
+        append(EOL);
         for (List<String> rows : table.rows()) {
             append("| ");
+            int colNumber = 0;
             for (String column : rows) {
-                append(escapeTableEntry(column)).append(" | ");
+                String cell = wrapColumn(column, table.columnTextStyles().get(colNumber++));
+                append(escapeTableEntry(cell)).append(" | ");
             }
-            append(eol);
+            append(EOL);
         }
 
     }
