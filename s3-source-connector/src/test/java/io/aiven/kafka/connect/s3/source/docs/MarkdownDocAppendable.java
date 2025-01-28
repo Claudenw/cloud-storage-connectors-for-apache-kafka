@@ -42,6 +42,7 @@ public class MarkdownDocAppendable extends BaseDocAppendable {
                 throw new RuntimeException(e);
             }
         });
+        append(EOL);
     }
 
     public String escape(CharSequence charSequence) {
@@ -54,7 +55,7 @@ public class MarkdownDocAppendable extends BaseDocAppendable {
 
     @Override
     public void appendParagraph(CharSequence paragraph) throws IOException {
-        append(String.format("%S%n%n", paragraph));
+        append(String.format("%s%n%n", paragraph));
     }
 
     private String escapeTableEntry(String text) {
