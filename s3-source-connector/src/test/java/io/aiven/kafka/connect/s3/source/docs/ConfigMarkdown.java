@@ -1,6 +1,7 @@
 package io.aiven.kafka.connect.s3.source.docs;
 
 import io.aiven.kafka.connect.s3.source.config.S3SourceConfig;
+import org.apache.avro.generic.GenericData;
 import org.apache.kafka.common.config.ConfigDef;
 import org.junit.jupiter.api.Test;
 
@@ -16,7 +17,7 @@ public class ConfigMarkdown {
     ConfigDef config = S3SourceConfig.configDef();
 
     @Test
-    public void x() throws IOException {
+    public void table() throws IOException {
         Collection< ConfigDef.ConfigKey> keys = config.configKeys().values();
         int maxColumnWidth = 35;
         int tableWidth = 180;
@@ -48,4 +49,32 @@ public class ConfigMarkdown {
         System.out.println(sb);
     }
 
+    @Test
+    public void entries() throws IOException {
+        Collection< ConfigDef.ConfigKey> keys = config.configKeys().values();
+
+        List<String> headers = Arrays.asList("Name", "Default", "Description");
+
+        Map<String, ConfigDef.ConfigKey> sections = new TreeMap<>();
+        for (ConfigDef.ConfigKey key : keys) {
+            sections.put(key.name, key);
+        }
+
+        StringBuilder sb = new StringBuilder();
+        MarkdownDocAppendable output = new MarkdownDocAppendable(sb);
+
+        for (ConfigDef.ConfigKey section : sections.values()) {
+            output.appendHeader(2, section.displayName);
+            List<CharSequence> lst = new ArrayList<>();
+            lst.add("Default value: " + section.defaultValue);
+            lst.add("Type: " + section.type.name());
+            lst.add(String.format("Validation: %s", section.validator));
+
+            output.appendList(false, lst);
+
+            output.appendParagraph(section.documentation);
+        }
+
+        System.out.println(sb);
+    }
 }
