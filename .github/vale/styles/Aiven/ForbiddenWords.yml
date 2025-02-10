@@ -1,0 +1,9 @@
+extends: existence
+message: "Do not use this word."
+ignorecase: true
+level: error
+tokens:
+  - here
+  - please
+  - furthermore
+  # - especially

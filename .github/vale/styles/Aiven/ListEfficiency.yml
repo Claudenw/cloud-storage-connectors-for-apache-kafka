@@ -1,0 +1,9 @@
+extends: existence
+message: "If you're in a list, you don't need this. If you're in a paragraph, consider using a list."
+level: error
+ignorecase: false
+tokens:
+  - Next,
+  - First,
+  - Finally,
+  - Lastly,
