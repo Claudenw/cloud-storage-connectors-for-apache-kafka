@@ -1,0 +1,12 @@
+extends: existence
+message: "This is too generic. Use something more specific."
+level: error
+ignorecase: true
+tokens:
+  - click here
+  - this article
+  - this guide
+  - this help article
+  - this page
+  - this tutorial
+  - you can find
