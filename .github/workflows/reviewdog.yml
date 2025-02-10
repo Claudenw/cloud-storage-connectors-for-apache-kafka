@@ -13,5 +13,3 @@ jobs:
            filter_mode: file
            reporter: github-check
            level: warning
-           debug: true
-           vale_flags: --glob='!RELEASE-NOTES.md'
