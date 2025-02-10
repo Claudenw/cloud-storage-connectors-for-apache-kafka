@@ -14,4 +14,4 @@ jobs:
            reporter: github-check
            level: warning
            debug: true
-           vale_flags: --glob='!**/RELEASE-NOTES.md'
+           vale_flags: --ignore-syntax RELEASE-NOTES.md
