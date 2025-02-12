@@ -31,4 +31,4 @@
  *
  * @since 1.10.0
  */
-package io.aiven.kafka.connect.docs.docs;
+package io.aiven.kafka.connect.docs;
