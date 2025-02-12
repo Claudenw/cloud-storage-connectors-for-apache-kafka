@@ -16,7 +16,11 @@ import com.github.spotbugs.snom.SpotBugsTask
  * limitations under the License.
  */
 
-plugins { id("aiven-apache-kafka-connectors-all.java-conventions") }
+plugins {
+  id("aiven-apache-kafka-connectors-all.java-conventions")
+  id("com.bmuschko.docker-remote-api") version "9.4.0"
+}
+
 
 val s3mockVersion by extra("0.2.6")
 val kafkaVersion by extra("3.3.0")
