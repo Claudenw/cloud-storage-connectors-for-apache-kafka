@@ -27,7 +27,7 @@ import java.util.TreeMap;
 
 import static java.lang.String.format;
 
-public class ConfigMarkdown {
+public class ConfigDocumentation {
 
     enum Format {XML, TEXT, TABLE, HTML, RST, ENRICHED_RST, YAML};
 
@@ -229,9 +229,8 @@ public class ConfigMarkdown {
 
         out.append(format("%s:%n", config.getClass().getSimpleName()));
 
-
         for (ConfigDef.ConfigKey section : sections.values()) {
-            out.append(format("- %s%n",  section.name));
+            out.append(format("- %n  name: %s%n",  section.name));
             out.append(format("  documentation: %s%n", section.documentation));
             out.append(format("  type: %s%n", section.type));
             out.append(format("  default: %s%n", section.defaultValue));

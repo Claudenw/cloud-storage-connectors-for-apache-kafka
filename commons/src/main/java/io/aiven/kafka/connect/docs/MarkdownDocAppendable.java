@@ -1,7 +1,6 @@
-package io.aiven.kafka.connect.docs.docs;
+package io.aiven.kafka.connect.docs;
 
 import org.apache.commons.lang3.StringUtils;
-import scala.Char;
 
 import java.io.IOException;
 import java.util.Collection;

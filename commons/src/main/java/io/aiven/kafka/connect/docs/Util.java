@@ -15,7 +15,7 @@
   limitations under the License.
  */
 
-package io.aiven.kafka.connect.docs.docs;
+package io.aiven.kafka.connect.docs;
 
 import java.util.Arrays;
 
