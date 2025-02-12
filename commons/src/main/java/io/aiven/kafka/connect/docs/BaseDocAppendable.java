@@ -14,7 +14,7 @@
   See the License for the specific language governing permissions and
   limitations under the License.
  */
-package io.aiven.kafka.connect.s3.source.docs;
+package io.aiven.kafka.connect.docs.docs;
 
 import java.io.IOException;
 
