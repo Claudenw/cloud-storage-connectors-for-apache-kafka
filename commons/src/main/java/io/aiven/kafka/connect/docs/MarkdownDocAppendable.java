@@ -1,14 +1,12 @@
-package io.aiven.kafka.connect.s3.source.docs;
+package io.aiven.kafka.connect.docs.docs;
 
 import org.apache.commons.lang3.StringUtils;
 import scala.Char;
 
 import java.io.IOException;
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.Queue;
 
 public class MarkdownDocAppendable extends BaseDocAppendable {
