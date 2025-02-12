@@ -15,3 +15,5 @@ dependencies {
     implementation("com.github.spotbugs.snom:spotbugs-gradle-plugin:${spotbugsVersion}")
     implementation(kotlin("stdlib-jdk8"))
 }
+
+
