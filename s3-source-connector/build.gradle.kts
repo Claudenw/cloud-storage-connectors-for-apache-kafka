@@ -16,7 +16,11 @@ import com.github.spotbugs.snom.SpotBugsTask
  * limitations under the License.
  */
 
-plugins { id("aiven-apache-kafka-connectors-all.java-conventions") }
+plugins {
+  id("aiven-apache-kafka-connectors-all.java-conventions")
+  id("com.bmuschko.docker-remote-api") version "9.4.0"
+}
+
 
 val amazonS3Version by extra("2.29.34")
 val amazonSTSVersion by extra("2.29.34")
@@ -52,6 +56,13 @@ tasks.register<Test>("integrationTest") {
   val distTarTask = tasks.get("distTar") as Tar
   val distributionFilePath = distTarTask.archiveFile.get().asFile.path
   systemProperty("integration-test.distribution.file.path", distributionFilePath)
+}
+
+tasks.register<Exec>("execVale") {
+  description = "Executes the Vale text linter"
+  group = "Documentation"
+  executable("/usr/bin/docker")
+  args("run", "--rm", "-v", "${project.rootDir}:/project:Z", "-v", "${project.rootDir}/.github/vale/styles:/styles:Z", "-v", "${project.projectDir}:/docs:Z", "-w", "/docs", "jdkato/vale", "--filter=warn.expr", "--config=/project/.vale.ini", "--glob=!**/build/**", ".")
 }
 
 idea {
