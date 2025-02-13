@@ -57,13 +57,15 @@ public class ConfigDocumentation {
 
     private static Option formatOption = Option.builder("f").longOpt("format").desc("The output format. (Defaults to TEXT)")
             .converter(FORMAT).hasArg().build();
+
+
     private static Options createOptions() {
         return new Options()
                 .addOption(classOption)
                 .addOption(Option.builder("?").longOpt("help").desc("Print this message").build())
                 .addOption(formatOption)
                 .addOption(Option.builder("o").longOpt("output").desc("Output file name (Defaults to System.out")
-                        .converter(Converter.FILE).build());
+                        .converter(Converter.FILE).hasArg().build());
     }
 
     public static void printHelp() {
@@ -159,6 +161,16 @@ public class ConfigDocumentation {
             sections.put(key.name, key);
         }
 
+        /*        out.append("  <section>\n");
+            out.append("      <name>" + StringEscapeUtils.escapeXml11(section.name) + "</name>\n");
+            out.append("      <documentation>" + StringEscapeUtils.escapeXml11(section.documentation) + "</documentation>\n");
+            out.append("      <type>" + StringEscapeUtils.escapeXml11(section.type.toString()) + "</type>\n");
+            out.append("      <default>" + StringEscapeUtils.escapeXml11(asString(section.defaultValue)) + "</default>\n");
+            out.append("      <validValues>" + StringEscapeUtils.escapeXml11(asString(section.validator)) + "</validValues>\n");
+            out.append("      <importance>" + StringEscapeUtils.escapeXml11(section.importance.toString()) + "</importance>\n");
+            out.append("  </section>\n");
+
+         */
         MarkdownDocAppendable output = new MarkdownDocAppendable(out);
 
         for (ConfigDef.ConfigKey section : sections.values()) {
@@ -166,8 +178,8 @@ public class ConfigDocumentation {
             List<CharSequence> lst = new ArrayList<>();
             lst.add("Default value: " + section.defaultValue);
             lst.add("Type: " + section.type.name());
-            lst.add(format("Validation: %s", section.validator));
-
+            lst.add(format("Valid values: %s", section.validator));
+            lst.add(format("Importance: %s", section.importance));
             output.appendList(false, lst);
 
             output.appendParagraph(section.documentation);

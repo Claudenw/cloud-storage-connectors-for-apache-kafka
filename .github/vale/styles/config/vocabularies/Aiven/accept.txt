@@ -348,3 +348,6 @@ zapier
 zdm-proxy
 Zipkin
 ZooKeeper
+
+gzip
+zstd
