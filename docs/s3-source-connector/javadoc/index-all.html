@@ -87,6 +87,8 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="io/aiven/kafka/connect/s3/source/AivenKafkaConnectS3SourceConnector.html#config()" class="member-name-link">config()</a> - Method in class io.aiven.kafka.connect.s3.source.<a href="io/aiven/kafka/connect/s3/source/AivenKafkaConnectS3SourceConnector.html" title="class in io.aiven.kafka.connect.s3.source">AivenKafkaConnectS3SourceConnector</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="io/aiven/kafka/connect/s3/source/S3SourceConnector.html#config()" class="member-name-link">config()</a> - Method in class io.aiven.kafka.connect.s3.source.<a href="io/aiven/kafka/connect/s3/source/S3SourceConnector.html" title="class in io.aiven.kafka.connect.s3.source">S3SourceConnector</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="io/aiven/kafka/connect/s3/source/config/S3SourceConfig.html#configDef()" class="member-name-link">configDef()</a> - Static method in class io.aiven.kafka.connect.s3.source.config.<a href="io/aiven/kafka/connect/s3/source/config/S3SourceConfig.html" title="class in io.aiven.kafka.connect.s3.source.config">S3SourceConfig</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="io/aiven/kafka/connect/s3/source/S3SourceTask.html#configure(java.util.Map)" class="member-name-link">configure(Map&lt;String, String&gt;)</a> - Method in class io.aiven.kafka.connect.s3.source.<a href="io/aiven/kafka/connect/s3/source/S3SourceTask.html" title="class in io.aiven.kafka.connect.s3.source">S3SourceTask</a></dt>
@@ -284,6 +286,13 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="io/aiven/kafka/connect/s3/source/config/S3SourceConfigDef.html#%3Cinit%3E()" class="member-name-link">S3SourceConfigDef()</a> - Constructor for class io.aiven.kafka.connect.s3.source.config.<a href="io/aiven/kafka/connect/s3/source/config/S3SourceConfigDef.html" title="class in io.aiven.kafka.connect.s3.source.config">S3SourceConfigDef</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="io/aiven/kafka/connect/s3/source/S3SourceConnector.html" class="type-name-link" title="class in io.aiven.kafka.connect.s3.source">S3SourceConnector</a> - Class in <a href="io/aiven/kafka/connect/s3/source/package-summary.html">io.aiven.kafka.connect.s3.source</a></dt>
+<dd>
+<div class="block">S3SourceConnector is a Kafka Connect Connector implementation that watches a S3 bucket and generates tasks to ingest
+ contents.</div>
+</dd>
+<dt><a href="io/aiven/kafka/connect/s3/source/S3SourceConnector.html#%3Cinit%3E()" class="member-name-link">S3SourceConnector()</a> - Constructor for class io.aiven.kafka.connect.s3.source.<a href="io/aiven/kafka/connect/s3/source/S3SourceConnector.html" title="class in io.aiven.kafka.connect.s3.source">S3SourceConnector</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="io/aiven/kafka/connect/s3/source/utils/S3SourceRecord.html" class="type-name-link" title="class in io.aiven.kafka.connect.s3.source.utils">S3SourceRecord</a> - Class in <a href="io/aiven/kafka/connect/s3/source/utils/package-summary.html">io.aiven.kafka.connect.s3.source.utils</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="io/aiven/kafka/connect/s3/source/utils/S3SourceRecord.html#%3Cinit%3E(io.aiven.kafka.connect.s3.source.utils.S3SourceRecord)" class="member-name-link">S3SourceRecord(S3SourceRecord)</a> - Constructor for class io.aiven.kafka.connect.s3.source.utils.<a href="io/aiven/kafka/connect/s3/source/utils/S3SourceRecord.html" title="class in io.aiven.kafka.connect.s3.source.utils">S3SourceRecord</a></dt>
@@ -321,14 +330,22 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="io/aiven/kafka/connect/s3/source/AivenKafkaConnectS3SourceConnector.html#start(java.util.Map)" class="member-name-link">start(Map&lt;String, String&gt;)</a> - Method in class io.aiven.kafka.connect.s3.source.<a href="io/aiven/kafka/connect/s3/source/AivenKafkaConnectS3SourceConnector.html" title="class in io.aiven.kafka.connect.s3.source">AivenKafkaConnectS3SourceConnector</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="io/aiven/kafka/connect/s3/source/S3SourceConnector.html#start(java.util.Map)" class="member-name-link">start(Map&lt;String, String&gt;)</a> - Method in class io.aiven.kafka.connect.s3.source.<a href="io/aiven/kafka/connect/s3/source/S3SourceConnector.html" title="class in io.aiven.kafka.connect.s3.source">S3SourceConnector</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="io/aiven/kafka/connect/s3/source/AivenKafkaConnectS3SourceConnector.html#stop()" class="member-name-link">stop()</a> - Method in class io.aiven.kafka.connect.s3.source.<a href="io/aiven/kafka/connect/s3/source/AivenKafkaConnectS3SourceConnector.html" title="class in io.aiven.kafka.connect.s3.source">AivenKafkaConnectS3SourceConnector</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="io/aiven/kafka/connect/s3/source/S3SourceConnector.html#stop()" class="member-name-link">stop()</a> - Method in class io.aiven.kafka.connect.s3.source.<a href="io/aiven/kafka/connect/s3/source/S3SourceConnector.html" title="class in io.aiven.kafka.connect.s3.source">S3SourceConnector</a></dt>
 <dd>&nbsp;</dd>
 </dl>
 <h2 class="title" id="I:T">T</h2>
 <dl class="index">
 <dt><a href="io/aiven/kafka/connect/s3/source/AivenKafkaConnectS3SourceConnector.html#taskClass()" class="member-name-link">taskClass()</a> - Method in class io.aiven.kafka.connect.s3.source.<a href="io/aiven/kafka/connect/s3/source/AivenKafkaConnectS3SourceConnector.html" title="class in io.aiven.kafka.connect.s3.source">AivenKafkaConnectS3SourceConnector</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="io/aiven/kafka/connect/s3/source/S3SourceConnector.html#taskClass()" class="member-name-link">taskClass()</a> - Method in class io.aiven.kafka.connect.s3.source.<a href="io/aiven/kafka/connect/s3/source/S3SourceConnector.html" title="class in io.aiven.kafka.connect.s3.source">S3SourceConnector</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="io/aiven/kafka/connect/s3/source/AivenKafkaConnectS3SourceConnector.html#taskConfigs(int)" class="member-name-link">taskConfigs(int)</a> - Method in class io.aiven.kafka.connect.s3.source.<a href="io/aiven/kafka/connect/s3/source/AivenKafkaConnectS3SourceConnector.html" title="class in io.aiven.kafka.connect.s3.source">AivenKafkaConnectS3SourceConnector</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="io/aiven/kafka/connect/s3/source/S3SourceConnector.html#taskConfigs(int)" class="member-name-link">taskConfigs(int)</a> - Method in class io.aiven.kafka.connect.s3.source.<a href="io/aiven/kafka/connect/s3/source/S3SourceConnector.html" title="class in io.aiven.kafka.connect.s3.source">S3SourceConnector</a></dt>
 <dd>&nbsp;</dd>
 </dl>
 <h2 class="title" id="I:V">V</h2>
@@ -336,6 +353,8 @@ loadScripts(document, 'script');</script>
 <dt><a href="io/aiven/kafka/connect/s3/source/config/S3SourceConfigDef.html#validate(java.util.Map)" class="member-name-link">validate(Map&lt;String, String&gt;)</a> - Method in class io.aiven.kafka.connect.s3.source.config.<a href="io/aiven/kafka/connect/s3/source/config/S3SourceConfigDef.html" title="class in io.aiven.kafka.connect.s3.source.config">S3SourceConfigDef</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="io/aiven/kafka/connect/s3/source/AivenKafkaConnectS3SourceConnector.html#version()" class="member-name-link">version()</a> - Method in class io.aiven.kafka.connect.s3.source.<a href="io/aiven/kafka/connect/s3/source/AivenKafkaConnectS3SourceConnector.html" title="class in io.aiven.kafka.connect.s3.source">AivenKafkaConnectS3SourceConnector</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="io/aiven/kafka/connect/s3/source/S3SourceConnector.html#version()" class="member-name-link">version()</a> - Method in class io.aiven.kafka.connect.s3.source.<a href="io/aiven/kafka/connect/s3/source/S3SourceConnector.html" title="class in io.aiven.kafka.connect.s3.source">S3SourceConnector</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="io/aiven/kafka/connect/s3/source/S3SourceTask.html#version()" class="member-name-link">version()</a> - Method in class io.aiven.kafka.connect.s3.source.<a href="io/aiven/kafka/connect/s3/source/S3SourceTask.html" title="class in io.aiven.kafka.connect.s3.source">S3SourceTask</a></dt>
 <dd>&nbsp;</dd>
