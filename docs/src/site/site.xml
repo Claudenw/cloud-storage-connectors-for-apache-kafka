@@ -21,7 +21,10 @@ under the License.
 
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xmlns="http://maven.apache.org/DECORATION/1.6.0"
-         xsi:schemaLocation="http://maven.apache.org/DECORATION/1.6.0 http://maven.apache.org/xsd/decoration-1.6.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/DECORATION/1.6.0 http://maven.apache.org/xsd/decoration-1.6.0.xsd"
+        name="Aiven Kafka Connectors">
+    <publishDate position="right"/>
+    <version position="right"/>
     <body>
         <menu name="Overview">
             <item name="Introduction" href="index.html"/>
@@ -33,28 +36,36 @@ under the License.
             <item name="Download" href="download.html"/>
         </menu>
 
-        <menu name="Examples">
-            <item name="Creating Content" href="/examples/creating-content.html"/>
-            <item name="Configuring the Site Descriptor" href="/examples/sitedescriptor.html"/>
-            <item name="Building a multi-module site" href="/examples/multimodule.html"/>
-            <item name="Configuring Site Run" href="/examples/siterun.html"/>
-            <item name="Excluding Document Formats" href="/examples/moduleexcludes.html"/>
-            <item name="Inheritance of the Site Distribution Management"
-                  href="/examples/inheritance-site-distribution-management.html"/>
+        <menu name="Azure Sink">
+            <item name="Javadoc" href="azure-sink-connector/javadoc/index.html"/>
         </menu>
 
-        <menu name="Reports">
-            <item name="Configuring Reports" href="/examples/configuring-reports.html"/>
-            <item name="Reports Internationalization" href="i18n.html"/>
+        <menu name="Commons Sink">
+            <item name="Javadoc" href="commons/javadoc/index.html"/>
         </menu>
 
-        <menu name="Site Template">
-            <item name="Creating Skins" href="/examples/creatingskins.html"/>
+        <menu name="GCS Sink">
+            <item name="Javadoc" href="gcs-sink-connector/javadoc/index.html"/>
         </menu>
 
-        <menu name="Deploying">
-            <item name="Adding a Protocol to Deploy the Site" href="/examples/adding-deploy-protocol.html"/>
-            <item name="Deploying to sourceforge.net" href="/examples/site-deploy-to-sourceforge.net.html"/>
+        <menu name="S3 Commons">
+            <item name="Javadoc" href="s3-commons/javadoc/index.html"/>
         </menu>
+
+        <menu name="S3 Sink">
+            <item name="Javadoc" href="s3-sink/javadoc/index.html"/>
+        </menu>
+
+        <menu name="S3 Source">
+            <item name="Introduction" href="s3-source-connector/index.html"/>
+            <item name="Configuration" href="s3-source-connector/S3SourceConfig.html" />
+            <item name="Javadoc" href="s3-source-connector/javadoc/index.html"/>
+        </menu>
+
     </body>
+    <skin>
+        <groupId>org.apache.maven.skins</groupId>
+        <artifactId>maven-fluido-skin</artifactId>
+        <version>1.8</version>
+    </skin>
 </project>
