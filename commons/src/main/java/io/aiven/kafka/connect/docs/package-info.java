@@ -16,19 +16,9 @@
  */
 
 /**
- * The help production system.
+ * The documentation production system.
  * <p>
  * This package contains the classes to produce help output. In general,, there are 4 classes that may interest users.
  * </p>
- * <ul>
- * <li>{@link org.apache.commons.cli.help.HelpFormatter HelpFormatter} - The class used to produce the help output for most users.</li>
- * <li>{@link org.apache.commons.cli.help.HelpAppendable DocAppendable} - Writes the output in a specific output format. For example
- * {@link org.apache.commons.cli.help.TextHelpAppendable TextDocAppendable} for text, other classes for XHTML, Markdown, and so on.</li>
- * <li>{@link org.apache.commons.cli.help.OptionFormatter OptionFormatter} - Determines how to format the various data elements in an Option</li>
- * <li>{@link org.apache.commons.cli.help.TableDefinition TableDefinition} - Useful for developers who want to build custom option displays or use the help
- * system to produce additional information in the help system.</li>
- * </ul>
- *
- * @since 1.10.0
  */
 package io.aiven.kafka.connect.docs;

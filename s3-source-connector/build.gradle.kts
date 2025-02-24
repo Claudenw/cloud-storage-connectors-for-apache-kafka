@@ -36,6 +36,22 @@ val integrationTest: SourceSet =
 val integrationTestImplementation: Configuration by
     configurations.getting { extendsFrom(configurations.implementation.get()) }
 
+/**********************************/
+/* Documentation building section */
+/**********************************/
+
+tasks.register<Copy>("createIndexMarkdown") {
+  group = "Documentation"
+  description = "Copies Readme to docs/site"
+  outputs.upToDateWhen { false }
+  into(mkdir(layout.buildDirectory.dir("docs/site/s3-source-connector/markdown")).resolve("index.md"))
+  from("src/README.md")
+}
+
+/*********************************/
+/*  End of documentation section */
+/*********************************/
+
 tasks.register<Test>("integrationTest") {
   description = "Runs the integration tests."
   group = "verification"
@@ -54,13 +70,6 @@ tasks.register<Test>("integrationTest") {
   val distTarTask = tasks.get("distTar") as Tar
   val distributionFilePath = distTarTask.archiveFile.get().asFile.path
   systemProperty("integration-test.distribution.file.path", distributionFilePath)
-}
-
-tasks.register<Exec>("execVale") {
-  description = "Executes the Vale text linter"
-  group = "Documentation"
-  executable("/usr/bin/docker")
-  args("run", "--rm", "-v", "${project.rootDir}:/project:Z", "-v", "${project.rootDir}/.github/vale/styles:/styles:Z", "-v", "${project.projectDir}:/docs:Z", "-w", "/docs", "jdkato/vale", "--filter=warn.expr", "--config=/project/.vale.ini", "--glob=!**/build/**", ".")
 }
 
 idea {
