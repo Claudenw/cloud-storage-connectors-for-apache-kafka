@@ -86,7 +86,7 @@ tasks.register<Copy>("deploySite") {
     description = "Copies javadocs"
     outputs.upToDateWhen { false }
     println("Copying site to docs directory")
-    from("${project.layout.projectDirectory.asFile}/build/site")
+    from("${project.layout.projectDirectory.asFile}/target/site")
     into("${rootProject.projectDir}/docs/")
 }
 
