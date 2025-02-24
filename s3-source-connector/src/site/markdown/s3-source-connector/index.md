@@ -354,6 +354,7 @@ Default is `3`.
 ### Connecting to Kafka
 A source connector produces events to Kafka and when using SSL with certificates, you must ensure the SSL settings are prefixed with producer to send events to Kafka, but the connector also reads offsets, and configuration topics and so there should also be an entry prefixed with consumer for Connect to know what keystore and truststore to use.
 
+```
 producer.security.protocol=SSL
 producer.ssl.truststore.location=<path>/client.truststore.jks
 producer.ssl.truststore.password=<your password>
@@ -367,7 +368,7 @@ consumer.ssl.truststore.password=<your password>
 consumer.ssl.keystore.location=<path>/client.keystore.p12
 consumer.ssl.keystore.password=<your password>
 consumer.ssl.key.password=<your password>
-
+```
 
 ## Development
 
