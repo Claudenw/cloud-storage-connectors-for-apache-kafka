@@ -71,10 +71,6 @@ public class SourceCommonConfig extends CommonConfig {
         return sourceConfigFragment.getDistributionType();
     }
 
-    public ErrorsTolerance getErrorsTolerance() {
-        return ErrorsTolerance.forName(sourceConfigFragment.getErrorsTolerance());
-    }
-
     public int getMaxPollRecords() {
         return sourceConfigFragment.getMaxPollRecords();
     }

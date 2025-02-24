@@ -82,6 +82,8 @@ public class ConfigDocumentation {
                 Format format = commandLine.getParsedOptionValue(formatOption, () -> Format.TEXT);
                 ConfigDef configDef = commandLine.getParsedOptionValue(classOption);
                 File outputFile = commandLine.getParsedOptionValue("output");
+                outputFile = outputFile.getAbsoluteFile();
+                outputFile.getParentFile().mkdirs();
                 Appendable out = outputFile == null ? System.out : new FileWriter(outputFile);
                 try {
                     switch (format) {

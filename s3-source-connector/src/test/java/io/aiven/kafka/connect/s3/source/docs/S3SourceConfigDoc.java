@@ -10,9 +10,9 @@ public class S3SourceConfigDoc {
     @Test
     public void generate() throws IOException {
         ConfigDocumentation.main(new String[]{"-c", S3SourceConfig.class.getName(), "-f", "TEXT",
-                "-o", "docs/configs/S3SourceConfig.md" } );
+                "-o", "src/site/markdown/s3-source-connector/S3SourceConfig.txt" } );
 
         ConfigDocumentation.main(new String[]{"-c", S3SourceConfig.class.getName(), "-f", "YAML",
-                "-o", "docs/configs/S3SourceConfig.yml" } );
+                "-o", "src/site/s3-source-connector/S3SourceConfig.yml" } );
     }
 }
