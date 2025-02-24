@@ -1,0 +1,7 @@
+extends: substitution
+message: "Do not use 'must'. Use the imperative."
+level: warning
+ignorecase: false
+swap:
+  you must create: create
+  you must start: start
