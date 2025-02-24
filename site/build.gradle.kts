@@ -61,7 +61,7 @@ tasks.register<Copy>("copySiteYamlFiles") {
     group = "Documentation"
     description = "Copies documentation yaml files."
     outputs.upToDateWhen { false }
-    dependsOn("createSite")
+    mustRunAfter("createSite")
     from("build/site")
     into("target/site")
     include("**/*.yml")
@@ -71,7 +71,7 @@ tasks.register<Copy>("copyJavadocs") {
     group = "Documentation"
     description = "Copies javadocs"
     outputs.upToDateWhen { false }
-    dependsOn("createSite")
+    mustRunAfter("createSite")
     println("Copying javadoc from subprojects to site")
     rootProject.subprojects.filter { s -> s.name != "docs" }.forEach { s ->
         println("Copying from ${s.layout.projectDirectory}/build/docs/javadoc")
