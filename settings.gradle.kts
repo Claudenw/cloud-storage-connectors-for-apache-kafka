@@ -118,4 +118,4 @@ include("azure-sink-connector")
 
 include("s3-source-connector")
 
-include("docs")
+include("site")

@@ -12,15 +12,14 @@ tasks.register<Exec>("execVale") {
     description = "Executes the Vale text linter"
     group = "Documentation"
     executable("/usr/bin/docker")
-    args("run", "--rm", "-v", "${project.rootDir}:/project:Z", "-v", "${project.rootDir}/.github/vale/styles:/styles:Z", "-v", "${project.projectDir}:/docs:Z", "-w", "/docs", "jdkato/vale", "--filter=warn.expr", "--config=/project/.vale.ini", "--glob=!**/build/**", ".")
+    args("run", "--rm", "-v", "${project.rootDir}:/project:Z", "-v", "${project.rootDir}/.github/vale/styles:/styles:Z", "-v", "${project.projectDir}:/site:Z", "-w", "/docs", "jdkato/vale", "--filter=warn.expr", "--config=/project/.vale.ini", "--glob=!**/build/**", ".")
 }
 
 tasks.register<Copy>("processSiteAssets") {
     group = "Documentation"
     description = "Copies "
     outputs.upToDateWhen { false }
-    println("Copying from subprojects to root build dir -> ${rootProject.layout.buildDirectory.asFile.get()}/docs-dir")
-    rootProject.subprojects.filter { s -> s.name != "docs" }.forEach { s ->
+    rootProject.subprojects.filter { s -> s.name != "site" }.forEach { s ->
         println("Copying from ${s.layout.projectDirectory}/src/site")
         println("          to ${project.layout.buildDirectory.asFile.get()}/site")
         rootProject.copy {
@@ -61,9 +60,8 @@ tasks.register<Copy>("copySiteYamlFiles") {
     group = "Documentation"
     description = "Copies documentation yaml files."
     outputs.upToDateWhen { false }
-    mustRunAfter("createSite")
-    from("build/site")
-    into("target/site")
+    from("${project.layout.projectDirectory.asFile}/build/site")
+    into("${project.layout.projectDirectory.asFile}/target/site")
     include("**/*.yml")
 }
 
@@ -71,9 +69,8 @@ tasks.register<Copy>("copyJavadocs") {
     group = "Documentation"
     description = "Copies javadocs"
     outputs.upToDateWhen { false }
-    mustRunAfter("createSite")
     println("Copying javadoc from subprojects to site")
-    rootProject.subprojects.filter { s -> s.name != "docs" }.forEach { s ->
+    rootProject.subprojects.filter { s -> s.name != "site" }.forEach { s ->
         println("Copying from ${s.layout.projectDirectory}/build/docs/javadoc")
         println("          to ${project.layout.projectDirectory.asFile}/target/site/${s.name}/javadoc")
         rootProject.copy {
@@ -84,12 +81,15 @@ tasks.register<Copy>("copyJavadocs") {
     }
 }
 
-tasks.register<Task>("buildDocumentation") {
+tasks.register<Copy>("deploySite") {
     group = "Documentation"
-    description = "Builds the documentation"
+    description = "Copies javadocs"
     outputs.upToDateWhen { false }
-    dependsOn("createSite", "copySiteYamlFiles", "copyJavadocs")
+    println("Copying site to docs directory")
+    from("${project.layout.projectDirectory.asFile}/build/site")
+    into("${rootProject.projectDir}/docs/")
 }
+
 
 
 

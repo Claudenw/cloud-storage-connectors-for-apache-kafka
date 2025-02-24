@@ -44,7 +44,7 @@ tasks.register<Copy>("createIndexMarkdown") {
   group = "Documentation"
   description = "Copies Readme to docs/site"
   outputs.upToDateWhen { false }
-  into(mkdir(layout.buildDirectory.dir("docs/site/s3-source-connector/markdown")).resolve("index.md"))
+  into(mkdir(layout.buildDirectory.dir("site/site/s3-source-connector/markdown")).resolve("index.md"))
   from("src/README.md")
 }
 
