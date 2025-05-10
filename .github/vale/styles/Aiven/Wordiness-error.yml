@@ -1,0 +1,25 @@
+extends: substitution
+message: "Use '%s' instead of '%s'."
+ignorecase: true
+level: error
+action:
+  name: replace
+swap:
+  (?:if )?you want to: to
+  (?:run|execute) (?:this|that) ?(?:command|script)?: run
+  (?:take|apply|follow)? ?(?:the|those|these) ?(?:following)? ?(?:steps|instructions): nothing
+  and then: and
+  check it out: see
+  check out: see
+  click (?:in|on): click
+  navigate to: go to
+  pre-requisites: prerequisites
+  proceed as follows: nothing
+  see a list: to list
+  spin up: start
+  view a list: list
+  you need to: imperative
+  whilst: while
+  amongst: among
+  thus: so
+  create a new: create a

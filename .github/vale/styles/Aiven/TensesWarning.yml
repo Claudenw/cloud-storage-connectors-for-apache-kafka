@@ -1,0 +1,9 @@
+extends: substitution
+message: "Do not use this tense, use %s instead."
+level: warning
+ignorecase: true
+swap:
+  will: is/are
+  may: can
+  must(?! be ): the imperative
+  should: can
