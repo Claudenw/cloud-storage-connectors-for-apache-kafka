@@ -34,13 +34,13 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Stream;
 
+import io.aiven.kafka.connect.common.config.SourceConfigAccess;
+import io.aiven.kafka.connect.common.config.TransformerAccess;
 import org.apache.kafka.common.config.ConfigDef;
 import org.apache.kafka.connect.data.SchemaAndValue;
 
 import io.aiven.kafka.connect.common.config.OutputFormatFragment;
 import io.aiven.kafka.connect.common.config.SourceCommonConfig;
-import io.aiven.kafka.connect.common.config.SourceConfigFragment;
-import io.aiven.kafka.connect.common.config.TransformerFragment;
 import io.aiven.kafka.connect.common.source.task.Context;
 
 import org.apache.commons.io.function.IOSupplier;
@@ -129,22 +129,22 @@ class TransformerStreamingTest {
         props.put(FORMAT_OUTPUT_TYPE_CONFIG.key(), "avro");
         lst.add(Arguments.of(TransformerFactory.getTransformer(InputFormat.AVRO),
                 AvroTransformerTest.generateMockAvroData(100).toByteArray(), new SourceCommonConfig(
-                        SourceConfigFragment.update(OutputFormatFragment.update(new ConfigDef(), null)), props) {
+                        SourceConfigAccess.SourceConfigFragment.update(OutputFormatFragment.update(new ConfigDef(), null)), props) {
                 }, 100));
         lst.add(Arguments.of(TransformerFactory.getTransformer(InputFormat.BYTES),
                 "Hello World".getBytes(StandardCharsets.UTF_8),
                 new SourceCommonConfig(
-                        TransformerFragment.update(
-                                SourceConfigFragment.update(OutputFormatFragment.update(new ConfigDef(), null))),
+                        TransformerAccess.TransformerFragment.update(
+                                SourceConfigAccess.SourceConfigFragment.update(OutputFormatFragment.update(new ConfigDef(), null))),
                         props) {
                 }, 1));
         lst.add(Arguments.of(TransformerFactory.getTransformer(InputFormat.JSONL),
                 JsonTransformerTest.getJsonRecs(100).getBytes(StandardCharsets.UTF_8), new SourceCommonConfig(
-                        SourceConfigFragment.update(OutputFormatFragment.update(new ConfigDef(), null)), props) {
+                        SourceConfigAccess.SourceConfigFragment.update(OutputFormatFragment.update(new ConfigDef(), null)), props) {
                 }, 100));
         lst.add(Arguments.of(TransformerFactory.getTransformer(InputFormat.PARQUET),
                 ParquetTransformerTest.generateMockParquetData(), new SourceCommonConfig(
-                        SourceConfigFragment.update(OutputFormatFragment.update(new ConfigDef(), null)), props) {
+                        SourceConfigAccess.SourceConfigFragment.update(OutputFormatFragment.update(new ConfigDef(), null)), props) {
                 }, 100));
         return lst.stream();
     }

@@ -16,9 +16,9 @@
 
 package io.aiven.kafka.connect.s3.source.config;
 
-import static io.aiven.kafka.connect.common.config.SourceConfigFragment.TARGET_TOPIC;
-import static io.aiven.kafka.connect.common.config.TransformerFragment.INPUT_FORMAT_KEY;
-import static io.aiven.kafka.connect.common.config.TransformerFragment.SCHEMA_REGISTRY_URL;
+import static io.aiven.kafka.connect.common.config.SourceConfigAccess.SourceConfigFragment.TARGET_TOPIC;
+import static io.aiven.kafka.connect.common.config.TransformerAccess.TransformerFragment.INPUT_FORMAT_KEY;
+import static io.aiven.kafka.connect.common.config.TransformerAccess.TransformerFragment.SCHEMA_REGISTRY_URL;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.HashMap;

@@ -18,14 +18,13 @@ package io.aiven.kafka.connect.azure.source.config;
 
 import java.util.Map;
 
+import io.aiven.kafka.connect.common.config.TransformerAccess;
 import org.apache.kafka.common.config.ConfigDef;
 
 import io.aiven.kafka.connect.common.config.FileNameFragment;
 import io.aiven.kafka.connect.common.config.OutputFieldType;
 import io.aiven.kafka.connect.common.config.OutputFormatFragment;
 import io.aiven.kafka.connect.common.config.SourceCommonConfig;
-import io.aiven.kafka.connect.common.config.SourceConfigFragment;
-import io.aiven.kafka.connect.common.config.TransformerFragment;
 
 import com.azure.storage.blob.BlobServiceAsyncClient;
 
@@ -45,7 +44,7 @@ public class AzureBlobSourceConfig extends SourceCommonConfig {
 
         FileNameFragment.update(configDef);
         SourceConfigFragment.update(configDef);
-        TransformerFragment.update(configDef);
+        TransformerAccess.TransformerFragment.update(configDef);
         OutputFormatFragment.update(configDef, OutputFieldType.VALUE);
         AzureBlobConfigFragment.update(configDef);
         return configDef;

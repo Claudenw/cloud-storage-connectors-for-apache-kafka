@@ -35,11 +35,11 @@ class TransformerFragmentTest {
     @Test
     void validateCorrectBufferSizeIsAccepted() {
         final int bufferSize = 50;
-        final ConfigDef configDef = TransformerFragment.update(new ConfigDef());
+        final ConfigDef configDef = TransformerAccess.TransformerFragment.update(new ConfigDef());
         final Map<String, Object> props = new HashMap<>();
-        props.put(TransformerFragment.TRANSFORMER_MAX_BUFFER_SIZE, bufferSize);
+        props.put(TransformerAccess.TransformerFragment.TRANSFORMER_MAX_BUFFER_SIZE, bufferSize);
 
-        final TransformerFragment schemaReg = new TransformerFragment(new AbstractConfig(configDef, props));
+        final TransformerAccess.TransformerFragment schemaReg = new TransformerAccess.TransformerFragment(new AbstractConfig(configDef, props));
         assertThat(schemaReg.getTransformerMaxBufferSize()).isEqualTo(bufferSize);
     }
 
@@ -52,11 +52,11 @@ class TransformerFragmentTest {
             "-9000,transformer.max.buffer.size must be larger then 0 and less then 2147483647",
             "MTA=,Invalid value MTA= for configuration transformer.max.buffer.size: Not a number of type INT" })
     void validateInvalidBufferSizeThrowsConfigException(final String value, final String expectedMessage) {
-        final ConfigDef configDef = TransformerFragment.update(new ConfigDef());
+        final ConfigDef configDef = TransformerAccess.TransformerFragment.update(new ConfigDef());
         final Map<String, Object> props = new HashMap<>();
 
-        props.put(TransformerFragment.TRANSFORMER_MAX_BUFFER_SIZE, value);
-        assertThatThrownBy(() -> new TransformerFragment(new AbstractConfig(configDef, props)))
+        props.put(TransformerAccess.TransformerFragment.TRANSFORMER_MAX_BUFFER_SIZE, value);
+        assertThatThrownBy(() -> new TransformerAccess.TransformerFragment(new AbstractConfig(configDef, props)))
                 .isInstanceOf(ConfigException.class)
                 .hasMessage(expectedMessage);
     }

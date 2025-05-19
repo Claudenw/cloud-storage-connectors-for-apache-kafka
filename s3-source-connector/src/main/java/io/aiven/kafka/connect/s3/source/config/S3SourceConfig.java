@@ -20,13 +20,12 @@ import static io.aiven.kafka.connect.config.s3.S3CommonConfig.handleDeprecatedYy
 
 import java.util.Map;
 
+import io.aiven.kafka.connect.common.config.TransformerAccess;
 import org.apache.kafka.common.config.ConfigDef;
 
 import io.aiven.kafka.connect.common.config.OutputFieldType;
 import io.aiven.kafka.connect.common.config.OutputFormatFragment;
 import io.aiven.kafka.connect.common.config.SourceCommonConfig;
-import io.aiven.kafka.connect.common.config.SourceConfigFragment;
-import io.aiven.kafka.connect.common.config.TransformerFragment;
 import io.aiven.kafka.connect.config.s3.S3ConfigFragment;
 import io.aiven.kafka.connect.iam.AwsCredentialProviderFactory;
 import io.aiven.kafka.connect.iam.AwsStsEndpointConfig;
@@ -55,7 +54,7 @@ final public class S3SourceConfig extends SourceCommonConfig {
         final var configDef = new S3SourceConfigDef();
         S3ConfigFragment.update(configDef);
         SourceConfigFragment.update(configDef);
-        TransformerFragment.update(configDef);
+        TransformerAccess.TransformerFragment.update(configDef);
         OutputFormatFragment.update(configDef, OutputFieldType.VALUE);
 
         return configDef;

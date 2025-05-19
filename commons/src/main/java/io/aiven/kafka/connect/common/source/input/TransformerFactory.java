@@ -16,7 +16,7 @@
 
 package io.aiven.kafka.connect.common.source.input;
 
-import static io.aiven.kafka.connect.common.config.TransformerFragment.SCHEMAS_ENABLE;
+import static io.aiven.kafka.connect.common.config.TransformerAccess.TransformerFragment.SCHEMAS_ENABLE;
 
 import java.util.Map;
 

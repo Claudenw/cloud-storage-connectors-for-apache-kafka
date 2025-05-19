@@ -34,38 +34,12 @@ import org.apache.kafka.common.config.AbstractConfig;
  * fragment depends on another fragment may create it inline and use it. The {@link #validate()} method may call the
  * {@code
  * validate} methods on the dependant fragments during validation.
- * @deprecated Use Fragment base.
  */
-@Deprecated()
-public class ConfigFragment<T> {
-    /** The configuration that this fragment is associated with */
-    protected final AbstractConfig cfg;
+public abstract class FragmentBase<T extends AccessBase> {
 
     /**
-     * Construct the ConfigFragment..
-     *
-     * @param cfg
-     *            the configuration that this fragment is associated with.
+     * Construct the ConfigFragment.
      */
-    protected ConfigFragment(final AbstractConfig cfg) {
-        this.cfg = cfg;
-    }
-
-    /**
-     * Validate that the data in the configuration matches any restrictions. Default implementation does nothing.
-     */
-    public void validate() {
-        // does nothing
-    }
-
-    /**
-     * Determines if a key has been set.
-     *
-     * @param key
-     *            The key to check.
-     * @return {@code true} if the key was set, {@code false} if the key was not set or does not exist in the config.
-     */
-    public final boolean has(final String key) {
-        return cfg.values().get(key) != null;
+    protected FragmentBase() {
     }
 }
