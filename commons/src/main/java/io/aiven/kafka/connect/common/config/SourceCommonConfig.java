@@ -37,8 +37,8 @@ public class SourceCommonConfig extends CommonConfig implements SourceConfigAcce
     }
 
     private void validate() {
-        SourceConfigAccess.validate(this);
-        TransformerAccess.validate(this);
+        SourceConfigAccess.Fragment.validate(this);
+        TransformerAccess.Fragment.validate(this);
         outputFormatFragment.validate();
     }
 

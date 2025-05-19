@@ -2,14 +2,8 @@ package io.aiven.kafka.connect.common.config;
 
 import org.apache.kafka.common.config.AbstractConfig;
 
-public interface AccessBase<T extends AccessBase> {
+public interface AccessBase {
     AbstractConfig getAbstractConfig();
-
-
-    /**
-     * Validate that the data in the configuration matches any restrictions. Default implementation does nothing.
-     */
-    void validate(T access);
 
     /**
      * Determines if a key has been set.

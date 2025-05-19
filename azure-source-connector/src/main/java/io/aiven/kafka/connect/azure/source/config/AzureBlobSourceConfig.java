@@ -43,8 +43,8 @@ public class AzureBlobSourceConfig extends SourceCommonConfig {
         final var configDef = new AzureBlobSourceConfigDef();
 
         FileNameFragment.update(configDef);
-        SourceConfigFragment.update(configDef);
-        TransformerAccess.TransformerFragment.update(configDef);
+        io.aiven.kafka.connect.common.config.SourceConfigAccess.Fragment.update(configDef);
+        TransformerAccess.Fragment.update(configDef);
         OutputFormatFragment.update(configDef, OutputFieldType.VALUE);
         AzureBlobConfigFragment.update(configDef);
         return configDef;

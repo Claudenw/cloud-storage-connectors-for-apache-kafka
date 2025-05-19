@@ -35,7 +35,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  * ByteArrayTransformer chunks an entire object into a maximum size specified by the
- * {@link TransformerAccess.TransformerFragment#TRANSFORMER_MAX_BUFFER_SIZE} configuration option.
+ * {@link TransformerAccess.Fragment#TRANSFORMER_MAX_BUFFER_SIZE} configuration option.
  * <p>
  * If the configuration option specifies a buffer that is smaller than the length of the input stream, the record will
  * be split into multiple parts. When this happens the transformer makes no guarantees for only once delivery or

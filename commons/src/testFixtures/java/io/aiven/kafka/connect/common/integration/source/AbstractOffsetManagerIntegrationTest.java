@@ -112,7 +112,7 @@ public abstract class AbstractOffsetManagerIntegrationTest<K extends Comparable<
                     .name(getConnectorName())
                     .keyConverter(ByteArrayConverter.class)
                     .valueConverter(ByteArrayConverter.class);
-            SourceConfigAccess.SourceConfigFragment.setter(connectorConfig).distributionType(DistributionType.PARTITION);
+            SourceConfigAccess.Fragment.setter(connectorConfig).distributionType(DistributionType.PARTITION);
 
             final KafkaManager kafkaManager = setupKafka();
             kafkaManager.createTopics(topic);
@@ -126,7 +126,7 @@ public abstract class AbstractOffsetManagerIntegrationTest<K extends Comparable<
             // Verify that the correct data is read from the S3 bucket and pushed to Kafka
             assertThat(records).containsOnly(testData1, testData2);
 
-            SourceConfigAccess.SourceConfigFragment.setter(connectorConfig).ringBufferSize(0);
+            SourceConfigAccess.Fragment.setter(connectorConfig).ringBufferSize(0);
 
             getLogger().info(">>>>> RESTARTING");
             kafkaManager.configureConnector(getConnectorName(), connectorConfig);
@@ -186,7 +186,7 @@ public abstract class AbstractOffsetManagerIntegrationTest<K extends Comparable<
 
         KafkaFragment.setter(configData).connector(getConnectorClass());
 
-        SourceConfigAccess.SourceConfigFragment.setter(configData).targetTopic(topic);
+        SourceConfigAccess.Fragment.setter(configData).targetTopic(topic);
 
         final CommonConfigFragment.Setter setter = CommonConfigFragment.setter(configData).maxTasks(maxTasks);
         if (taskId > TASK_NOT_SET) {
@@ -196,7 +196,7 @@ public abstract class AbstractOffsetManagerIntegrationTest<K extends Comparable<
         if (inputFormat == InputFormat.AVRO) {
             configData.put(KafkaAvroDeserializerConfig.SPECIFIC_AVRO_READER_CONFIG, "false");
         }
-        TransformerAccess.TransformerFragment.setter(configData).inputFormat(inputFormat);
+        TransformerAccess.Fragment.setter(configData).inputFormat(inputFormat);
 
         FileNameFragment.setter(configData).template(FILE_PATTERN);
 

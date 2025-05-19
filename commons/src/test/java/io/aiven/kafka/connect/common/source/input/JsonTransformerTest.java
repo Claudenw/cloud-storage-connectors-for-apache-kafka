@@ -16,7 +16,7 @@
 
 package io.aiven.kafka.connect.common.source.input;
 
-import static io.aiven.kafka.connect.common.config.TransformerAccess.TransformerFragment.SCHEMAS_ENABLE;
+import static io.aiven.kafka.connect.common.config.TransformerAccess.Fragment.SCHEMAS_ENABLE;
 import static io.aiven.kafka.connect.common.source.input.Transformer.UNKNOWN_STREAM_LENGTH;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;

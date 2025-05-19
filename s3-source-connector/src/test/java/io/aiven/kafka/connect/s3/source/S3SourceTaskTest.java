@@ -18,8 +18,8 @@ package io.aiven.kafka.connect.s3.source;
 
 import static io.aiven.kafka.connect.common.config.CommonConfig.MAX_TASKS;
 import static io.aiven.kafka.connect.common.config.CommonConfig.TASK_ID;
-import static io.aiven.kafka.connect.common.config.SourceConfigAccess.SourceConfigFragment.TARGET_TOPIC;
-import static io.aiven.kafka.connect.common.config.TransformerAccess.TransformerFragment.INPUT_FORMAT_KEY;
+import static io.aiven.kafka.connect.common.config.SourceConfigAccess.Fragment.TARGET_TOPIC;
+import static io.aiven.kafka.connect.common.config.TransformerAccess.Fragment.INPUT_FORMAT_KEY;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.awaitility.Awaitility.await;
 import static org.mockito.Mockito.mock;
@@ -315,7 +315,7 @@ final class S3SourceTaskTest {
     @Test
     void testPollsWithExcessRecords() {
         // test that multiple polls to get all records succeeds.
-        properties.put(SourceConfigAccess.SourceConfigFragment.MAX_POLL_RECORDS, "2");
+        properties.put(SourceConfigAccess.Fragment.MAX_POLL_RECORDS, "2");
 
         final List<S3SourceRecord> lst = createS3SourceRecords(3);
 

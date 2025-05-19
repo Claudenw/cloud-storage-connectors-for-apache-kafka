@@ -129,22 +129,22 @@ class TransformerStreamingTest {
         props.put(FORMAT_OUTPUT_TYPE_CONFIG.key(), "avro");
         lst.add(Arguments.of(TransformerFactory.getTransformer(InputFormat.AVRO),
                 AvroTransformerTest.generateMockAvroData(100).toByteArray(), new SourceCommonConfig(
-                        SourceConfigAccess.SourceConfigFragment.update(OutputFormatFragment.update(new ConfigDef(), null)), props) {
+                        SourceConfigAccess.Fragment.update(OutputFormatFragment.update(new ConfigDef(), null)), props) {
                 }, 100));
         lst.add(Arguments.of(TransformerFactory.getTransformer(InputFormat.BYTES),
                 "Hello World".getBytes(StandardCharsets.UTF_8),
                 new SourceCommonConfig(
-                        TransformerAccess.TransformerFragment.update(
-                                SourceConfigAccess.SourceConfigFragment.update(OutputFormatFragment.update(new ConfigDef(), null))),
+                        TransformerAccess.Fragment.update(
+                                SourceConfigAccess.Fragment.update(OutputFormatFragment.update(new ConfigDef(), null))),
                         props) {
                 }, 1));
         lst.add(Arguments.of(TransformerFactory.getTransformer(InputFormat.JSONL),
                 JsonTransformerTest.getJsonRecs(100).getBytes(StandardCharsets.UTF_8), new SourceCommonConfig(
-                        SourceConfigAccess.SourceConfigFragment.update(OutputFormatFragment.update(new ConfigDef(), null)), props) {
+                        SourceConfigAccess.Fragment.update(OutputFormatFragment.update(new ConfigDef(), null)), props) {
                 }, 100));
         lst.add(Arguments.of(TransformerFactory.getTransformer(InputFormat.PARQUET),
                 ParquetTransformerTest.generateMockParquetData(), new SourceCommonConfig(
-                        SourceConfigAccess.SourceConfigFragment.update(OutputFormatFragment.update(new ConfigDef(), null)), props) {
+                        SourceConfigAccess.Fragment.update(OutputFormatFragment.update(new ConfigDef(), null)), props) {
                 }, 100));
         return lst.stream();
     }

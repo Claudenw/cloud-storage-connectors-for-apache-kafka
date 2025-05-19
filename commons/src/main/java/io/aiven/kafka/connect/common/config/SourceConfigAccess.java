@@ -16,26 +16,26 @@ import static io.aiven.kafka.connect.common.source.task.DistributionType.OBJECT_
 public interface SourceConfigAccess extends AccessBase {
 
     default String getTargetTopic() {
-        return getAbstractConfig().getString(SourceConfigFragment.TARGET_TOPIC);
+        return getAbstractConfig().getString(Fragment.TARGET_TOPIC);
     }
     default String getSourceName() {
         return getAbstractConfig().getString(FILE_NAME_TEMPLATE_CONFIG);
     }
 
     default int getMaxPollRecords() {
-        return getAbstractConfig().getInt(SourceConfigFragment.MAX_POLL_RECORDS);
+        return getAbstractConfig().getInt(Fragment.MAX_POLL_RECORDS);
     }
 
     default int getExpectedMaxMessageBytes() {
-        return getAbstractConfig().getInt(SourceConfigFragment.EXPECTED_MAX_MESSAGE_BYTES);
+        return getAbstractConfig().getInt(Fragment.EXPECTED_MAX_MESSAGE_BYTES);
     }
 
     default ErrorsTolerance getErrorsTolerance() {
-        return ErrorsTolerance.forName(getAbstractConfig().getString(SourceConfigFragment.ERRORS_TOLERANCE));
+        return ErrorsTolerance.forName(getAbstractConfig().getString(Fragment.ERRORS_TOLERANCE));
     }
 
     default DistributionType getDistributionType() {
-        return DistributionType.forName(getAbstractConfig().getString(SourceConfigFragment.DISTRIBUTION_TYPE));
+        return DistributionType.forName(getAbstractConfig().getString(Fragment.DISTRIBUTION_TYPE));
     }
 
     /**
@@ -44,10 +44,10 @@ public interface SourceConfigAccess extends AccessBase {
      * @return the ring buffer size.
      */
     default int getRingBufferSize() {
-        return getAbstractConfig().getInt(SourceConfigFragment.RING_BUFFER_SIZE);
+        return getAbstractConfig().getInt(Fragment.RING_BUFFER_SIZE);
     }
 
-    final class SourceConfigFragment extends FragmentBase<SourceConfigAccess> {
+    final class Fragment extends FragmentBase<SourceConfigAccess> {
         private static final String GROUP_OTHER = "OTHER_CFG";
         public static final String MAX_POLL_RECORDS = "max.poll.records";
         public static final String EXPECTED_MAX_MESSAGE_BYTES = "expected.max.message.bytes";
@@ -58,7 +58,7 @@ public interface SourceConfigAccess extends AccessBase {
         /* public so that deprecated users can reference it */
         public static final String RING_BUFFER_SIZE = "ring.buffer.size";
 
-        private SourceConfigFragment() {
+        private Fragment() {
             super();
         }
 
@@ -118,8 +118,7 @@ public interface SourceConfigAccess extends AccessBase {
             return configDef;
         }
 
-        @Override
-        public void validate(SourceConfigAccess access) {
+        public static void validate(SourceConfigAccess access) {
             new SourcenameTemplateValidator(FILE_NAME_TEMPLATE_CONFIG, access.getDistributionType())
                     .ensureValid(FILE_NAME_TEMPLATE_CONFIG, access.getSourceName());
         }
@@ -153,7 +152,7 @@ public interface SourceConfigAccess extends AccessBase {
         }
 
         /**
-         * The SourceConfigFragment setter.
+         * The Fragment setter.
          */
         public static class Setter extends AbstractFragmentSetter<Setter> {
             /**

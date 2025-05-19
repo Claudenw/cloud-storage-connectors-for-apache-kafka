@@ -1,7 +1,6 @@
 package io.aiven.kafka.connect.common.config;
 
 import io.aiven.kafka.connect.common.source.input.InputFormat;
-import org.apache.kafka.common.config.AbstractConfig;
 import org.apache.kafka.common.config.ConfigDef;
 import org.apache.kafka.common.config.ConfigException;
 
@@ -9,25 +8,25 @@ import java.util.Locale;
 import java.util.Map;
 
 
-public interface TransformerAccess extends AccessBase<TransformerAccess> {
+public interface TransformerAccess extends AccessBase {
 
     default InputFormat getInputFormat() {
-        return InputFormat.valueOf(getAbstractConfig().getString(TransformerFragment.INPUT_FORMAT_KEY).toUpperCase(Locale.ROOT));
+        return InputFormat.valueOf(getAbstractConfig().getString(Fragment.INPUT_FORMAT_KEY).toUpperCase(Locale.ROOT));
     }
 
     default String getSchemaRegistryUrl() {
-        return getAbstractConfig().getString(TransformerFragment.SCHEMA_REGISTRY_URL);
+        return getAbstractConfig().getString(Fragment.SCHEMA_REGISTRY_URL);
     }
 
     default Class<?> getAvroValueSerializer() {
-        return getAbstractConfig().getClass(TransformerFragment.AVRO_VALUE_SERIALIZER);
+        return getAbstractConfig().getClass(Fragment.AVRO_VALUE_SERIALIZER);
     }
 
     default int getTransformerMaxBufferSize() {
-        return getAbstractConfig().getInt(TransformerFragment.TRANSFORMER_MAX_BUFFER_SIZE);
+        return getAbstractConfig().getInt(Fragment.TRANSFORMER_MAX_BUFFER_SIZE);
     }
 
-    final class TransformerFragment extends FragmentBase<TransformerAccess>{
+    final class Fragment {
         private static final String TRANSFORMER_GROUP = "Transformer group";
         public static final String SCHEMA_REGISTRY_URL = "schema.registry.url";
         public static final String VALUE_CONVERTER_SCHEMA_REGISTRY_URL = "value.converter.schema.registry.url";
@@ -37,7 +36,7 @@ public interface TransformerAccess extends AccessBase<TransformerAccess> {
         public static final String TRANSFORMER_MAX_BUFFER_SIZE = "transformer.max.buffer.size";
         private static final int DEFAULT_MAX_BUFFER_SIZE = 4096;
 
-        private TransformerFragment() {
+        private Fragment() {
             super();
         }
 
@@ -68,6 +67,10 @@ public interface TransformerAccess extends AccessBase<TransformerAccess> {
             return configDef;
         }
 
+        public static void validate(TransformerAccess access) {
+            // no validation.
+        }
+
         private static class ByteArrayTransformerMaxBufferSizeValidator implements ConfigDef.Validator {
             @Override
             public void ensureValid(final String name, final Object value) {
@@ -82,7 +85,7 @@ public interface TransformerAccess extends AccessBase<TransformerAccess> {
         }
 
         /**
-         * The setter for the TransformerFragment
+         * The setter for the Fragment
          */
         public final static class Setter extends AbstractFragmentSetter<Setter> {
             /**
