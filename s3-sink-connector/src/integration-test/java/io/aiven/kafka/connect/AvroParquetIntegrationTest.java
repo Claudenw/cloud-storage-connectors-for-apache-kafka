@@ -92,12 +92,12 @@ class AvroParquetIntegrationTest extends AbstractIntegrationTest implements Inte
     }
 
     @BeforeEach
-    void setUp(final TestInfo testInfo) throws ExecutionException, InterruptedException {
+    void setUpAvroP() {
         producer = newProducer();
     }
 
     @AfterEach
-    final void tearDown() {
+    final void tearDownAvroP() {
         producer.close();
     }
 

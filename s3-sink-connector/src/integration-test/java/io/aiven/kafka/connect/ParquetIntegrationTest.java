@@ -91,13 +91,13 @@ final class ParquetIntegrationTest extends AbstractIntegrationTest implements In
     }
 
     @BeforeEach
-    void setUp(final TestInfo testInfo) throws ExecutionException, InterruptedException {
+    void setUpPar() {
         testBucketAccessor.createBucket();
         producer = newProducer();
     }
 
     @AfterEach
-    void tearDown() {
+    void tearDownPar() {
         testBucketAccessor.removeBucket();
         producer.close();
     }

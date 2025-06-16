@@ -99,16 +99,12 @@ final class AvroIntegrationTest extends AbstractIntegrationTest implements Integ
     }
 
     @BeforeEach
-    void setUp(final TestInfo testInfo) throws ExecutionException, InterruptedException {
-
+    void setUpAvro() {
         producer = newProducer();
-
-        final var topicName = IntegrationBase.topicName(testInfo);
-        getKafkaManager().createTopic(topicName);
     }
 
     @AfterEach
-    void tearDown() {
+    void tearDownAvro() {
         producer.close();
     }
 

@@ -99,13 +99,13 @@ final class IntegrationTest extends AbstractIntegrationTest implements Integrati
     }
 
     @BeforeEach
-    void setUp(final TestInfo testInfo) throws ExecutionException, InterruptedException {
+    void setUpInt() {
         testBucketAccessor.createBucket();
         producer = newProducer();
     }
 
     @AfterEach
-    void tearDown() {
+    void tearDownInt() {
         testBucketAccessor.removeBucket();
         producer.close();
     }
