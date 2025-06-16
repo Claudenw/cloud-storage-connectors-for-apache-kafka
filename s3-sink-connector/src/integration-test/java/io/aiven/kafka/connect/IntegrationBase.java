@@ -66,11 +66,6 @@ public interface IntegrationBase {
         return AdminClient.create(adminClientConfig);
     }
 
-    default ConnectRunner newConnectRunner(final KafkaContainer kafka, final File pluginDir,
-            final int offsetFlushIntervalMs) {
-        return new ConnectRunner(pluginDir, kafka.getBootstrapServers(), offsetFlushIntervalMs);
-    }
-
     static void extractConnectorPlugin(File pluginDir) throws IOException, InterruptedException {
         final File distFile = new File(System.getProperty("integration-test.distribution.file.path"));
         assert distFile.exists();

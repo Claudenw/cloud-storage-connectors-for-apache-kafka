@@ -37,7 +37,6 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 import java.util.stream.Collectors;
 
-import org.apache.kafka.clients.admin.AdminClient;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.ProducerRecord;
@@ -63,13 +62,12 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInfo;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
-import org.testcontainers.containers.KafkaContainer;
 import org.testcontainers.containers.localstack.LocalStackContainer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 
 @Testcontainers
-final class IntegrationTest implements IntegrationBase {
+final class IntegrationTest extends AbstractIntegrationTest implements IntegrationBase {
     private static final String S3_ACCESS_KEY_ID = "test-key-id0";
     private static final String S3_SECRET_ACCESS_KEY = "test_secret_key0";
     private static final String TEST_BUCKET_NAME = "test-bucket0";
@@ -85,11 +83,7 @@ final class IntegrationTest implements IntegrationBase {
 
     @Container
     public static final LocalStackContainer LOCALSTACK = IntegrationBase.createS3Container();
-    @Container
-    private static final KafkaContainer KAFKA = IntegrationBase.createKafkaContainer();
-    private AdminClient adminClient;
     private KafkaProducer<byte[], byte[]> producer;
-    private ConnectRunner connectRunner;
 
     @BeforeAll
     static void setUpAll() throws IOException, InterruptedException {
@@ -102,32 +96,18 @@ final class IntegrationTest implements IntegrationBase {
         pluginDir = IntegrationBase.getPluginDir();
         IntegrationBase.extractConnectorPlugin(pluginDir);
 
-        IntegrationBase.waitForRunningContainer(KAFKA);
     }
 
     @BeforeEach
     void setUp(final TestInfo testInfo) throws ExecutionException, InterruptedException {
         testBucketAccessor.createBucket();
-
-        adminClient = newAdminClient(KAFKA);
         producer = newProducer();
-
-        final var topicName = IntegrationBase.topicName(testInfo);
-        final var topics = List.of(topicName);
-        IntegrationBase.createTopics(adminClient, topics);
-
-        connectRunner = newConnectRunner(KAFKA, pluginDir, OFFSET_FLUSH_INTERVAL_MS);
-        connectRunner.start();
     }
 
     @AfterEach
     void tearDown() {
         testBucketAccessor.removeBucket();
-        connectRunner.stop();
-        adminClient.close();
         producer.close();
-
-        connectRunner.awaitStop();
     }
 
     @ParameterizedTest
@@ -139,7 +119,7 @@ final class IntegrationTest implements IntegrationBase {
         connectorConfig.put("format.output.fields", "key,value");
         connectorConfig.put("file.compression.type", compression.name());
         connectorConfig.put("aws.s3.prefix", s3Prefix);
-        connectRunner.createConnector(connectorConfig);
+        createConnector(connectorConfig);
 
         final List<Future<RecordMetadata>> sendFutures = new ArrayList<>();
         final IndexesToString keyGen = (partition, epoch, currIdx) -> "key-" + currIdx;
@@ -190,7 +170,7 @@ final class IntegrationTest implements IntegrationBase {
         connectorConfig.put("file.compression.type", compression.name());
         connectorConfig.put("file.name.template", s3Prefix + "{{topic}}-{{partition}}-{{start_offset}}-"
                 + "{{timestamp:unit=yyyy}}-{{timestamp:unit=MM}}-{{timestamp:unit=dd}}");
-        connectRunner.createConnector(connectorConfig);
+        createConnector(connectorConfig);
 
         final List<Future<RecordMetadata>> sendFutures = new ArrayList<>();
         sendFutures.add(sendMessageAsync(producer, topicName, 0, "key-0", "value-0"));
@@ -247,7 +227,7 @@ final class IntegrationTest implements IntegrationBase {
         connectorConfig.put("file.compression.type", compression.name());
         connectorConfig.put("format.output.fields.value.encoding", "none");
         connectorConfig.put("file.max.records", "1");
-        connectRunner.createConnector(connectorConfig);
+        createConnector(connectorConfig);
 
         final List<Future<RecordMetadata>> sendFutures = new ArrayList<>();
 
@@ -293,14 +273,14 @@ final class IntegrationTest implements IntegrationBase {
             throws ExecutionException, InterruptedException, IOException {
         final var topicName0 = IntegrationBase.topicName(testInfo);
         final var topicName1 = IntegrationBase.topicName(testInfo) + "_1";
-        IntegrationBase.createTopics(adminClient, List.of(topicName1));
+        getKafkaManager().createTopics(List.of(topicName1));
         final Map<String, String> connectorConfig = awsSpecificConfig(basicConnectorConfig(CONNECTOR_NAME),
                 List.of(topicName0, topicName1));
         connectorConfig.put("key.converter", "org.apache.kafka.connect.storage.StringConverter");
         connectorConfig.put("format.output.fields", "key,value");
         connectorConfig.put("file.compression.type", compression.name());
         connectorConfig.put("file.name.template", s3Prefix + "{{key}}" + compression.extension());
-        connectRunner.createConnector(connectorConfig);
+        createConnector(connectorConfig);
 
         final Map<TopicPartition, List<String>> keysPerTopicPartition = new HashMap<>();
         keysPerTopicPartition.put(new TopicPartition(topicName0, 0), Arrays.asList("key-0", "key-1", "key-2", "key-3"));
@@ -378,7 +358,7 @@ final class IntegrationTest implements IntegrationBase {
         connectorConfig.put("value.converter.schemas.enable", "false");
         connectorConfig.put("file.compression.type", compression.name());
         connectorConfig.put("format.output.type", contentType);
-        connectRunner.createConnector(connectorConfig);
+        createConnector(connectorConfig);
 
         final List<Future<RecordMetadata>> sendFutures = new ArrayList<>();
         int cnt = 0;
@@ -443,7 +423,7 @@ final class IntegrationTest implements IntegrationBase {
         connectorConfig.put("value.converter.schemas.enable", "false");
         connectorConfig.put("file.compression.type", compression.name());
         connectorConfig.put("format.output.type", contentType);
-        connectRunner.createConnector(connectorConfig);
+        createConnector(connectorConfig);
 
         final List<Future<RecordMetadata>> sendFutures = new ArrayList<>();
 
@@ -524,7 +504,7 @@ final class IntegrationTest implements IntegrationBase {
 
     private KafkaProducer<byte[], byte[]> newProducer() {
         final Map<String, Object> producerProps = new HashMap<>();
-        producerProps.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, KAFKA.getBootstrapServers());
+        producerProps.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, getKafkaManager().bootstrapServers());
         producerProps.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG,
                 "org.apache.kafka.common.serialization.ByteArraySerializer");
         producerProps.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG,

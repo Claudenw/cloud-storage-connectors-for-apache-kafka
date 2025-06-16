@@ -20,10 +20,13 @@ plugins {
   id("aiven-apache-kafka-connectors-all.docs")
 }
 
+val kafkaTestingVersion by extra("3.3.1")
+
 dependencies {
   compileOnly(apache.kafka.connect.api)
   compileOnly(apache.kafka.connect.runtime)
   compileOnly(apache.kafka.connect.json)
+  implementation(tools.spotbugs.annotations)
 
   implementation(confluent.kafka.connect.avro.data) {
     exclude(group = "org.apache.kafka", module = "kafka-clients")
@@ -82,14 +85,30 @@ dependencies {
   }
 
   testFixturesImplementation(apache.kafka.connect.api)
+  testFixturesImplementation(apache.kafka.connect.runtime)
+  testFixturesImplementation(apache.kafka.clients)
+  testFixturesImplementation(confluent.kafka.connect.avro.converter) {
+    exclude(group = "org.apache.kafka", module = "kafka-clients")
+  }
+  testFixturesImplementation(tools.spotbugs.annotations)
+
+  testFixturesImplementation(testinglibs.awaitility)
   testFixturesImplementation(testinglibs.junit.jupiter)
+  // testFixturesImplementation("org.apache.kafka:kafka-clients:${kafkaTestingVersion}:test")
+  testFixturesImplementation("org.apache.kafka:connect-runtime:${kafkaTestingVersion}:test")
+  // testFixturesImplementation("org.apache.kafka:kafka_2.13:${kafkaTestingVersion}:test")
+
+  //  testFixturesImplementation(testinglibs.junit.jupiter.params)
+  //  testFixturesImplementation(testinglibs.junit.jupiter.api)
+
   testFixturesImplementation(testinglibs.mockito.core)
   testFixturesImplementation(testinglibs.assertj.core)
   testFixturesImplementation(apache.commons.lang3)
   testFixturesImplementation(apache.commons.io)
   testFixturesImplementation(apache.avro)
   testFixturesImplementation(testinglibs.wiremock)
-  testFixturesImplementation("org.mockito:mockito-junit-jupiter:5.18.0")
+  testFixturesImplementation(testinglibs.mockito.junit.jupiter)
+  testFixturesImplementation(testcontainers.kafka)
 
   testImplementation(apache.kafka.connect.api)
   testImplementation(apache.kafka.connect.runtime)

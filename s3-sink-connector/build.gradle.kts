@@ -77,7 +77,6 @@ dependencies {
   compileOnly(apache.kafka.connect.runtime)
 
   implementation(project(":commons"))
-  testImplementation(testFixtures(project(":commons")))
   implementation(project(":s3-commons"))
 
   implementation(tools.spotbugs.annotations)
@@ -85,6 +84,8 @@ dependencies {
   implementation("com.amazonaws:aws-java-sdk-s3:$amazonS3Version")
   implementation("com.amazonaws:aws-java-sdk-sts:$amazonSTSVersion")
 
+  testImplementation(apache.commons.io)
+  testImplementation(testFixtures(project(":commons")))
   testImplementation(compressionlibs.snappy)
   testImplementation(compressionlibs.zstd.jni)
   testImplementation(project(":s3-commons"))
@@ -110,6 +111,8 @@ dependencies {
   integrationTestImplementation(testcontainers.kafka) // this is not Kafka version
   integrationTestImplementation(testcontainers.localstack)
   integrationTestImplementation(testinglibs.wiremock)
+  integrationTestImplementation(testFixtures(project(":commons")))
+  integrationTestImplementation(apache.kafka.connect.runtime)
 
   // TODO: add avro-converter to ConnectRunner via plugin.path instead of on worker classpath
   integrationTestImplementation(confluent.kafka.connect.avro.converter) {
@@ -117,6 +120,9 @@ dependencies {
   }
 
   integrationTestImplementation(apache.avro)
+  // Make test utils from 'test' available in 'integration-test'
+  integrationTestImplementation(sourceSets["test"].output)
+  integrationTestImplementation(testinglibs.awaitility)
 
   testImplementation(apache.hadoop.mapreduce.client.core) {
     exclude(group = "org.apache.hadoop", module = "hadoop-yarn-client")
@@ -155,10 +161,6 @@ dependencies {
     exclude(group = "com.google.inject.extensions", module = "guice-servlet")
     exclude(group = "io.netty", module = "netty")
   }
-
-  // Make test utils from 'test' available in 'integration-test'
-  integrationTestImplementation(sourceSets["test"].output)
-  integrationTestImplementation(testinglibs.awaitility)
 }
 
 tasks.named<Pmd>("pmdIntegrationTest") {

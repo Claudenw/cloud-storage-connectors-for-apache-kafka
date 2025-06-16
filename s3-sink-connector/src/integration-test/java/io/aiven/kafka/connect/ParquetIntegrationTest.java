@@ -32,7 +32,6 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 import java.util.stream.Collectors;
 
-import org.apache.kafka.clients.admin.AdminClient;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.ProducerRecord;
@@ -53,13 +52,12 @@ import org.junit.jupiter.api.TestInfo;
 import org.junit.jupiter.api.io.TempDir;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
-import org.testcontainers.containers.KafkaContainer;
 import org.testcontainers.containers.localstack.LocalStackContainer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 
 @Testcontainers
-final class ParquetIntegrationTest implements IntegrationBase {
+final class ParquetIntegrationTest extends AbstractIntegrationTest implements IntegrationBase {
 
     private static final String S3_ACCESS_KEY_ID = "test-key-id0";
 
@@ -79,12 +77,8 @@ final class ParquetIntegrationTest implements IntegrationBase {
 
     @Container
     public static final LocalStackContainer LOCALSTACK = IntegrationBase.createS3Container();
-    @Container
-    private static final KafkaContainer KAFKA = IntegrationBase.createKafkaContainer();
 
-    private AdminClient adminClient;
     private KafkaProducer<byte[], byte[]> producer;
-    private ConnectRunner connectRunner;
 
     @BeforeAll
     static void setUpAll() throws IOException, InterruptedException {
@@ -94,37 +88,23 @@ final class ParquetIntegrationTest implements IntegrationBase {
 
         pluginDir = IntegrationBase.getPluginDir();
         IntegrationBase.extractConnectorPlugin(pluginDir);
-
-        IntegrationBase.waitForRunningContainer(KAFKA);
     }
 
     @BeforeEach
     void setUp(final TestInfo testInfo) throws ExecutionException, InterruptedException {
         testBucketAccessor.createBucket();
-
-        adminClient = newAdminClient(KAFKA);
         producer = newProducer();
-
-        final var topicName = IntegrationBase.topicName(testInfo);
-        IntegrationBase.createTopics(adminClient, List.of(topicName));
-
-        connectRunner = newConnectRunner(KAFKA, pluginDir, OFFSET_FLUSH_INTERVAL_MS);
-        connectRunner.start();
     }
 
     @AfterEach
     void tearDown() {
         testBucketAccessor.removeBucket();
-        connectRunner.stop();
-        adminClient.close();
         producer.close();
-
-        connectRunner.awaitStop();
     }
 
     private KafkaProducer<byte[], byte[]> newProducer() {
         final Map<String, Object> producerProps = new HashMap<>();
-        producerProps.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, KAFKA.getBootstrapServers());
+        producerProps.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, getKafkaManager().bootstrapServers());
         return new KafkaProducer<>(producerProps, new ByteArraySerializer(), new ByteArraySerializer());
     }
 
@@ -137,7 +117,7 @@ final class ParquetIntegrationTest implements IntegrationBase {
         connectorConfig.put("format.output.fields.value.encoding", "none");
         connectorConfig.put("key.converter", "org.apache.kafka.connect.storage.StringConverter");
         connectorConfig.put("value.converter", "org.apache.kafka.connect.storage.StringConverter");
-        connectRunner.createConnector(connectorConfig);
+        createConnector(connectorConfig);
 
         final List<Future<RecordMetadata>> sendFutures = new ArrayList<>();
         int cnt = 0;
@@ -198,7 +178,7 @@ final class ParquetIntegrationTest implements IntegrationBase {
         connectorConfig.put("format.output.fields.value.encoding", "none");
         connectorConfig.put("key.converter", "org.apache.kafka.connect.storage.StringConverter");
         connectorConfig.put("value.converter", "org.apache.kafka.connect.storage.StringConverter");
-        connectRunner.createConnector(connectorConfig);
+        createConnector(connectorConfig);
 
         final List<Future<RecordMetadata>> sendFutures = new ArrayList<>();
         int cnt = 0;
@@ -261,7 +241,7 @@ final class ParquetIntegrationTest implements IntegrationBase {
         connectorConfig.put("format.output.fields.value.encoding", "none");
         connectorConfig.put("key.converter", "org.apache.kafka.connect.storage.StringConverter");
         connectorConfig.put("value.converter", "org.apache.kafka.connect.json.JsonConverter");
-        connectRunner.createConnector(connectorConfig);
+        createConnector(connectorConfig);
 
         final var jsonMessageSchema = "{\"type\":\"struct\",\"fields\":[{\"type\":\"string\",\"field\":\"name\"}]}";
         final var jsonMessagePattern = "{\"schema\": %s, \"payload\": %s}";
@@ -320,7 +300,7 @@ final class ParquetIntegrationTest implements IntegrationBase {
         connectorConfig.put("format.output.fields.value.encoding", "none");
         connectorConfig.put("key.converter", "org.apache.kafka.connect.storage.StringConverter");
         connectorConfig.put("value.converter", "org.apache.kafka.connect.json.JsonConverter");
-        connectRunner.createConnector(connectorConfig);
+        createConnector(connectorConfig);
 
         final var jsonMessageSchema = "{\"type\":\"struct\",\"fields\":[{\"type\":\"string\",\"field\":\"name\"}]}";
         final var jsonMessageNewSchema = "{\"type\":\"struct\",\"fields\":"

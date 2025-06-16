@@ -32,7 +32,6 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 import java.util.stream.Stream;
 
-import org.apache.kafka.clients.admin.AdminClient;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.ProducerRecord;
@@ -40,7 +39,6 @@ import org.apache.kafka.clients.producer.RecordMetadata;
 
 import io.aiven.kafka.connect.common.config.CompressionType;
 import io.aiven.kafka.connect.s3.AivenKafkaConnectS3SinkConnector;
-import io.aiven.kafka.connect.s3.SchemaRegistryContainer;
 import io.aiven.kafka.connect.s3.testutils.BucketAccessor;
 
 import com.amazonaws.services.s3.AmazonS3;
@@ -60,13 +58,12 @@ import org.junit.jupiter.api.TestInfo;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
-import org.testcontainers.containers.KafkaContainer;
 import org.testcontainers.containers.localstack.LocalStackContainer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 
 @Testcontainers
-final class AvroIntegrationTest implements IntegrationBase {
+final class AvroIntegrationTest extends AbstractIntegrationTest implements IntegrationBase {
     private static final String S3_ACCESS_KEY_ID = "test-key-id0";
     private static final String S3_SECRET_ACCESS_KEY = "test_secret_key0";
     private static final String TEST_BUCKET_NAME = "test-bucket0";
@@ -82,13 +79,8 @@ final class AvroIntegrationTest implements IntegrationBase {
 
     @Container
     public static final LocalStackContainer LOCALSTACK = IntegrationBase.createS3Container();
-    @Container
-    private static final KafkaContainer KAFKA = IntegrationBase.createKafkaContainer();
-    @Container
-    private static final SchemaRegistryContainer SCHEMA_REGISTRY = new SchemaRegistryContainer(KAFKA);
-    private AdminClient adminClient;
+
     private KafkaProducer<String, GenericRecord> producer;
-    private ConnectRunner connectRunner;
 
     private final Schema avroInputDataSchema = new Schema.Parser().parse(
             "{\"type\":\"record\",\"name\":\"input_data\",\"fields\":[{\"name\":\"name\",\"type\":\"string\"}]}");
@@ -104,29 +96,20 @@ final class AvroIntegrationTest implements IntegrationBase {
 
         pluginDir = IntegrationBase.getPluginDir();
         IntegrationBase.extractConnectorPlugin(pluginDir);
-
-        IntegrationBase.waitForRunningContainer(KAFKA);
     }
 
     @BeforeEach
     void setUp(final TestInfo testInfo) throws ExecutionException, InterruptedException {
-        adminClient = newAdminClient(KAFKA);
+
         producer = newProducer();
 
         final var topicName = IntegrationBase.topicName(testInfo);
-        IntegrationBase.createTopics(adminClient, List.of(topicName));
-
-        connectRunner = newConnectRunner(KAFKA, pluginDir, OFFSET_FLUSH_INTERVAL_MS);
-        connectRunner.start();
+        getKafkaManager().createTopic(topicName);
     }
 
     @AfterEach
     void tearDown() {
-        connectRunner.stop();
-        adminClient.close();
         producer.close();
-
-        connectRunner.awaitStop();
     }
 
     private static Stream<Arguments> compressionAndCodecTestParameters() {
@@ -150,7 +133,7 @@ final class AvroIntegrationTest implements IntegrationBase {
         connectorConfig.put("format.output.fields", "key,value");
         connectorConfig.put("format.output.type", "avro");
         connectorConfig.put("avro.codec", avroCodec);
-        connectRunner.createConnector(connectorConfig);
+        createConnector(connectorConfig);
 
         final int recordCountPerPartition = 10;
         produceRecords(recordCountPerPartition, topicName);
@@ -216,7 +199,7 @@ final class AvroIntegrationTest implements IntegrationBase {
         connectorConfig.put("value.converter.schemas.enable", "false");
         connectorConfig.put("file.compression.type", compression.name());
         connectorConfig.put("format.output.type", contentType);
-        connectRunner.createConnector(connectorConfig);
+        createConnector(connectorConfig);
 
         final int recordCountPerPartition = 10;
         produceRecords(recordCountPerPartition, topicName);
@@ -280,12 +263,12 @@ final class AvroIntegrationTest implements IntegrationBase {
 
     private KafkaProducer<String, GenericRecord> newProducer() {
         final Map<String, Object> producerProps = new HashMap<>();
-        producerProps.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, KAFKA.getBootstrapServers());
+        producerProps.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, getKafkaManager().bootstrapServers());
         producerProps.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG,
                 "io.confluent.kafka.serializers.KafkaAvroSerializer");
         producerProps.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG,
                 "io.confluent.kafka.serializers.KafkaAvroSerializer");
-        producerProps.put("schema.registry.url", SCHEMA_REGISTRY.getSchemaRegistryUrl());
+        producerProps.put("schema.registry.url", getKafkaManager().getSchemaRegistryUrl());
         return new KafkaProducer<>(producerProps);
     }
 
@@ -299,9 +282,9 @@ final class AvroIntegrationTest implements IntegrationBase {
         final Map<String, String> config = new HashMap<>();
         config.put("name", connectorName);
         config.put("key.converter", "io.confluent.connect.avro.AvroConverter");
-        config.put("key.converter.schema.registry.url", SCHEMA_REGISTRY.getSchemaRegistryUrl());
+        config.put("key.converter.schema.registry.url", getKafkaManager().getSchemaRegistryUrl());
         config.put("value.converter", "io.confluent.connect.avro.AvroConverter");
-        config.put("value.converter.schema.registry.url", SCHEMA_REGISTRY.getSchemaRegistryUrl());
+        config.put("value.converter.schema.registry.url", getKafkaManager().getSchemaRegistryUrl());
         config.put("tasks.max", "1");
         return config;
     }
@@ -314,8 +297,8 @@ final class AvroIntegrationTest implements IntegrationBase {
         config.put("aws.s3.bucket.name", TEST_BUCKET_NAME);
         config.put("aws.s3.prefix", s3Prefix);
         config.put("topics", topicName);
-        config.put("key.converter.schema.registry.url", SCHEMA_REGISTRY.getSchemaRegistryUrl());
-        config.put("value.converter.schema.registry.url", SCHEMA_REGISTRY.getSchemaRegistryUrl());
+        config.put("key.converter.schema.registry.url", getKafkaManager().getSchemaRegistryUrl());
+        config.put("value.converter.schema.registry.url", getKafkaManager().getSchemaRegistryUrl());
         config.put("tasks.max", "1");
         return config;
     }

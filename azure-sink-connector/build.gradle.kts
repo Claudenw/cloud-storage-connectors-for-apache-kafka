@@ -134,6 +134,7 @@ dependencies {
 
   testRuntimeOnly(logginglibs.slf4j.log4j12)
 
+  integrationTestImplementation(tools.spotbugs.annotations)
   integrationTestImplementation(testinglibs.wiremock)
   integrationTestImplementation(testcontainers.junit.jupiter)
   integrationTestImplementation(testcontainers.kafka) // this is not Kafka version
@@ -147,6 +148,7 @@ dependencies {
 
   // Make test utils from "test" available in "integration-test"
   integrationTestImplementation(sourceSets["test"].output)
+  integrationTestImplementation(testFixtures(project(":commons")))
 }
 
 tasks.named<Pmd>("pmdIntegrationTest") {
