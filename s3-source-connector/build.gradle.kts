@@ -18,12 +18,15 @@ import com.github.spotbugs.snom.SpotBugsTask
 
 plugins {
   id("aiven-apache-kafka-connectors-all.java-conventions")
-  id("com.bmuschko.docker-remote-api") version "9.4.0"
+//  id("com.bmuschko.docker-remote-api") version "9.4.0"
   id("aiven-apache-kafka-connectors-all.docs")
 }
 
+
+val kafkaTestingVersion by extra("3.3.1")
+
 val s3mockVersion by extra("0.2.6")
-val kafkaVersion by extra("3.3.0")
+val kafkaVersion by extra("3.3.1")
 
 val integrationTest: SourceSet =
     sourceSets.create("integrationTest") {
@@ -139,18 +142,6 @@ dependencies {
 
   testRuntimeOnly(logginglibs.logback.classic)
 
-  integrationTestImplementation(testinglibs.localstack) {
-    exclude(group = "io.netty", module = "netty-transport-native-epoll")
-  }
-  integrationTestImplementation(testcontainers.junit.jupiter)
-  integrationTestImplementation(testcontainers.kafka) // this is not Kafka version
-  integrationTestImplementation(testcontainers.localstack)
-  integrationTestImplementation(testinglibs.wiremock)
-
-  integrationTestImplementation(confluent.kafka.connect.avro.converter) {
-    exclude(group = "org.apache.kafka", module = "kafka-clients")
-  }
-
   testImplementation(apache.hadoop.mapreduce.client.core) {
     exclude(group = "org.apache.hadoop", module = "hadoop-yarn-client")
     exclude(group = "org.apache.hadoop.thirdparty", module = "hadoop-shaded-protobuf_3_7")
@@ -189,16 +180,29 @@ dependencies {
     exclude(group = "io.netty", module = "netty")
   }
 
-  integrationTestImplementation("org.apache.kafka:connect-runtime:${kafkaVersion}:test")
-  integrationTestImplementation("org.apache.kafka:connect-runtime:${kafkaVersion}")
-  integrationTestImplementation("org.apache.kafka:kafka-clients:${kafkaVersion}:test")
-  integrationTestImplementation("org.apache.kafka:kafka_2.13:${kafkaVersion}:test")
-  integrationTestImplementation("org.apache.kafka:kafka_2.13:${kafkaVersion}")
+
   integrationTestImplementation(testFixtures(project(":commons")))
 
   // Make test utils from 'test' available in 'integration-test'
   integrationTestImplementation(sourceSets["test"].output)
+
+  integrationTestImplementation(testinglibs.localstack) {
+    exclude(group = "io.netty", module = "netty-transport-native-epoll")
+  }
+  integrationTestImplementation(testcontainers.junit.jupiter)
+  integrationTestImplementation(testcontainers.localstack)
+  integrationTestImplementation(testinglibs.wiremock)
+  integrationTestImplementation(apache.kafka.connect.runtime)
+
+  integrationTestImplementation(tools.spotbugs.annotations)
+  integrationTestImplementation(testinglibs.embeddedkafka)
   integrationTestImplementation(testinglibs.awaitility)
+  integrationTestImplementation(apache.kafka.clients)
+  integrationTestImplementation("org.apache.kafka:kafka-clients:${kafkaTestingVersion}:test")
+
+  integrationTestImplementation(confluent.kafka.connect.avro.converter) {
+    exclude(group = "org.apache.kafka", module = "kafka-clients")
+  }
 }
 
 tasks.named<Pmd>("pmdIntegrationTest") {

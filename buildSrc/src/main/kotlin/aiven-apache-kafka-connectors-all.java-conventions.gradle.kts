@@ -45,6 +45,10 @@ plugins {
     id("pmd")
 
     id("com.github.spotbugs")
+
+
+    id("java-test-fixtures")
+
 }
 
 java {

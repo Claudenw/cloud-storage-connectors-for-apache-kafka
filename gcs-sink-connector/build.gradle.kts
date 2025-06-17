@@ -21,6 +21,8 @@ plugins {
   id("aiven-apache-kafka-connectors-all.docs")
 }
 
+val kafkaTestingVersion by extra("3.3.1")
+
 val integrationTest: SourceSet =
     sourceSets.create("integrationTest") {
       java { srcDir("src/integration-test/java") }
@@ -140,10 +142,13 @@ dependencies {
   testRuntimeOnly(logginglibs.slf4j.log4j12)
 
   integrationTestImplementation(testFixtures(project(":commons")))
-  integrationTestImplementation(testinglibs.wiremock)
   integrationTestImplementation(testcontainers.junit.jupiter)
-  integrationTestImplementation(testcontainers.kafka) // this is not Kafka version
+  integrationTestImplementation(tools.spotbugs.annotations)
+  integrationTestImplementation(testinglibs.embeddedkafka)
+  integrationTestImplementation(testinglibs.wiremock)
   integrationTestImplementation(testinglibs.awaitility)
+  integrationTestImplementation(apache.kafka.clients)
+  integrationTestImplementation("org.apache.kafka:kafka-clients:${kafkaTestingVersion}:test")
 
   integrationTestImplementation(apache.kafka.connect.transforms)
   // TODO: add avro-converter to ConnectRunner via plugin.path instead of on worker classpath

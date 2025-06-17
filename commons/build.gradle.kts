@@ -86,17 +86,17 @@ dependencies {
 
   testFixturesImplementation(apache.kafka.connect.api)
   testFixturesImplementation(apache.kafka.connect.runtime)
-  testFixturesImplementation(apache.kafka.clients)
   testFixturesImplementation(confluent.kafka.connect.avro.converter) {
     exclude(group = "org.apache.kafka", module = "kafka-clients")
   }
+  testFixturesImplementation(apache.kafka.clients)
   testFixturesImplementation(tools.spotbugs.annotations)
 
   testFixturesImplementation(testinglibs.awaitility)
   testFixturesImplementation(testinglibs.junit.jupiter)
   // testFixturesImplementation("org.apache.kafka:kafka-clients:${kafkaTestingVersion}:test")
   testFixturesImplementation("org.apache.kafka:connect-runtime:${kafkaTestingVersion}:test")
-  // testFixturesImplementation("org.apache.kafka:kafka_2.13:${kafkaTestingVersion}:test")
+  testFixturesImplementation("org.apache.kafka:kafka_2.13:${kafkaTestingVersion}:test")
 
   //  testFixturesImplementation(testinglibs.junit.jupiter.params)
   //  testFixturesImplementation(testinglibs.junit.jupiter.api)

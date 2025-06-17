@@ -28,7 +28,7 @@ import org.apache.parquet.avro.AvroParquetReader;
 import org.apache.parquet.io.DelegatingSeekableInputStream;
 import org.apache.parquet.io.InputFile;
 import org.apache.parquet.io.SeekableInputStream;
-import org.testcontainers.shaded.org.apache.commons.io.FileUtils;
+import org.apache.commons.io.FileUtils;
 
 final class ParquetUtils {
 

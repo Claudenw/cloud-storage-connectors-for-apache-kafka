@@ -41,7 +41,7 @@ dependencyResolutionManagement {
           "org.apache.commons:commons-collections4:$commonsCollections4Version")
       library("commons-io", "commons-io:commons-io:$commonsIOVersion")
       library("commons-lang3", "org.apache.commons:commons-lang3:$commonsLang3Version")
-      library("kafka-connect-api", "org.apache.kafka:connect-api:$kafkaVersion")
+      library("kafka-connect-api", "org.apache.kafka:connect-api:$kafkaAPIVersion")
       library("kafka-connect-json", "org.apache.kafka:connect-json:$kafkaVersion")
       library("kafka-connect-runtime", "org.apache.kafka:connect-runtime:$kafkaVersion")
       library("kafka-connect-transforms", "org.apache.kafka:connect-transforms:$kafkaVersion")
@@ -100,6 +100,9 @@ dependencyResolutionManagement {
       library("mockito-junit-jupiter", "org.mockito:mockito-junit-jupiter:$mockitoVersion")
       library("wiremock", "com.github.tomakehurst:wiremock-jre8:$wireMockVersion")
       library("woodstox-stax2-api", "org.codehaus.woodstox:stax2-api:$stax2ApiVersion")
+      library("embeddedkafka","io.github.embeddedkafka:embedded-kafka_2.13:${kafkaVersion}")
+      // the below entry does not work but implementations will need the link.
+      //library("kafka-clients", "org.apache.kafka:kafka-clients:${kafkaVersion}:test")
     }
     create("testcontainers") {
       library("junit-jupiter", "org.testcontainers:junit-jupiter:$testcontainersVersion")

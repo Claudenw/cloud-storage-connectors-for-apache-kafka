@@ -18,9 +18,10 @@ import com.github.spotbugs.snom.SpotBugsTask
 
 plugins {
   id("aiven-apache-kafka-connectors-all.java-conventions")
-  id("java-test-fixtures")
   id("aiven-apache-kafka-connectors-all.docs")
 }
+
+val kafkaTestingVersion by extra("3.3.1")
 
 val amazonS3Version by extra("1.12.777")
 val amazonSTSVersion by extra("1.12.777")
@@ -108,11 +109,16 @@ dependencies {
 
   integrationTestImplementation(testinglibs.localstack)
   integrationTestImplementation(testcontainers.junit.jupiter)
-  integrationTestImplementation(testcontainers.kafka) // this is not Kafka version
   integrationTestImplementation(testcontainers.localstack)
   integrationTestImplementation(testinglibs.wiremock)
   integrationTestImplementation(testFixtures(project(":commons")))
   integrationTestImplementation(apache.kafka.connect.runtime)
+
+  integrationTestImplementation(tools.spotbugs.annotations)
+  integrationTestImplementation(testinglibs.embeddedkafka)
+  integrationTestImplementation(testinglibs.awaitility)
+  integrationTestImplementation(apache.kafka.clients)
+  integrationTestImplementation("org.apache.kafka:kafka-clients:${kafkaTestingVersion}:test")
 
   // TODO: add avro-converter to ConnectRunner via plugin.path instead of on worker classpath
   integrationTestImplementation(confluent.kafka.connect.avro.converter) {
